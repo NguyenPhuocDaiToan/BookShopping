@@ -67,6 +67,12 @@ export class HeaderComponent implements OnInit {
       this.cartItems = this.cartStorageService.getItems();
       this.cartItems.forEach(c => this.totalPriceCart += c.amount * c.book.price);
     }
+
+    this.cartService.cartItems$.subscribe(cartItems => {
+      this.cartItems = cartItems;
+      this.totalPriceCart = 0;
+      cartItems.forEach(c => this.totalPriceCart += c.amount * c.book.price);
+    });
   }
 
   logout() {
@@ -100,6 +106,7 @@ export class HeaderComponent implements OnInit {
     this.cartService.getCartItemByUserId(this.tokenStorageService.getUser().id).subscribe(items => {
       this.cartItems = items;
       items.forEach(t => this.totalPriceCart += t.amount * t?.book.price);
+      this.cartService.cartItems$.next(items);
     });
   }
 

@@ -9,10 +9,10 @@
         <relativePath/> <!-- lookup parent from repository -->
     </parent>
     <groupId>com.example</groupId>
-    <artifactId>LoginOAuth2WithAngular</artifactId>
+    <artifactId>BookShopping</artifactId>
     <version>0.0.1-SNAPSHOT</version>
-    <name>LoginOAuth2WithAngular</name>
-    <description>LoginOAuth2WithAngular</description>
+    <name>BookShopping</name>
+    <description>BookShopping</description>
     <properties>
         <java.version>11</java.version>
     </properties>

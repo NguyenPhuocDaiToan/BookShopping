@@ -58,6 +58,7 @@ export class ViewCartComponent implements OnInit {
           next => {
             this.cartItems.find(t => t.id === id).amount--;
             inputQuantity.value--;
+            this.cartService.reloadCartItems();
           },
           error => {
             this.toastrService.warning(error.error.message, 'Thông báo');
@@ -87,6 +88,7 @@ export class ViewCartComponent implements OnInit {
         next => {
           inputQuantity.value++;
           this.cartItems.find(t => t.id === id).amount++;
+          this.cartService.reloadCartItems();
         },
         error => {
           this.toastrService.warning(error.error.message, 'Thông báo');
@@ -144,6 +146,7 @@ export class ViewCartComponent implements OnInit {
       this.cartItems.splice(index, 1);
       this.cartService.deleteCartItem(this.idCartItemDelete).subscribe(
         next => {
+          this.cartService.reloadCartItems();
           this.toastrService.success('Xoá sản phẩm khỏi giỏ hàng thành công !!!', 'Thông báo');
         }
       );

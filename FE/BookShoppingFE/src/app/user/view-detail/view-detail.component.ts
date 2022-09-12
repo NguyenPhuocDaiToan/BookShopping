@@ -105,6 +105,7 @@ export class ViewDetailComponent implements OnInit {
         this.cartService.addToCart(amount, this.storageService.getUser().cart.id , this.book?.id).subscribe(
           next => {
             this.toastrService.success('Thêm vào giỏ hàng thành công !!!');
+            this.cartService.reloadCartItems();
           }
         );
       } else {

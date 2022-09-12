@@ -37,11 +37,14 @@
         <div class="header__option-user header__cart" (click)="viewCart()">
           <i class="bi bi-cart3 header__option-user-icon"></i>
           <p>Giỏ hàng</p>
-
+          <div style="position: absolute; top: 10px; right: 3px; width: 20px;
+          height: 20px;background-color: red; border-radius: 50%" class="d-flex-center-all">
+            <span style="line-height: 20px; padding-top: 1px">{{cartItems?.length}}</span>
+          </div>
           <div class="cart-wrapper" (click)="$event.stopImmediatePropagation()">
             <div class="cart-header d-flex-align-center">
               <i class="bi bi-cart3 cart-header-icon"></i>
-              <span>Giỏ hàng (3)</span>
+              <span>Giỏ hàng ({{cartItems?.length}})</span>
             </div>
 
             <div class="cart-body">
