@@ -1,8 +1,10 @@
 package com.bookshopping.service.impl;
 
 import com.bookshopping.model.Cart;
+import com.bookshopping.model.GenderType;
 import com.bookshopping.model.Role;
 import com.bookshopping.model.User;
+import com.bookshopping.payload.request.UserRequest;
 import com.bookshopping.repository.UserRepository;
 import com.bookshopping.service.CartService;
 import com.bookshopping.service.RoleService;
@@ -56,5 +58,30 @@ public class UserServiceImpl implements UserService {
     @Override
     public Boolean existsByEmail(String email) {
         return userRepository.existsByEmail(email);
+    }
+
+    @Override
+    public boolean existByEmailOtherUser(Integer id, String email) {
+        return userRepository.existByEmailOtherUser(id, email) != null;
+    }
+
+    @Override
+    public int updateEmail(Integer id, String email) {
+        return userRepository.updateEmail(id, email);
+    }
+
+    @Override
+    public int updateInfo(Integer id, User user) {
+        System.out.println("update service");
+        if(user.getGender() != null) {
+            return userRepository.updateInfo(id, user.getName(), String.valueOf(user.getGender()), user.getBirthday(), user.getAddress(), user.getPhone());
+        } else {
+            return userRepository.updateInfoNotGender(id, user.getName(), user.getBirthday(), user.getAddress(), user.getPhone());
+        }
+    }
+
+    @Override
+    public void updatePassword(Integer id, String newPassword) {
+        userRepository.updatePassword(id, newPassword);
     }
 }

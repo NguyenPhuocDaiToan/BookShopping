@@ -79,8 +79,8 @@ public class AuthController {
                 user.setEmail(register.getEmail());
                 user.setPassword(passwordEncoder.encode(register.getNewPass()));
                 user.setProvider(AuthProvider.local);
-                user.setEmailVerified(true);
 
+                otpService.clearOTP(register.getEmail());
                 userService.saveCreateRelationship(user);
                 return new ResponseEntity<>(new ResponseMessage("Đăng ký thành công !!!"), HttpStatus.OK);
             }

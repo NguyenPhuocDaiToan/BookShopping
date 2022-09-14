@@ -1,6 +1,7 @@
 package com.bookshopping.model;
 
 import com.fasterxml.jackson.annotation.JsonBackReference;
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonManagedReference;
 import lombok.AllArgsConstructor;
 import lombok.Data;
@@ -36,10 +37,9 @@ public class Book {
     private int numberRating;
 
     @ManyToOne(targetEntity = Category.class)
-    @JsonManagedReference("category_book")
     private Category category;
 
     @OneToMany(mappedBy = "book")
-    @JsonBackReference("book_cart_item")
+    @JsonIgnore
     private List<CartItem> cartItems;
 }

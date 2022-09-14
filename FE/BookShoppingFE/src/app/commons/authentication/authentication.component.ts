@@ -150,7 +150,7 @@ export class AuthenticationComponent implements OnInit {
   getOTP() {
     if (this.emailRegister.valid) {
       this.el.nativeElement.querySelector('.loading-container').style.display = 'block';
-      this.commonService.getOTP(this.emailRegister.value).subscribe(
+      this.commonService.getOtpRegister(this.emailRegister.value).subscribe(
         data => {
           this.el.nativeElement.querySelector('.loading-container').style.display = 'none';
           this.toastrService.success('Vui lòng kiểm tra email để lấy mã OTP', 'Thông báo');

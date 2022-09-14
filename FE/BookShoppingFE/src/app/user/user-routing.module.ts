@@ -5,6 +5,7 @@ import {ViewDetailComponent} from './view-detail/view-detail.component';
 import {ViewInfoUserComponent} from './view-info-user/view-info-user.component';
 import {ViewCartComponent} from './view-cart/view-cart.component';
 import {ViewSearchComponent} from './view-search/view-search.component';
+import {ChangePasswordComponent} from './change-password/change-password.component';
 
 
 const routes: Routes = [
@@ -16,6 +17,9 @@ const routes: Routes = [
   },
   {
     path: 'info/me', component: ViewInfoUserComponent
+  },
+  {
+    path: 'info/me/changePassword', component: ChangePasswordComponent
   },
   {
     path: 'cart', component: ViewCartComponent

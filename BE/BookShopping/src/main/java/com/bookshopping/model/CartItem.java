@@ -23,6 +23,5 @@ public class CartItem {
     private Cart cart;
 
     @ManyToOne(targetEntity = Book.class)
-    @JsonManagedReference("book_cart_item")
     private Book book;
 }

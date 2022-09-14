@@ -50,6 +50,7 @@ public class CustomOAuth2UserService extends DefaultOAuth2UserService {
         }
         else {
             if(!user.getProvider().equals(AuthProvider.valueOf(oAuth2UserRequest.getClientRegistration().getRegistrationId()))) {
+                System.out.println("Email register");
                 throw new OAuth2AuthenticationProcessingException("EmailRegistered");
             }
 

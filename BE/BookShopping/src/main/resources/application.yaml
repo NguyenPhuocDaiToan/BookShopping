@@ -1,6 +1,6 @@
 spring:
   datasource:
-    url: jdbc:mysql://localhost:3306/testoauth2angular
+    url: jdbc:mysql://localhost:3306/book_shopping
     username: root
     password: daitoan2002
 

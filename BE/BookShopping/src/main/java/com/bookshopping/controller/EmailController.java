@@ -23,8 +23,8 @@ public class EmailController {
     @Autowired
     private UserService userService;
 
-    @GetMapping("/getOTP")
-    public ResponseEntity<ResponseMessage> getOTP(@RequestParam String email) {
+    @GetMapping("/getOtpRegister")
+    public ResponseEntity<ResponseMessage> getOtpRegister(@RequestParam String email) {
         User user = userService.findByEmail(email);
         if (user == null) {
             int otp = otpService.generateOTP(email);
@@ -36,5 +36,16 @@ public class EmailController {
             return new ResponseEntity<>(new ResponseMessage("Gửi email bị lỗi"), HttpStatus.BAD_REQUEST);
         }
         else return new ResponseEntity<>(new ResponseMessage("Email đã tồn tại trong hệ thống"), HttpStatus.BAD_REQUEST);
+    }
+
+    @GetMapping("/getOtp")
+    public ResponseEntity<ResponseMessage> getOtp(@RequestParam String email) {
+        int otp = otpService.generateOTP(email);
+        String message = "<h3>Cảm ơn bạn đã sử dụng ứng dụng của chúng tôi !!!</h3>"
+                + "<p>Mã OTP để thay đổi mật khẩu của bạn là: " + otp + ".</p>"
+                + "<p>Mã OTP có hiệu lực trong thời gian 4 phút.</p>";
+        if(emailService.sendEmail(email, "DT BookStore", message))
+            return new ResponseEntity<>(new ResponseMessage(String.valueOf(otp)), HttpStatus.OK);
+        return new ResponseEntity<>(new ResponseMessage("Gửi email bị lỗi"), HttpStatus.BAD_REQUEST);
     }
 }

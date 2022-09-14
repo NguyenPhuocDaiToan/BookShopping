@@ -100,7 +100,8 @@
         </div>
 
         <div class="header__option-user select-options-account-wrapper" *ngIf="isLogin">
-          <img [src]="user?.imageUrl" alt="Avatar" *ngIf="isLogin" class="avatar-user">
+          <img [src]="user?.imageUrl" alt="Avatar" *ngIf="isLogin" class="avatar-user"
+               onerror="this.src='https://png.pngitem.com/pimgs/s/21-211738_free-member-icon-download-user-icon-svg-hd.png'">
           <p class="username">
             {{user?.name}}
           </p>
