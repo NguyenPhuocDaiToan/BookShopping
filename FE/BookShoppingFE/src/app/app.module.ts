@@ -10,7 +10,6 @@ import { FooterComponent } from './commons/footer/footer.component';
 import {UserModule} from './user/user.module';
 import {ToastrModule} from 'ngx-toastr';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
-import {FormDirective} from './commons/form.directive';
 import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 import { AuthenticationComponent } from './commons/authentication/authentication.component';
 import {ShareModuleModule} from './share-module/share-module.module';

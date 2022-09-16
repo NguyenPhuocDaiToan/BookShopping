@@ -91,11 +91,13 @@ public class UserController {
         // If old password = password in database
         if(otpService.getOtp(user.getEmail()) != otp) {
             return new ResponseEntity<>(new ResponseMessage("Mã OTP không đúng hoặc hết hiệu lực !!!"), HttpStatus.BAD_REQUEST);
-        }
-        else if(!passwordEncoder.matches(oldPass, user.getPassword())) {
+        } else if (user.getPassword() == null) {
+            otpService.clearOTP(user.getEmail());
+            userService.updatePassword(id, passwordEncoder.encode(newPass));
+            return new ResponseEntity<>(new ResponseMessage("Cập nhật mật khẩu thành công !!!"), HttpStatus.OK);
+        } else if (!passwordEncoder.matches(oldPass, user.getPassword())) {
             return new ResponseEntity<>(new ResponseMessage("Mật khẩu cũ không đúng !!!"), HttpStatus.BAD_REQUEST);
-        }
-        else if(passwordEncoder.matches(newPass, user.getPassword())){
+        } else if (passwordEncoder.matches(newPass, user.getPassword())) {
             return new ResponseEntity<>(new ResponseMessage("Mật khẩu mới trùng mật khẩu cũ !!!"), HttpStatus.BAD_REQUEST);
         }
         otpService.clearOTP(user.getEmail());

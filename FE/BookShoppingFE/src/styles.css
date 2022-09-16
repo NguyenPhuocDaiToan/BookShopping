@@ -55,7 +55,11 @@ body {
   background-color: rgb(8, 79, 154);
   color: #fff;
 }
-
+.btn-disabled {
+  background-color: #7A7E7F !important;
+  color: #fff;
+  outline: none;
+}
 .color-blue {
   color: var(--color-lightness-2) !important;
 }
@@ -67,6 +71,9 @@ body {
 }
 .color-black {
   color: #000 !important;
+}
+.color-green {
+  color: #198754 !important;
 }
 .fs-14 {
   font-size: 14px !important;
@@ -149,6 +156,10 @@ a {
   flex: 0 0 41.666667%;
   max-width: 41.666667%;
 }
+.col-6 {
+  flex: 0 0 50%;
+  max-width: 50%;
+}
 .col-7 {
   flex: 0 0 58.333333%;
   max-width: 58.333333%;
@@ -188,6 +199,12 @@ a {
 }
 .mt-16 {
   margin-top: 16px;
+}
+.mt-20 {
+  margin-top: 20px;
+}
+.mt-32 {
+  margin-top: 32px;
 }
 .mb-8 {
   margin-bottom: 8px;

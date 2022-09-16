@@ -49,6 +49,7 @@
   display: -webkit-box;
   -webkit-box-orient: vertical;
   -webkit-line-clamp: 2;
+  min-height: 35.5px;
 }
 .product-price {
   color: rgb(255, 66, 78);

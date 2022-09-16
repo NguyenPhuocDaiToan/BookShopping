@@ -42,4 +42,8 @@ public class Book {
     @OneToMany(mappedBy = "book")
     @JsonIgnore
     private List<CartItem> cartItems;
+
+    @OneToMany(mappedBy = "book")
+    @JsonIgnore
+    private List<OrderItem> orderItems;
 }

@@ -47,6 +47,7 @@ export class HomepageComponent implements OnInit, AfterViewInit  {
       this.user = this.tokenStorageService.getUser();
     }
     const numberRecord = window.sessionStorage.getItem('numberRecord');
+    console.log(numberRecord);
     if (numberRecord) {
       this.numberRecord = Number(numberRecord);
     } else {

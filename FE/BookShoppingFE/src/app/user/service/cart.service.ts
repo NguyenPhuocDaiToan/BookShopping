@@ -3,7 +3,7 @@ import {HttpClient} from '@angular/common/http';
 import {BehaviorSubject, Observable} from 'rxjs';
 import {CartItem} from '../../models/cart-item';
 import {ResponseMessage} from '../../models/response-message';
-import {TokenStorageService} from "../../services/token-storage.service";
+import {TokenStorageService} from '../../services/token-storage.service';
 
 const API_URL = 'http://localhost:8080/api/cart';
 
@@ -44,9 +44,12 @@ export class CartService {
     return this.http.delete<ResponseMessage>(API_URL + '/delete?cartItemId=' + cartItemId);
   }
 
+  deleteCartItems(cartItems): Observable<ResponseMessage> {
+    return this.http.post<ResponseMessage>(API_URL + '/deleteCartItems', cartItems);
+  }
 
   synchronizedCart(cartId: number, cartItemRequests): Observable<ResponseMessage> {
-    return this.http.post<ResponseMessage>(API_URL + '/synchronizedCart?cartId=' + cartId, cartItemRequests)
+    return this.http.post<ResponseMessage>(API_URL + '/synchronizedCart?cartId=' + cartId, cartItemRequests);
   }
 
 }

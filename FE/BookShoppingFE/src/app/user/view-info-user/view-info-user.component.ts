@@ -178,4 +178,9 @@ export class ViewInfoUserComponent implements OnInit {
       this.toastrService.warning('Thông tin trong form không hợp lệ !!!', 'Thông báo');
     }
   }
+
+  formatPhone() {
+    const value = this.phone.value.replace(/\s/g, '');
+    this.phone.setValue(value);
+  }
 }

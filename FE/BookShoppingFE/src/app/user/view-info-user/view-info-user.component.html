@@ -94,7 +94,8 @@
                   </label>
                 </div>
                 <div class="col-9">
-                  <input type="text" class="form-control" id="phone" formControlName="phone" placeholder="Nhập số điện thoại">
+                  <input type="text" class="form-control" id="phone" (blur)="formatPhone()"
+                         formControlName="phone" placeholder="Nhập số điện thoại">
                 </div>
 
                 <div class="col-3"></div>

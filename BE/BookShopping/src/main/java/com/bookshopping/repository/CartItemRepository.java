@@ -20,7 +20,7 @@ public interface CartItemRepository extends JpaRepository<CartItem, Integer> {
 
     @Transactional
     @Modifying
-    @Query(value = "insert into cart_item set amount = :amount, cart_id = :cartId, book_id = :bookId", nativeQuery = true)
+    @Query(value = "insert into cart_item(amount, cart_id, book_id) VALUES(:amount, :cartId, :bookId)", nativeQuery = true)
     int save(int amount, Integer cartId, Integer bookId);
 
     @Transactional

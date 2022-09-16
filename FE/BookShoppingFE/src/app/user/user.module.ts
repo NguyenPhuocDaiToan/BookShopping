@@ -10,8 +10,12 @@ import {ViewSearchComponent} from './view-search/view-search.component';
 import {ChangePasswordComponent} from './change-password/change-password.component';
 import {SidebarComponent} from './sidebar/sidebar.component';
 import {ReactiveFormsModule} from '@angular/forms';
-import {FormDirective} from '../commons/form.directive';
 import {ShareModuleModule} from '../share-module/share-module.module';
+import {NgxSpinnerModule} from 'ngx-spinner';
+import {NgxPayPalModule} from 'ngx-paypal';
+import { PaymentComponent } from './payment/payment.component';
+import { ViewHistoryTransactionComponent } from './view-history-transaction/view-history-transaction.component';
+import { ViewHistoryTransactionDetailComponent } from './view-history-transaction-detail/view-history-transaction-detail.component';
 
 
 @NgModule({
@@ -22,13 +26,18 @@ import {ShareModuleModule} from '../share-module/share-module.module';
     ViewCartComponent,
     ViewSearchComponent,
     ChangePasswordComponent,
-    SidebarComponent
+    SidebarComponent,
+    PaymentComponent,
+    ViewHistoryTransactionComponent,
+    ViewHistoryTransactionDetailComponent
   ],
   imports: [
     CommonModule,
     UserRoutingModule,
     ReactiveFormsModule,
-    ShareModuleModule
+    ShareModuleModule,
+    NgxSpinnerModule,
+    NgxPayPalModule
   ]
 })
 export class UserModule {

@@ -93,6 +93,12 @@ public class CartController {
         return new ResponseEntity<>(new ResponseMessage("Thêm vào giỏ hàng thành công !!!"), HttpStatus.OK);
     };
 
+    @PostMapping("/deleteCartItems")
+    public ResponseEntity<ResponseMessage> deleteCartItems(@RequestBody List<Integer> cartItemIds) {
+        cartItemIds.stream().forEach(id -> cartItemService.update(id, 0));
+        return new ResponseEntity<>(new ResponseMessage("Cập nhật giỏ hàng thành công"), HttpStatus.OK);
+    }
+
     @PostMapping("/synchronizedCart")
     public ResponseEntity<?> synchronizedCart(@RequestParam Integer cartId, @RequestBody List<CartItemRequest> cartItemRequests) {
         System.out.println("synchronizedCart");

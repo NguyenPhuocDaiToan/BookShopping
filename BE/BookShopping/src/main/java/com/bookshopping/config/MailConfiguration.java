@@ -12,17 +12,16 @@ public class MailConfiguration {
     @Bean
     public JavaMailSender getJavaMailSender() {
         JavaMailSenderImpl mailSender = new JavaMailSenderImpl();
-        mailSender.setHost("smtp.office365.com");
+        mailSender.setHost("smtp.gmail.com");
+//        smtp.outlook.com nếu xài mail outlook
         mailSender.setPort(587);
-
-        mailSender.setUsername("102200035@SV1.dut.udn.vn");
-        mailSender.setPassword("Thaemdi@emxin");
-
+        mailSender.setUsername("nguyentoan102002@gmail.com");
+        mailSender.setPassword("qvrkbcahtcshxbnm");
         Properties props = mailSender.getJavaMailProperties();
         props.put("mail.transport.protocol", "smtp");
         props.put("mail.smtp.auth", "true");
         props.put("mail.smtp.starttls.enable", "true");
-
+//        props.put("mail.debug", "true");
         return mailSender;
     }
 }

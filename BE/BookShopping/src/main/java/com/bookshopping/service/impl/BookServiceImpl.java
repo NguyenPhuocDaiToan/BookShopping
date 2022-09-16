@@ -26,6 +26,11 @@ public class BookServiceImpl implements BookService {
     }
 
     @Override
+    public int subAmount(Integer bookId, int amount) {
+        return bookRepository.subAmount(bookId, amount);
+    }
+
+    @Override
     public Book findById(Integer id) {
         return bookRepository.findById(id).orElse(null);
     }

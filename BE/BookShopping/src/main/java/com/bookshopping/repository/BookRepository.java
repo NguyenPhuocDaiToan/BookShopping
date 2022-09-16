@@ -20,6 +20,11 @@ public interface BookRepository extends JpaRepository<Book, Integer> {
     @Query(value = "update book set amount = :amount where book.id = :bookId", nativeQuery = true)
     int updateAmount(Integer bookId, int amount);
 
+    @Transactional
+    @Modifying
+    @Query(value = "update book set amount = amount - :amount where book.id = :bookId", nativeQuery = true)
+    int subAmount(Integer bookId, int amount);
+
     @Query(value = "select * from book limit :numberRecord", nativeQuery = true)
     List<Book> findBookByNumberRecord(int numberRecord);
 

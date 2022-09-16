@@ -6,6 +6,8 @@ import {ViewInfoUserComponent} from './view-info-user/view-info-user.component';
 import {ViewCartComponent} from './view-cart/view-cart.component';
 import {ViewSearchComponent} from './view-search/view-search.component';
 import {ChangePasswordComponent} from './change-password/change-password.component';
+import {ViewHistoryTransactionComponent} from './view-history-transaction/view-history-transaction.component';
+import {ViewHistoryTransactionDetailComponent} from './view-history-transaction-detail/view-history-transaction-detail.component';
 
 
 const routes: Routes = [
@@ -26,6 +28,12 @@ const routes: Routes = [
   },
   {
     path: 'search', component: ViewSearchComponent
+  },
+  {
+    path: 'info/me/history-transaction', component: ViewHistoryTransactionComponent
+  },
+  {
+    path: 'info/me/history-transaction/:id', component: ViewHistoryTransactionDetailComponent
   }
 ];
 
