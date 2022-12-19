@@ -5,19 +5,11 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="cce77742-06d3-411b-8578-4f4134d1d1f5" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/../BE/BookShopping/src/main/java/com/bookshopping/model/GenderType.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../BE/BookShopping/src/main/java/com/bookshopping/model/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/../BE/BookShopping/src/main/java/com/bookshopping/model/User.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../BE/BookShopping/src/main/java/com/bookshopping/util/Test.java" beforeDir="false" afterPath="$PROJECT_DIR$/../BE/BookShopping/src/main/java/com/bookshopping/util/Test.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/BookShoppingFE/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/BookShoppingFE/package-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/BookShoppingFE/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/BookShoppingFE/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/BookShoppingFE/src/app/app.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/BookShoppingFE/src/app/app.component.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/BookShoppingFE/src/app/app.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/BookShoppingFE/src/app/app.component.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/BookShoppingFE/src/app/models/user.ts" beforeDir="false" afterPath="$PROJECT_DIR$/BookShoppingFE/src/app/models/user.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/BookShoppingFE/src/app/user/user.module.ts" beforeDir="false" afterPath="$PROJECT_DIR$/BookShoppingFE/src/app/user/user.module.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/BookShoppingFE/src/app/user/view-info-user/view-info-user.component.css" beforeDir="false" afterPath="$PROJECT_DIR$/BookShoppingFE/src/app/user/view-info-user/view-info-user.component.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/BookShoppingFE/src/app/user/view-info-user/view-info-user.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/BookShoppingFE/src/app/user/view-info-user/view-info-user.component.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/BookShoppingFE/src/app/user/view-info-user/view-info-user.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/BookShoppingFE/src/app/user/view-info-user/view-info-user.component.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/BookShoppingFE/src/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/BookShoppingFE/src/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/BookShoppingFE/src/app/commons/authentication/authentication.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/BookShoppingFE/src/app/commons/authentication/authentication.component.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/BookShoppingFE/src/app/commons/header/header.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/BookShoppingFE/src/app/commons/header/header.component.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/BookShoppingFE/src/app/user/view-detail/view-detail.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/BookShoppingFE/src/app/user/view-detail/view-detail.component.ts" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -42,7 +34,7 @@
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "WebServerToolWindowFactoryState": "false",
-    "last_opened_file_path": "E:/demo/demo1209",
+    "last_opened_file_path": "D:/",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
@@ -69,6 +61,24 @@
       <workItem from="1662974393503" duration="6065000" />
       <workItem from="1663030403667" duration="3213000" />
       <workItem from="1663049445394" duration="3497000" />
+      <workItem from="1664015587266" duration="692000" />
+      <workItem from="1665064184508" duration="593000" />
+      <workItem from="1667636508218" duration="2174000" />
+      <workItem from="1667975284339" duration="1704000" />
+      <workItem from="1668001217426" duration="615000" />
+      <workItem from="1668150451730" duration="518000" />
+      <workItem from="1668418330828" duration="723000" />
+      <workItem from="1668430387241" duration="2104000" />
+      <workItem from="1668583173003" duration="602000" />
+      <workItem from="1668956213486" duration="788000" />
+      <workItem from="1669012935347" duration="2180000" />
+      <workItem from="1669219041937" duration="1255000" />
+      <workItem from="1669360692010" duration="272000" />
+      <workItem from="1669448941283" duration="98000" />
+      <workItem from="1669451104687" duration="1245000" />
+      <workItem from="1669540200005" duration="596000" />
+      <workItem from="1670056128612" duration="1217000" />
+      <workItem from="1671038142758" duration="174000" />
     </task>
     <servers />
   </component>

@@ -1,11 +1,10 @@
-import {Component, ElementRef, OnInit} from '@angular/core';
-import redirect from '../../contants/redirect';
-import {ActivatedRoute, Route, Router} from '@angular/router';
+import {Component, OnInit} from '@angular/core';
+import {ActivatedRoute, Router} from '@angular/router';
 import {TokenStorageService} from '../../services/token-storage.service';
 import {UserService} from '../../user/service/user.service';
 import {User} from '../../models/user';
 import {ToastrService} from 'ngx-toastr';
-import {FormBuilder, FormControl, FormGroup, Validators} from '@angular/forms';
+import {FormControl, FormGroup, Validators} from '@angular/forms';
 import {CartItem} from '../../models/cart-item';
 import {CartService} from '../../user/service/cart.service';
 import {CartStorageService} from '../../services/cart-storage.service';
@@ -65,6 +64,7 @@ export class HeaderComponent implements OnInit {
       this.synchronizedCart();
     } else {
       this.cartItems = this.cartStorageService.getItems();
+      this.cartService.cartItems$.next(this.cartItems);
       this.cartItems.forEach(c => this.totalPriceCart += c.amount * c.book.price);
     }
 

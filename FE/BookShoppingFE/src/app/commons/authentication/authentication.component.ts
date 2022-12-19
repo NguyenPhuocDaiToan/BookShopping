@@ -75,11 +75,7 @@ export class AuthenticationComponent implements OnInit {
   };
 
   ngOnInit(): void {
-    if (this.typeForm === 'login') {
-      this.openFormLogin();
-    } else {
-      this.openFormRegister();
-    }
+    this.typeForm === 'login' ? this.openFormLogin() : this.openFormRegister();
   }
 
   get emailLogin() {

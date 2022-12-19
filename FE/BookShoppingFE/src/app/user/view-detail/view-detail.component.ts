@@ -114,6 +114,8 @@ export class ViewDetailComponent implements OnInit {
           book: this.book
         };
         this.cartStorageService.addToCart(cartItem);
+        this.toastrService.success('Thêm vào giỏ hàng thành công !!!');
+        this.cartService.cartItems$.next(this.cartStorageService.cartItems);
       }
     }
   }
