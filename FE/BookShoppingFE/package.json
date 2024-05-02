@@ -5,6 +5,8 @@
     "ng": "ng",
     "start": "ng serve",
     "build": "ng build",
+    "build_prod": "ng build --prod",
+    "deploy_azure": "sudo rsync -ravz dist/BookShoppingFE/ pbl7:/var/www/html",
     "test": "ng test",
     "lint": "ng lint",
     "e2e": "ng e2e"
