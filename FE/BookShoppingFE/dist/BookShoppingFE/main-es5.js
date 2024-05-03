@@ -11234,7 +11234,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
 
     var environment = {
       production: false,
-      url: "http://4.227.145.2:8080/api",
+      url: "https://bookrecommendation.website:8080/api",
       clientId: "AXPkXKpXxzFnLRNZHVAvewN-dvyt3zjRVr-bzveAEZz5aOQJWj6A7fxiUSr-kcXpvvrbW94m2ZufGl5L"
     };
     /*
