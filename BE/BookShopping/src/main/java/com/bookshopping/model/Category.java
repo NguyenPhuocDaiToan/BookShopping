@@ -1,6 +1,5 @@
 package com.bookshopping.model;
 
-import com.fasterxml.jackson.annotation.JsonBackReference;
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import lombok.AllArgsConstructor;
 import lombok.Data;
@@ -19,6 +18,7 @@ public class Category {
     private Integer id;
     private String name;
     private String imageUrl;
+    private int parent;
 
     @OneToMany(mappedBy = "category")
     @JsonIgnore

@@ -20,21 +20,22 @@ public class Book {
     private Integer id;
     private String name;
     private String avatar;
-    @Column(length = 10000)
-    private String description;
-    private String language;
-    private int page;
+    private int amount;
+    private int price;
+    private int numberRating;
+    private float averageRating;
+    private int category1;
+    private int category2;
+    private int category3;
     private String author;
     private String coverForm;
     private String publisher;
-    private String yearPublisher;
     private String supplier;
-    private int weight;
-    private String packagingSize;
-    private int amount;
-    private int pointReward;
-    private int price;
-    private int numberRating;
+
+    @Column(length = 5000)
+    private String description;
+    @Column(length = 5000)
+    private String moreInformation;
 
     @ManyToOne(targetEntity = Category.class)
     private Category category;
