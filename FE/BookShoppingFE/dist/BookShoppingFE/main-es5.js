@@ -768,74 +768,74 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
         this.newItemEvent = new _angular_core__WEBPACK_IMPORTED_MODULE_0__["EventEmitter"]();
         this.validationMessages = {
           name: [{
-            type: 'required',
-            message: 'Họ và tên không được để trống.'
+            type: "required",
+            message: "Họ và tên không được để trống."
           }, {
-            type: 'maxlength',
-            message: 'Họ và tên không quá 100 kí tự.'
+            type: "maxlength",
+            message: "Họ và tên không quá 100 kí tự."
           }, {
-            type: 'pattern',
-            message: 'Họ và tên không chứa kí tự đặc biệt.'
+            type: "pattern",
+            message: "Họ và tên không chứa kí tự đặc biệt."
           }],
           email: [{
-            type: 'required',
-            message: 'Email không được để trống.'
+            type: "required",
+            message: "Email không được để trống."
           }, {
-            type: 'email',
-            message: 'Email không đúng định dạng.'
+            type: "email",
+            message: "Email không đúng định dạng."
           }],
           password: [{
-            type: 'required',
-            message: 'Mật khẩu không được để trống.'
+            type: "required",
+            message: "Mật khẩu không được để trống."
           }, {
-            type: 'minlength',
-            message: 'Mật khẩu dài từ 8-32 kí tự.'
+            type: "minlength",
+            message: "Mật khẩu dài từ 8-32 kí tự."
           }, {
-            type: 'maxlength',
-            message: 'Mật khẩu dài từ 8-32 kí tự.'
+            type: "maxlength",
+            message: "Mật khẩu dài từ 8-32 kí tự."
           }],
           newPass: [{
-            type: 'required',
-            message: 'Mật khẩu không được để trống.'
+            type: "required",
+            message: "Mật khẩu không được để trống."
           }, {
-            type: 'minlength',
-            message: 'Mật khẩu dài từ 8-32 kí tự.'
+            type: "minlength",
+            message: "Mật khẩu dài từ 8-32 kí tự."
           }, {
-            type: 'maxlength',
-            message: 'Mật khẩu dài từ 8-32 kí tự.'
+            type: "maxlength",
+            message: "Mật khẩu dài từ 8-32 kí tự."
           }],
           confirmPass: [{
-            type: 'required',
-            message: 'Mật khẩu không được để trống.'
+            type: "required",
+            message: "Mật khẩu không được để trống."
           }, {
-            type: 'minlength',
-            message: 'Mật khẩu dài từ 8-32 kí tự.'
+            type: "minlength",
+            message: "Mật khẩu dài từ 8-32 kí tự."
           }, {
-            type: 'maxlength',
-            message: 'Mật khẩu dài từ 8-32 kí tự.'
+            type: "maxlength",
+            message: "Mật khẩu dài từ 8-32 kí tự."
           }],
           OTP: [{
-            type: 'required',
-            message: 'OTP không được để trống.'
+            type: "required",
+            message: "OTP không được để trống."
           }, {
-            type: 'min',
-            message: 'OTP phải chứa 6 kí tự số'
+            type: "min",
+            message: "OTP phải chứa 6 kí tự số"
           }, {
-            type: 'max',
-            message: 'OTP phải chứa 6 kí tự số'
+            type: "max",
+            message: "OTP phải chứa 6 kí tự số"
           }]
         };
         this.formLogin = this.fb.group({
-          email: ['', [_angular_forms__WEBPACK_IMPORTED_MODULE_2__["Validators"].required, _angular_forms__WEBPACK_IMPORTED_MODULE_2__["Validators"].email]],
-          password: ['', [_angular_forms__WEBPACK_IMPORTED_MODULE_2__["Validators"].required, _angular_forms__WEBPACK_IMPORTED_MODULE_2__["Validators"].minLength(8), _angular_forms__WEBPACK_IMPORTED_MODULE_2__["Validators"].maxLength(32)]]
+          email: ["", [_angular_forms__WEBPACK_IMPORTED_MODULE_2__["Validators"].required, _angular_forms__WEBPACK_IMPORTED_MODULE_2__["Validators"].email]],
+          password: ["", [_angular_forms__WEBPACK_IMPORTED_MODULE_2__["Validators"].required, _angular_forms__WEBPACK_IMPORTED_MODULE_2__["Validators"].minLength(8), _angular_forms__WEBPACK_IMPORTED_MODULE_2__["Validators"].maxLength(32)]]
         });
         this.formRegister = this.fb.group({
-          name: ['', [_angular_forms__WEBPACK_IMPORTED_MODULE_2__["Validators"].required, _angular_forms__WEBPACK_IMPORTED_MODULE_2__["Validators"].maxLength(100), _angular_forms__WEBPACK_IMPORTED_MODULE_2__["Validators"].pattern('^([a-zA-ZàáạảãâầấậẩẫăằắặẳẵèéẹẻẽêềếệểễìíịỉĩòóọỏõôồốộổỗơờớợởỡùúụủũưừứựửữỳýỵỷỹđĐ ]+)*$')]],
-          email: ['', [_angular_forms__WEBPACK_IMPORTED_MODULE_2__["Validators"].required, _angular_forms__WEBPACK_IMPORTED_MODULE_2__["Validators"].email]],
-          OTP: ['', [_angular_forms__WEBPACK_IMPORTED_MODULE_2__["Validators"].required, _angular_forms__WEBPACK_IMPORTED_MODULE_2__["Validators"].min(100000), _angular_forms__WEBPACK_IMPORTED_MODULE_2__["Validators"].max(999999)]],
+          name: ["", [_angular_forms__WEBPACK_IMPORTED_MODULE_2__["Validators"].required, _angular_forms__WEBPACK_IMPORTED_MODULE_2__["Validators"].maxLength(100), _angular_forms__WEBPACK_IMPORTED_MODULE_2__["Validators"].pattern("^([a-zA-ZàáạảãâầấậẩẫăằắặẳẵèéẹẻẽêềếệểễìíịỉĩòóọỏõôồốộổỗơờớợởỡùúụủũưừứựửữỳýỵỷỹđĐ ]+)*$")]],
+          email: ["", [_angular_forms__WEBPACK_IMPORTED_MODULE_2__["Validators"].required, _angular_forms__WEBPACK_IMPORTED_MODULE_2__["Validators"].email]],
+          OTP: ["", [_angular_forms__WEBPACK_IMPORTED_MODULE_2__["Validators"].required, _angular_forms__WEBPACK_IMPORTED_MODULE_2__["Validators"].min(100000), _angular_forms__WEBPACK_IMPORTED_MODULE_2__["Validators"].max(999999)]],
           pwGroup: this.fb.group({
-            newPass: ['', [_angular_forms__WEBPACK_IMPORTED_MODULE_2__["Validators"].required, _angular_forms__WEBPACK_IMPORTED_MODULE_2__["Validators"].minLength(8), _angular_forms__WEBPACK_IMPORTED_MODULE_2__["Validators"].maxLength(32)]],
-            confirmPass: ['', [_angular_forms__WEBPACK_IMPORTED_MODULE_2__["Validators"].required, _angular_forms__WEBPACK_IMPORTED_MODULE_2__["Validators"].minLength(8), _angular_forms__WEBPACK_IMPORTED_MODULE_2__["Validators"].maxLength(32)]]
+            newPass: ["", [_angular_forms__WEBPACK_IMPORTED_MODULE_2__["Validators"].required, _angular_forms__WEBPACK_IMPORTED_MODULE_2__["Validators"].minLength(8), _angular_forms__WEBPACK_IMPORTED_MODULE_2__["Validators"].maxLength(32)]],
+            confirmPass: ["", [_angular_forms__WEBPACK_IMPORTED_MODULE_2__["Validators"].required, _angular_forms__WEBPACK_IMPORTED_MODULE_2__["Validators"].minLength(8), _angular_forms__WEBPACK_IMPORTED_MODULE_2__["Validators"].maxLength(32)]]
           }, this.comparePass)
         });
       }
@@ -843,42 +843,42 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       _createClass(AuthenticationComponent, [{
         key: "ngOnInit",
         value: function ngOnInit() {
-          this.typeForm === 'login' ? this.openFormLogin() : this.openFormRegister();
+          this.typeForm === "login" ? this.openFormLogin() : this.openFormRegister();
         }
       }, {
         key: "emailLogin",
         get: function get() {
-          return this.formLogin.get('email');
+          return this.formLogin.get("email");
         }
       }, {
         key: "emailRegister",
         get: function get() {
-          return this.formRegister.get('email');
+          return this.formRegister.get("email");
         }
       }, {
         key: "password",
         get: function get() {
-          return this.formLogin.get('password');
+          return this.formLogin.get("password");
         }
       }, {
         key: "OTP",
         get: function get() {
-          return this.formRegister.get('OTP');
+          return this.formRegister.get("OTP");
         }
       }, {
         key: "name",
         get: function get() {
-          return this.formRegister.get('name');
+          return this.formRegister.get("name");
         }
       }, {
         key: "newPass",
         get: function get() {
-          return this.formRegister.get('pwGroup').get('newPass');
+          return this.formRegister.get("pwGroup").get("newPass");
         }
       }, {
         key: "confirmPass",
         get: function get() {
-          return this.formRegister.get('pwGroup').get('confirmPass');
+          return this.formRegister.get("pwGroup").get("confirmPass");
         }
       }, {
         key: "comparePass",
@@ -896,36 +896,36 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       }, {
         key: "openFormLogin",
         value: function openFormLogin() {
-          this.el.nativeElement.querySelector('.modal').style.display = 'block';
-          this.el.nativeElement.querySelector('.form-login').style.display = 'block';
-          this.el.nativeElement.querySelector('.form-register').style.display = 'none';
-          this.el.nativeElement.querySelectorAll('.modal-header > li')[0].classList.add('modal-header-first-select');
-          this.el.nativeElement.querySelectorAll('.modal-header > li')[1].classList.remove('modal-header-last-select');
+          this.el.nativeElement.querySelector(".modal").style.display = "block";
+          this.el.nativeElement.querySelector(".form-login").style.display = "block";
+          this.el.nativeElement.querySelector(".form-register").style.display = "none";
+          this.el.nativeElement.querySelectorAll(".modal-header > li")[0].classList.add("modal-header-first-select");
+          this.el.nativeElement.querySelectorAll(".modal-header > li")[1].classList.remove("modal-header-last-select");
         }
       }, {
         key: "openFormRegister",
         value: function openFormRegister() {
-          this.el.nativeElement.querySelector('.modal').style.display = 'block';
-          this.el.nativeElement.querySelector('.form-login').style.display = 'none';
-          this.el.nativeElement.querySelector('.form-register').style.display = 'block';
-          this.el.nativeElement.querySelectorAll('.modal-header > li')[0].classList.remove('modal-header-first-select');
-          this.el.nativeElement.querySelectorAll('.modal-header > li')[1].classList.add('modal-header-last-select');
+          this.el.nativeElement.querySelector(".modal").style.display = "block";
+          this.el.nativeElement.querySelector(".form-login").style.display = "none";
+          this.el.nativeElement.querySelector(".form-register").style.display = "block";
+          this.el.nativeElement.querySelectorAll(".modal-header > li")[0].classList.remove("modal-header-first-select");
+          this.el.nativeElement.querySelectorAll(".modal-header > li")[1].classList.add("modal-header-last-select");
         }
       }, {
         key: "hiddenFormAuthen",
         value: function hiddenFormAuthen() {
           this.newItemEvent.emit();
-          this.el.nativeElement.querySelector('.modal').style.display = 'none';
+          this.el.nativeElement.querySelector(".modal").style.display = "none";
         }
       }, {
         key: "loginOAuth2Google",
         value: function loginOAuth2Google() {
-          window.location.href = Object(_contants_redirect__WEBPACK_IMPORTED_MODULE_1__["default"])('google');
+          window.location.href = Object(_contants_redirect__WEBPACK_IMPORTED_MODULE_1__["default"])("google");
         }
       }, {
         key: "loginOAuth2Facebook",
         value: function loginOAuth2Facebook() {
-          window.location.href = Object(_contants_redirect__WEBPACK_IMPORTED_MODULE_1__["default"])('facebook');
+          window.location.href = Object(_contants_redirect__WEBPACK_IMPORTED_MODULE_1__["default"])("facebook");
         }
       }, {
         key: "getOTP",
@@ -933,18 +933,18 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
           var _this = this;
 
           if (this.emailRegister.valid) {
-            this.el.nativeElement.querySelector('.loading-container').style.display = 'block';
+            this.el.nativeElement.querySelector(".loading-container").style.display = "block";
             this.commonService.getOtpRegister(this.emailRegister.value).subscribe(function (data) {
-              _this.el.nativeElement.querySelector('.loading-container').style.display = 'none';
+              _this.el.nativeElement.querySelector(".loading-container").style.display = "none";
 
-              _this.toastrService.success('Vui lòng kiểm tra email để lấy mã OTP', 'Thông báo');
+              _this.toastrService.success("Vui lòng kiểm tra email để lấy mã OTP", "Thông báo");
             }, function (error) {
-              _this.el.nativeElement.querySelector('.loading-container').style.display = 'none';
+              _this.el.nativeElement.querySelector(".loading-container").style.display = "none";
 
-              _this.toastrService.error(error.error.message, 'Thông báo');
+              _this.toastrService.error(error.error.message, "Thông báo");
             });
           } else {
-            this.toastrService.warning('Email của bạn không hợp lệ !!!', 'Thông báo');
+            this.toastrService.warning("Email của bạn không hợp lệ !!!", "Thông báo");
           }
         }
       }, {
@@ -963,12 +963,12 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
 
                 _this2.tokenStorageService.isLogin();
 
-                window.location.href = 'http://localhost:4200';
+                window.location.href = "https://bookrecommendation.website";
               }, function (error) {
                 alert(error);
               });
             }, function (error) {
-              _this2.toastrService.error(error.error.message, 'Thông báo');
+              _this2.toastrService.error(error.error.message, "Thông báo");
             });
           }
         }
@@ -987,11 +987,11 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
               confirmPass: this.confirmPass.value
             };
             this.authenService.register(registerRequest).subscribe(function (data) {
-              _this3.toastrService.success(data.message, 'Thông báo');
+              _this3.toastrService.success(data.message, "Thông báo");
 
               _this3.openFormLogin();
             }, function (error) {
-              _this3.toastrService.error(error.error.message, 'Thông báo');
+              _this3.toastrService.error(error.error.message, "Thông báo");
             });
           }
         }
@@ -1000,10 +1000,10 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
         value: function togglePassword(idInput, idToggle) {
           var input = this.el.nativeElement.querySelector(idInput);
           var toggle = this.el.nativeElement.querySelector(idToggle);
-          var typeInput = input.type === 'text' ? 'password' : 'text';
-          input.setAttribute('type', typeInput);
-          toggle.classList.toggle('bi-eye-slash');
-          toggle.classList.toggle('bi-eye');
+          var typeInput = input.type === "text" ? "password" : "text";
+          input.setAttribute("type", typeInput);
+          toggle.classList.toggle("bi-eye-slash");
+          toggle.classList.toggle("bi-eye");
         }
       }]);
 
@@ -1372,9 +1372,9 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵsetClassMetadata"](AuthenticationComponent, [{
         type: _angular_core__WEBPACK_IMPORTED_MODULE_0__["Component"],
         args: [{
-          selector: 'app-authentication',
-          templateUrl: './authentication.component.html',
-          styleUrls: ['./authentication.component.css']
+          selector: "app-authentication",
+          templateUrl: "./authentication.component.html",
+          styleUrls: ["./authentication.component.css"]
         }]
       }], function () {
         return [{
@@ -3243,7 +3243,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
     __webpack_require__.r(__webpack_exports__);
 
     var redirectUrl = function redirectUrl(app) {
-      var redirectUri = 'http://localhost:4200';
+      var redirectUri = "https://bookrecommendation.website";
       return "http://localhost:8080/oauth2/authorize/".concat(app, "?redirect_uri=").concat(redirectUri);
     };
     /* harmony default export */
@@ -5754,7 +5754,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
     /*! ../../services/token-storage.service */
     "./src/app/services/token-storage.service.ts");
 
-    var API_URL = "".concat(_environments_environment__WEBPACK_IMPORTED_MODULE_1__["environment"].url) + '/user';
+    var API_URL = "".concat(_environments_environment__WEBPACK_IMPORTED_MODULE_1__["environment"].url) + "/user";
 
     var UserService =
     /*#__PURE__*/
@@ -5764,7 +5764,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       //     'Content-Type': 'application/json',
       //     Authorization: 'Bearer ' + this.tokenStorageService.getToken()
       //   }),
-      //   'Access-Control-Allow-Origin': 'http://localhost:4200/', 'Access-Control-Allow-Methods': 'GET,PUT,POST,DELETE,PATCH,OPTIONS'};
+      //   'Access-Control-Allow-Origin': 'https://bookrecommendation.website/', 'Access-Control-Allow-Methods': 'GET,PUT,POST,DELETE,PATCH,OPTIONS'};
       function UserService(http, tokenStorageService) {
         _classCallCheck(this, UserService);
 
@@ -5775,27 +5775,27 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       _createClass(UserService, [{
         key: "getInfo",
         value: function getInfo(token) {
-          return this.http.get(API_URL + '/getInfoFromToken?token=' + token);
+          return this.http.get(API_URL + "/getInfoFromToken?token=" + token);
         }
       }, {
         key: "updateEmail",
         value: function updateEmail(id, email, otp) {
-          return this.http.post(API_URL + '/updateEmail?id=' + id + '&&email=' + email + '&&otp=' + otp, '');
+          return this.http.post(API_URL + "/updateEmail?id=" + id + "&&email=" + email + "&&otp=" + otp, "");
         }
       }, {
         key: "findById",
         value: function findById(id) {
-          return this.http.get(API_URL + '/findById?id=' + id);
+          return this.http.get(API_URL + "/findById?id=" + id);
         }
       }, {
         key: "updateInfo",
         value: function updateInfo(id, user) {
-          return this.http.post(API_URL + '/updateInfo?id=' + id, user);
+          return this.http.post(API_URL + "/updateInfo?id=" + id, user);
         }
       }, {
         key: "updatePassword",
         value: function updatePassword(id, oldPass, newPass, otp) {
-          return this.http.post(API_URL + '/updatePassword?id=' + id + '&&oldPass=' + oldPass + '&&newPass=' + newPass + '&&otp=' + otp, '');
+          return this.http.post(API_URL + "/updatePassword?id=" + id + "&&oldPass=" + oldPass + "&&newPass=" + newPass + "&&otp=" + otp, "");
         }
       }]);
 
@@ -5809,7 +5809,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
     UserService.ɵprov = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdefineInjectable"]({
       token: UserService,
       factory: UserService.ɵfac,
-      providedIn: 'root'
+      providedIn: "root"
     });
     /*@__PURE__*/
 
@@ -5817,7 +5817,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵsetClassMetadata"](UserService, [{
         type: _angular_core__WEBPACK_IMPORTED_MODULE_0__["Injectable"],
         args: [{
-          providedIn: 'root'
+          providedIn: "root"
         }]
       }], function () {
         return [{

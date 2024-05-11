@@ -398,73 +398,103 @@ class AuthenticationComponent {
         this.newItemEvent = new _angular_core__WEBPACK_IMPORTED_MODULE_0__["EventEmitter"]();
         this.validationMessages = {
             name: [
-                { type: 'required', message: 'Họ và tên không được để trống.' },
-                { type: 'maxlength', message: 'Họ và tên không quá 100 kí tự.' },
-                { type: 'pattern', message: 'Họ và tên không chứa kí tự đặc biệt.' }
+                { type: "required", message: "Họ và tên không được để trống." },
+                { type: "maxlength", message: "Họ và tên không quá 100 kí tự." },
+                { type: "pattern", message: "Họ và tên không chứa kí tự đặc biệt." },
             ],
             email: [
-                { type: 'required', message: 'Email không được để trống.' },
-                { type: 'email', message: 'Email không đúng định dạng.' }
+                { type: "required", message: "Email không được để trống." },
+                { type: "email", message: "Email không đúng định dạng." },
             ],
             password: [
-                { type: 'required', message: 'Mật khẩu không được để trống.' },
-                { type: 'minlength', message: 'Mật khẩu dài từ 8-32 kí tự.' },
-                { type: 'maxlength', message: 'Mật khẩu dài từ 8-32 kí tự.' }
+                { type: "required", message: "Mật khẩu không được để trống." },
+                { type: "minlength", message: "Mật khẩu dài từ 8-32 kí tự." },
+                { type: "maxlength", message: "Mật khẩu dài từ 8-32 kí tự." },
             ],
             newPass: [
-                { type: 'required', message: 'Mật khẩu không được để trống.' },
-                { type: 'minlength', message: 'Mật khẩu dài từ 8-32 kí tự.' },
-                { type: 'maxlength', message: 'Mật khẩu dài từ 8-32 kí tự.' }
+                { type: "required", message: "Mật khẩu không được để trống." },
+                { type: "minlength", message: "Mật khẩu dài từ 8-32 kí tự." },
+                { type: "maxlength", message: "Mật khẩu dài từ 8-32 kí tự." },
             ],
             confirmPass: [
-                { type: 'required', message: 'Mật khẩu không được để trống.' },
-                { type: 'minlength', message: 'Mật khẩu dài từ 8-32 kí tự.' },
-                { type: 'maxlength', message: 'Mật khẩu dài từ 8-32 kí tự.' }
+                { type: "required", message: "Mật khẩu không được để trống." },
+                { type: "minlength", message: "Mật khẩu dài từ 8-32 kí tự." },
+                { type: "maxlength", message: "Mật khẩu dài từ 8-32 kí tự." },
             ],
             OTP: [
-                { type: 'required', message: 'OTP không được để trống.' },
-                { type: 'min', message: 'OTP phải chứa 6 kí tự số' },
-                { type: 'max', message: 'OTP phải chứa 6 kí tự số' }
-            ]
+                { type: "required", message: "OTP không được để trống." },
+                { type: "min", message: "OTP phải chứa 6 kí tự số" },
+                { type: "max", message: "OTP phải chứa 6 kí tự số" },
+            ],
         };
         this.formLogin = this.fb.group({
-            email: ['', [_angular_forms__WEBPACK_IMPORTED_MODULE_2__["Validators"].required, _angular_forms__WEBPACK_IMPORTED_MODULE_2__["Validators"].email]],
-            password: ['', [_angular_forms__WEBPACK_IMPORTED_MODULE_2__["Validators"].required, _angular_forms__WEBPACK_IMPORTED_MODULE_2__["Validators"].minLength(8), _angular_forms__WEBPACK_IMPORTED_MODULE_2__["Validators"].maxLength(32)]]
+            email: ["", [_angular_forms__WEBPACK_IMPORTED_MODULE_2__["Validators"].required, _angular_forms__WEBPACK_IMPORTED_MODULE_2__["Validators"].email]],
+            password: [
+                "",
+                [
+                    _angular_forms__WEBPACK_IMPORTED_MODULE_2__["Validators"].required,
+                    _angular_forms__WEBPACK_IMPORTED_MODULE_2__["Validators"].minLength(8),
+                    _angular_forms__WEBPACK_IMPORTED_MODULE_2__["Validators"].maxLength(32),
+                ],
+            ],
         });
         this.formRegister = this.fb.group({
-            name: ['', [_angular_forms__WEBPACK_IMPORTED_MODULE_2__["Validators"].required, _angular_forms__WEBPACK_IMPORTED_MODULE_2__["Validators"].maxLength(100),
-                    _angular_forms__WEBPACK_IMPORTED_MODULE_2__["Validators"].pattern('^([a-zA-ZàáạảãâầấậẩẫăằắặẳẵèéẹẻẽêềếệểễìíịỉĩòóọỏõôồốộổỗơờớợởỡùúụủũưừứựửữỳýỵỷỹđĐ ]+)*$')]],
-            email: ['', [_angular_forms__WEBPACK_IMPORTED_MODULE_2__["Validators"].required, _angular_forms__WEBPACK_IMPORTED_MODULE_2__["Validators"].email]],
-            OTP: ['', [_angular_forms__WEBPACK_IMPORTED_MODULE_2__["Validators"].required, _angular_forms__WEBPACK_IMPORTED_MODULE_2__["Validators"].min(100000), _angular_forms__WEBPACK_IMPORTED_MODULE_2__["Validators"].max(999999)]],
+            name: [
+                "",
+                [
+                    _angular_forms__WEBPACK_IMPORTED_MODULE_2__["Validators"].required,
+                    _angular_forms__WEBPACK_IMPORTED_MODULE_2__["Validators"].maxLength(100),
+                    _angular_forms__WEBPACK_IMPORTED_MODULE_2__["Validators"].pattern("^([a-zA-ZàáạảãâầấậẩẫăằắặẳẵèéẹẻẽêềếệểễìíịỉĩòóọỏõôồốộổỗơờớợởỡùúụủũưừứựửữỳýỵỷỹđĐ ]+)*$"),
+                ],
+            ],
+            email: ["", [_angular_forms__WEBPACK_IMPORTED_MODULE_2__["Validators"].required, _angular_forms__WEBPACK_IMPORTED_MODULE_2__["Validators"].email]],
+            OTP: [
+                "",
+                [_angular_forms__WEBPACK_IMPORTED_MODULE_2__["Validators"].required, _angular_forms__WEBPACK_IMPORTED_MODULE_2__["Validators"].min(100000), _angular_forms__WEBPACK_IMPORTED_MODULE_2__["Validators"].max(999999)],
+            ],
             pwGroup: this.fb.group({
-                newPass: ['', [_angular_forms__WEBPACK_IMPORTED_MODULE_2__["Validators"].required, _angular_forms__WEBPACK_IMPORTED_MODULE_2__["Validators"].minLength(8), _angular_forms__WEBPACK_IMPORTED_MODULE_2__["Validators"].maxLength(32)]],
-                confirmPass: ['', [_angular_forms__WEBPACK_IMPORTED_MODULE_2__["Validators"].required, _angular_forms__WEBPACK_IMPORTED_MODULE_2__["Validators"].minLength(8), _angular_forms__WEBPACK_IMPORTED_MODULE_2__["Validators"].maxLength(32)]]
-            }, this.comparePass)
+                newPass: [
+                    "",
+                    [
+                        _angular_forms__WEBPACK_IMPORTED_MODULE_2__["Validators"].required,
+                        _angular_forms__WEBPACK_IMPORTED_MODULE_2__["Validators"].minLength(8),
+                        _angular_forms__WEBPACK_IMPORTED_MODULE_2__["Validators"].maxLength(32),
+                    ],
+                ],
+                confirmPass: [
+                    "",
+                    [
+                        _angular_forms__WEBPACK_IMPORTED_MODULE_2__["Validators"].required,
+                        _angular_forms__WEBPACK_IMPORTED_MODULE_2__["Validators"].minLength(8),
+                        _angular_forms__WEBPACK_IMPORTED_MODULE_2__["Validators"].maxLength(32),
+                    ],
+                ],
+            }, this.comparePass),
         });
     }
     ngOnInit() {
-        this.typeForm === 'login' ? this.openFormLogin() : this.openFormRegister();
+        this.typeForm === "login" ? this.openFormLogin() : this.openFormRegister();
     }
     get emailLogin() {
-        return this.formLogin.get('email');
+        return this.formLogin.get("email");
     }
     get emailRegister() {
-        return this.formRegister.get('email');
+        return this.formRegister.get("email");
     }
     get password() {
-        return this.formLogin.get('password');
+        return this.formLogin.get("password");
     }
     get OTP() {
-        return this.formRegister.get('OTP');
+        return this.formRegister.get("OTP");
     }
     get name() {
-        return this.formRegister.get('name');
+        return this.formRegister.get("name");
     }
     get newPass() {
-        return this.formRegister.get('pwGroup').get('newPass');
+        return this.formRegister.get("pwGroup").get("newPass");
     }
     get confirmPass() {
-        return this.formRegister.get('pwGroup').get('confirmPass');
+        return this.formRegister.get("pwGroup").get("confirmPass");
     }
     comparePass(c) {
         const v = c.value;
@@ -474,58 +504,69 @@ class AuthenticationComponent {
         return { passwordNotMatch: true };
     }
     openFormLogin() {
-        this.el.nativeElement.querySelector('.modal').style.display = 'block';
-        this.el.nativeElement.querySelector('.form-login').style.display = 'block';
-        this.el.nativeElement.querySelector('.form-register').style.display = 'none';
-        this.el.nativeElement.querySelectorAll('.modal-header > li')[0].classList.add('modal-header-first-select');
-        this.el.nativeElement.querySelectorAll('.modal-header > li')[1].classList.remove('modal-header-last-select');
+        this.el.nativeElement.querySelector(".modal").style.display = "block";
+        this.el.nativeElement.querySelector(".form-login").style.display = "block";
+        this.el.nativeElement.querySelector(".form-register").style.display =
+            "none";
+        this.el.nativeElement
+            .querySelectorAll(".modal-header > li")[0]
+            .classList.add("modal-header-first-select");
+        this.el.nativeElement
+            .querySelectorAll(".modal-header > li")[1]
+            .classList.remove("modal-header-last-select");
     }
     openFormRegister() {
-        this.el.nativeElement.querySelector('.modal').style.display = 'block';
-        this.el.nativeElement.querySelector('.form-login').style.display = 'none';
-        this.el.nativeElement.querySelector('.form-register').style.display = 'block';
-        this.el.nativeElement.querySelectorAll('.modal-header > li')[0].classList.remove('modal-header-first-select');
-        this.el.nativeElement.querySelectorAll('.modal-header > li')[1].classList.add('modal-header-last-select');
+        this.el.nativeElement.querySelector(".modal").style.display = "block";
+        this.el.nativeElement.querySelector(".form-login").style.display = "none";
+        this.el.nativeElement.querySelector(".form-register").style.display =
+            "block";
+        this.el.nativeElement
+            .querySelectorAll(".modal-header > li")[0]
+            .classList.remove("modal-header-first-select");
+        this.el.nativeElement
+            .querySelectorAll(".modal-header > li")[1]
+            .classList.add("modal-header-last-select");
     }
     hiddenFormAuthen() {
         this.newItemEvent.emit();
-        this.el.nativeElement.querySelector('.modal').style.display = 'none';
+        this.el.nativeElement.querySelector(".modal").style.display = "none";
     }
     loginOAuth2Google() {
-        window.location.href = Object(_contants_redirect__WEBPACK_IMPORTED_MODULE_1__["default"])('google');
+        window.location.href = Object(_contants_redirect__WEBPACK_IMPORTED_MODULE_1__["default"])("google");
     }
     loginOAuth2Facebook() {
-        window.location.href = Object(_contants_redirect__WEBPACK_IMPORTED_MODULE_1__["default"])('facebook');
+        window.location.href = Object(_contants_redirect__WEBPACK_IMPORTED_MODULE_1__["default"])("facebook");
     }
     getOTP() {
         if (this.emailRegister.valid) {
-            this.el.nativeElement.querySelector('.loading-container').style.display = 'block';
-            this.commonService.getOtpRegister(this.emailRegister.value).subscribe(data => {
-                this.el.nativeElement.querySelector('.loading-container').style.display = 'none';
-                this.toastrService.success('Vui lòng kiểm tra email để lấy mã OTP', 'Thông báo');
-            }, error => {
-                this.el.nativeElement.querySelector('.loading-container').style.display = 'none';
-                this.toastrService.error(error.error.message, 'Thông báo');
+            this.el.nativeElement.querySelector(".loading-container").style.display =
+                "block";
+            this.commonService.getOtpRegister(this.emailRegister.value).subscribe((data) => {
+                this.el.nativeElement.querySelector(".loading-container").style.display = "none";
+                this.toastrService.success("Vui lòng kiểm tra email để lấy mã OTP", "Thông báo");
+            }, (error) => {
+                this.el.nativeElement.querySelector(".loading-container").style.display = "none";
+                this.toastrService.error(error.error.message, "Thông báo");
             });
         }
         else {
-            this.toastrService.warning('Email của bạn không hợp lệ !!!', 'Thông báo');
+            this.toastrService.warning("Email của bạn không hợp lệ !!!", "Thông báo");
         }
     }
     login() {
         if (this.formLogin.valid) {
-            this.authenService.login(this.formLogin.value).subscribe(data => {
+            this.authenService.login(this.formLogin.value).subscribe((data) => {
                 this.tokenStorageService.saveToken(data.message);
                 console.log(data);
-                this.userService.getInfo(data.message).subscribe(user => {
+                this.userService.getInfo(data.message).subscribe((user) => {
                     this.tokenStorageService.saveUser(user);
                     this.tokenStorageService.isLogin();
-                    window.location.href = 'http://localhost:4200';
-                }, error => {
+                    window.location.href = "https://bookrecommendation.website";
+                }, (error) => {
                     alert(error);
                 });
-            }, error => {
-                this.toastrService.error(error.error.message, 'Thông báo');
+            }, (error) => {
+                this.toastrService.error(error.error.message, "Thông báo");
             });
         }
     }
@@ -537,23 +578,23 @@ class AuthenticationComponent {
                 name: this.name.value,
                 otp: Number(this.OTP.value),
                 newPass: this.newPass.value,
-                confirmPass: this.confirmPass.value
+                confirmPass: this.confirmPass.value,
             };
-            this.authenService.register(registerRequest).subscribe(data => {
-                this.toastrService.success(data.message, 'Thông báo');
+            this.authenService.register(registerRequest).subscribe((data) => {
+                this.toastrService.success(data.message, "Thông báo");
                 this.openFormLogin();
-            }, error => {
-                this.toastrService.error(error.error.message, 'Thông báo');
+            }, (error) => {
+                this.toastrService.error(error.error.message, "Thông báo");
             });
         }
     }
     togglePassword(idInput, idToggle) {
         const input = this.el.nativeElement.querySelector(idInput);
         const toggle = this.el.nativeElement.querySelector(idToggle);
-        const typeInput = input.type === 'text' ? 'password' : 'text';
-        input.setAttribute('type', typeInput);
-        toggle.classList.toggle('bi-eye-slash');
-        toggle.classList.toggle('bi-eye');
+        const typeInput = input.type === "text" ? "password" : "text";
+        input.setAttribute("type", typeInput);
+        toggle.classList.toggle("bi-eye-slash");
+        toggle.classList.toggle("bi-eye");
     }
 }
 AuthenticationComponent.ɵfac = function AuthenticationComponent_Factory(t) { return new (t || AuthenticationComponent)(_angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdirectiveInject"](_angular_core__WEBPACK_IMPORTED_MODULE_0__["ElementRef"]), _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdirectiveInject"](_angular_forms__WEBPACK_IMPORTED_MODULE_2__["FormBuilder"]), _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdirectiveInject"](ngx_toastr__WEBPACK_IMPORTED_MODULE_3__["ToastrService"]), _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdirectiveInject"](_services_common_service__WEBPACK_IMPORTED_MODULE_4__["CommonService"]), _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdirectiveInject"](_services_authen_service__WEBPACK_IMPORTED_MODULE_5__["AuthenService"]), _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdirectiveInject"](_services_token_storage_service__WEBPACK_IMPORTED_MODULE_6__["TokenStorageService"]), _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdirectiveInject"](_user_service_user_service__WEBPACK_IMPORTED_MODULE_7__["UserService"])); };
@@ -711,9 +752,9 @@ AuthenticationComponent.ɵcmp = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵ
 /*@__PURE__*/ (function () { _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵsetClassMetadata"](AuthenticationComponent, [{
         type: _angular_core__WEBPACK_IMPORTED_MODULE_0__["Component"],
         args: [{
-                selector: 'app-authentication',
-                templateUrl: './authentication.component.html',
-                styleUrls: ['./authentication.component.css']
+                selector: "app-authentication",
+                templateUrl: "./authentication.component.html",
+                styleUrls: ["./authentication.component.css"],
             }]
     }], function () { return [{ type: _angular_core__WEBPACK_IMPORTED_MODULE_0__["ElementRef"] }, { type: _angular_forms__WEBPACK_IMPORTED_MODULE_2__["FormBuilder"] }, { type: ngx_toastr__WEBPACK_IMPORTED_MODULE_3__["ToastrService"] }, { type: _services_common_service__WEBPACK_IMPORTED_MODULE_4__["CommonService"] }, { type: _services_authen_service__WEBPACK_IMPORTED_MODULE_5__["AuthenService"] }, { type: _services_token_storage_service__WEBPACK_IMPORTED_MODULE_6__["TokenStorageService"] }, { type: _user_service_user_service__WEBPACK_IMPORTED_MODULE_7__["UserService"] }]; }, { typeForm: [{
             type: _angular_core__WEBPACK_IMPORTED_MODULE_0__["Input"]
@@ -1631,7 +1672,7 @@ HeaderComponent.ɵcmp = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdefineCo
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 const redirectUrl = (app) => {
-    const redirectUri = 'http://localhost:4200';
+    const redirectUri = "https://bookrecommendation.website";
     return `http://localhost:8080/oauth2/authorize/${app}?redirect_uri=${redirectUri}`;
 };
 /* harmony default export */ __webpack_exports__["default"] = (redirectUrl);
@@ -2879,45 +2920,48 @@ __webpack_require__.r(__webpack_exports__);
 
 
 
-const API_URL = `${_environments_environment__WEBPACK_IMPORTED_MODULE_1__["environment"].url}` + '/user';
+const API_URL = `${_environments_environment__WEBPACK_IMPORTED_MODULE_1__["environment"].url}` + "/user";
 class UserService {
     // httpOptions = {
     //   headers: new HttpHeaders({
     //     'Content-Type': 'application/json',
     //     Authorization: 'Bearer ' + this.tokenStorageService.getToken()
     //   }),
-    //   'Access-Control-Allow-Origin': 'http://localhost:4200/', 'Access-Control-Allow-Methods': 'GET,PUT,POST,DELETE,PATCH,OPTIONS'};
+    //   'Access-Control-Allow-Origin': 'https://bookrecommendation.website/', 'Access-Control-Allow-Methods': 'GET,PUT,POST,DELETE,PATCH,OPTIONS'};
     constructor(http, tokenStorageService) {
         this.http = http;
         this.tokenStorageService = tokenStorageService;
     }
     getInfo(token) {
-        return this.http.get(API_URL + '/getInfoFromToken?token=' + token);
+        return this.http.get(API_URL + "/getInfoFromToken?token=" + token);
     }
     updateEmail(id, email, otp) {
-        return this.http.post(API_URL + '/updateEmail?id=' + id +
-            '&&email=' + email +
-            '&&otp=' + otp, '');
+        return this.http.post(API_URL + "/updateEmail?id=" + id + "&&email=" + email + "&&otp=" + otp, "");
     }
     findById(id) {
-        return this.http.get(API_URL + '/findById?id=' + id);
+        return this.http.get(API_URL + "/findById?id=" + id);
     }
     updateInfo(id, user) {
-        return this.http.post(API_URL + '/updateInfo?id=' + id, user);
+        return this.http.post(API_URL + "/updateInfo?id=" + id, user);
     }
     updatePassword(id, oldPass, newPass, otp) {
-        return this.http.post(API_URL + '/updatePassword?id=' + id +
-            '&&oldPass=' + oldPass +
-            '&&newPass=' + newPass +
-            '&&otp=' + otp, '');
+        return this.http.post(API_URL +
+            "/updatePassword?id=" +
+            id +
+            "&&oldPass=" +
+            oldPass +
+            "&&newPass=" +
+            newPass +
+            "&&otp=" +
+            otp, "");
     }
 }
 UserService.ɵfac = function UserService_Factory(t) { return new (t || UserService)(_angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵinject"](_angular_common_http__WEBPACK_IMPORTED_MODULE_2__["HttpClient"]), _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵinject"](_services_token_storage_service__WEBPACK_IMPORTED_MODULE_3__["TokenStorageService"])); };
-UserService.ɵprov = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdefineInjectable"]({ token: UserService, factory: UserService.ɵfac, providedIn: 'root' });
+UserService.ɵprov = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdefineInjectable"]({ token: UserService, factory: UserService.ɵfac, providedIn: "root" });
 /*@__PURE__*/ (function () { _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵsetClassMetadata"](UserService, [{
         type: _angular_core__WEBPACK_IMPORTED_MODULE_0__["Injectable"],
         args: [{
-                providedIn: 'root'
+                providedIn: "root",
             }]
     }], function () { return [{ type: _angular_common_http__WEBPACK_IMPORTED_MODULE_2__["HttpClient"] }, { type: _services_token_storage_service__WEBPACK_IMPORTED_MODULE_3__["TokenStorageService"] }]; }, null); })();
 
