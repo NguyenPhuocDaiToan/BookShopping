@@ -13,7 +13,7 @@ public class EmailServiceImpl implements EmailService {
     @Autowired
     private JavaMailSender javaMailSender;
 
-    @Value("${spring.mail.username}") private String sender;
+//    @Value("${spring.mail.username}") private String sender;
     @Override
     public boolean sendEmail(String to, String subject, String message) {
         try {
@@ -21,7 +21,7 @@ public class EmailServiceImpl implements EmailService {
             MimeMessage msg = javaMailSender.createMimeMessage();
 
             MimeMessageHelper helper = new MimeMessageHelper(msg, "UTF-8");
-            helper.setFrom(sender);
+            helper.setFrom("102200035@sv1.dut.udn.vn");
             helper.setTo(to);
             helper.setSubject(subject);
             helper.setText(message, true);
