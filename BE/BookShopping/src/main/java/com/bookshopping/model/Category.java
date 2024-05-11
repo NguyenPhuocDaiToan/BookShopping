@@ -10,7 +10,6 @@ import java.util.List;
 
 @Entity
 @Data
-@NoArgsConstructor
 @AllArgsConstructor
 public class Category {
     @Id
@@ -23,4 +22,20 @@ public class Category {
     @OneToMany(mappedBy = "category")
     @JsonIgnore
     private List<Book> books;
+
+    public Category() {
+
+    }
+    public Category(int id, String name) {
+        this.id = id;
+        this.name = name;
+    }
+
+    public Category(int id) {
+        this.id = id;
+    }
+
+    public Category(String name) {
+        this.name = name;
+    }
 }
