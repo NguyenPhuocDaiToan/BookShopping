@@ -1673,7 +1673,7 @@ HeaderComponent.ɵcmp = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdefineCo
 __webpack_require__.r(__webpack_exports__);
 const redirectUrl = (app) => {
     const redirectUri = "https://bookrecommendation.website";
-    return `http://localhost:8080/oauth2/authorize/${app}?redirect_uri=${redirectUri}`;
+    return `https://bookrecommendation.website/oauth2/authorize/${app}?redirect_uri=${redirectUri}`;
 };
 /* harmony default export */ __webpack_exports__["default"] = (redirectUrl);
 
@@ -1739,24 +1739,24 @@ __webpack_require__.r(__webpack_exports__);
 
 
 
-const API_URL = 'http://localhost:8080/auth';
+const API_URL = "https://bookrecommendation.website/auth";
 class AuthenService {
     constructor(http) {
         this.http = http;
     }
     login(loginRequest) {
-        return this.http.post(API_URL + '/login', loginRequest);
+        return this.http.post(API_URL + "/login", loginRequest);
     }
     register(registerRequest) {
-        return this.http.post(API_URL + '/register', registerRequest);
+        return this.http.post(API_URL + "/register", registerRequest);
     }
 }
 AuthenService.ɵfac = function AuthenService_Factory(t) { return new (t || AuthenService)(_angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵinject"](_angular_common_http__WEBPACK_IMPORTED_MODULE_1__["HttpClient"])); };
-AuthenService.ɵprov = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdefineInjectable"]({ token: AuthenService, factory: AuthenService.ɵfac, providedIn: 'root' });
+AuthenService.ɵprov = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdefineInjectable"]({ token: AuthenService, factory: AuthenService.ɵfac, providedIn: "root" });
 /*@__PURE__*/ (function () { _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵsetClassMetadata"](AuthenService, [{
         type: _angular_core__WEBPACK_IMPORTED_MODULE_0__["Injectable"],
         args: [{
-                providedIn: 'root'
+                providedIn: "root",
             }]
     }], function () { return [{ type: _angular_common_http__WEBPACK_IMPORTED_MODULE_1__["HttpClient"] }]; }, null); })();
 
@@ -1850,24 +1850,24 @@ __webpack_require__.r(__webpack_exports__);
 
 
 
-const API_URL = 'http://localhost:8080/email';
+const API_URL = "https://bookrecommendation.website/email";
 class CommonService {
     constructor(http) {
         this.http = http;
     }
     getOtpRegister(email) {
-        return this.http.get(API_URL + '/getOtpRegister?email=' + email);
+        return this.http.get(API_URL + "/getOtpRegister?email=" + email);
     }
     getOtp(email) {
-        return this.http.get(API_URL + '/getOtp?email=' + email);
+        return this.http.get(API_URL + "/getOtp?email=" + email);
     }
 }
 CommonService.ɵfac = function CommonService_Factory(t) { return new (t || CommonService)(_angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵinject"](_angular_common_http__WEBPACK_IMPORTED_MODULE_1__["HttpClient"])); };
-CommonService.ɵprov = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdefineInjectable"]({ token: CommonService, factory: CommonService.ɵfac, providedIn: 'root' });
+CommonService.ɵprov = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdefineInjectable"]({ token: CommonService, factory: CommonService.ɵfac, providedIn: "root" });
 /*@__PURE__*/ (function () { _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵsetClassMetadata"](CommonService, [{
         type: _angular_core__WEBPACK_IMPORTED_MODULE_0__["Injectable"],
         args: [{
-                providedIn: 'root'
+                providedIn: "root",
             }]
     }], function () { return [{ type: _angular_common_http__WEBPACK_IMPORTED_MODULE_1__["HttpClient"] }]; }, null); })();
 
@@ -2812,7 +2812,7 @@ __webpack_require__.r(__webpack_exports__);
 
 
 
-const API_URL = 'http://localhost:8080/api/cart';
+const API_URL = "https://bookrecommendation.website/api/cart";
 class CartService {
     constructor(http, storageService) {
         this.http = http;
@@ -2820,39 +2820,47 @@ class CartService {
         this.cartItems$ = new rxjs__WEBPACK_IMPORTED_MODULE_1__["BehaviorSubject"]([]);
     }
     reloadCartItems() {
-        this.getCartItemByUserId(this.storageService.getUser().id).subscribe(cartItems => this.cartItems$.next(cartItems));
+        this.getCartItemByUserId(this.storageService.getUser().id).subscribe((cartItems) => this.cartItems$.next(cartItems));
     }
     getCartItemByUserId(id) {
-        return this.http.get(API_URL + '/getCartByUserId?id=' + id);
+        return this.http.get(API_URL + "/getCartByUserId?id=" + id);
     }
     addToCart(amount, cartId, bookId) {
-        return this.http.get(API_URL + '/addToCart?'
-            + 'amount=' + amount
-            + '&cartId=' + cartId
-            + '&bookId=' + bookId);
+        return this.http.get(API_URL +
+            "/addToCart?" +
+            "amount=" +
+            amount +
+            "&cartId=" +
+            cartId +
+            "&bookId=" +
+            bookId);
     }
     updateCartItem(amount, cartItemId, bookId) {
-        return this.http.get(API_URL + '/updateCartItem?'
-            + 'amount=' + amount
-            + '&cartItemId=' + cartItemId
-            + '&bookId=' + bookId);
+        return this.http.get(API_URL +
+            "/updateCartItem?" +
+            "amount=" +
+            amount +
+            "&cartItemId=" +
+            cartItemId +
+            "&bookId=" +
+            bookId);
     }
     deleteCartItem(cartItemId) {
-        return this.http.delete(API_URL + '/delete?cartItemId=' + cartItemId);
+        return this.http.delete(API_URL + "/delete?cartItemId=" + cartItemId);
     }
     deleteCartItems(cartItems) {
-        return this.http.post(API_URL + '/deleteCartItems', cartItems);
+        return this.http.post(API_URL + "/deleteCartItems", cartItems);
     }
     synchronizedCart(cartId, cartItemRequests) {
-        return this.http.post(API_URL + '/synchronizedCart?cartId=' + cartId, cartItemRequests);
+        return this.http.post(API_URL + "/synchronizedCart?cartId=" + cartId, cartItemRequests);
     }
 }
 CartService.ɵfac = function CartService_Factory(t) { return new (t || CartService)(_angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵinject"](_angular_common_http__WEBPACK_IMPORTED_MODULE_2__["HttpClient"]), _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵinject"](_services_token_storage_service__WEBPACK_IMPORTED_MODULE_3__["TokenStorageService"])); };
-CartService.ɵprov = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdefineInjectable"]({ token: CartService, factory: CartService.ɵfac, providedIn: 'root' });
+CartService.ɵprov = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdefineInjectable"]({ token: CartService, factory: CartService.ɵfac, providedIn: "root" });
 /*@__PURE__*/ (function () { _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵsetClassMetadata"](CartService, [{
         type: _angular_core__WEBPACK_IMPORTED_MODULE_0__["Injectable"],
         args: [{
-                providedIn: 'root'
+                providedIn: "root",
             }]
     }], function () { return [{ type: _angular_common_http__WEBPACK_IMPORTED_MODULE_2__["HttpClient"] }, { type: _services_token_storage_service__WEBPACK_IMPORTED_MODULE_3__["TokenStorageService"] }]; }, null); })();
 
@@ -2874,27 +2882,27 @@ __webpack_require__.r(__webpack_exports__);
 
 
 
-const API_URL = 'http://localhost:8080/api/order';
+const API_URL = "https://bookrecommendation.website/api/order";
 class OrderService {
     constructor(http) {
         this.http = http;
     }
     order(userId, totalPrice, orderItems) {
-        return this.http.post(API_URL + '?userId=' + userId + '&&totalPrice=' + totalPrice, orderItems);
+        return this.http.post(API_URL + "?userId=" + userId + "&&totalPrice=" + totalPrice, orderItems);
     }
     findById(orderDetailId) {
-        return this.http.get(API_URL + '/findById?id=' + orderDetailId);
+        return this.http.get(API_URL + "/findById?id=" + orderDetailId);
     }
     findByUserId(userId) {
-        return this.http.get(API_URL + '/findByUserId?userId=' + userId);
+        return this.http.get(API_URL + "/findByUserId?userId=" + userId);
     }
 }
 OrderService.ɵfac = function OrderService_Factory(t) { return new (t || OrderService)(_angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵinject"](_angular_common_http__WEBPACK_IMPORTED_MODULE_1__["HttpClient"])); };
-OrderService.ɵprov = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdefineInjectable"]({ token: OrderService, factory: OrderService.ɵfac, providedIn: 'root' });
+OrderService.ɵprov = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdefineInjectable"]({ token: OrderService, factory: OrderService.ɵfac, providedIn: "root" });
 /*@__PURE__*/ (function () { _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵsetClassMetadata"](OrderService, [{
         type: _angular_core__WEBPACK_IMPORTED_MODULE_0__["Injectable"],
         args: [{
-                providedIn: 'root'
+                providedIn: "root",
             }]
     }], function () { return [{ type: _angular_common_http__WEBPACK_IMPORTED_MODULE_1__["HttpClient"] }]; }, null); })();
 

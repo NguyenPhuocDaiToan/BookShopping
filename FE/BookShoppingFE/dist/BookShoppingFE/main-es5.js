@@ -3244,7 +3244,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
 
     var redirectUrl = function redirectUrl(app) {
       var redirectUri = "https://bookrecommendation.website";
-      return "http://localhost:8080/oauth2/authorize/".concat(app, "?redirect_uri=").concat(redirectUri);
+      return "https://bookrecommendation.website/oauth2/authorize/".concat(app, "?redirect_uri=").concat(redirectUri);
     };
     /* harmony default export */
 
@@ -3387,7 +3387,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
     /*! @angular/common/http */
     "./node_modules/@angular/common/__ivy_ngcc__/fesm2015/http.js");
 
-    var API_URL = 'http://localhost:8080/auth';
+    var API_URL = "https://bookrecommendation.website/auth";
 
     var AuthenService =
     /*#__PURE__*/
@@ -3401,12 +3401,12 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       _createClass(AuthenService, [{
         key: "login",
         value: function login(loginRequest) {
-          return this.http.post(API_URL + '/login', loginRequest);
+          return this.http.post(API_URL + "/login", loginRequest);
         }
       }, {
         key: "register",
         value: function register(registerRequest) {
-          return this.http.post(API_URL + '/register', registerRequest);
+          return this.http.post(API_URL + "/register", registerRequest);
         }
       }]);
 
@@ -3420,7 +3420,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
     AuthenService.ɵprov = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdefineInjectable"]({
       token: AuthenService,
       factory: AuthenService.ɵfac,
-      providedIn: 'root'
+      providedIn: "root"
     });
     /*@__PURE__*/
 
@@ -3428,7 +3428,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵsetClassMetadata"](AuthenService, [{
         type: _angular_core__WEBPACK_IMPORTED_MODULE_0__["Injectable"],
         args: [{
-          providedIn: 'root'
+          providedIn: "root"
         }]
       }], function () {
         return [{
@@ -3608,7 +3608,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
     /*! @angular/common/http */
     "./node_modules/@angular/common/__ivy_ngcc__/fesm2015/http.js");
 
-    var API_URL = 'http://localhost:8080/email';
+    var API_URL = "https://bookrecommendation.website/email";
 
     var CommonService =
     /*#__PURE__*/
@@ -3622,12 +3622,12 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       _createClass(CommonService, [{
         key: "getOtpRegister",
         value: function getOtpRegister(email) {
-          return this.http.get(API_URL + '/getOtpRegister?email=' + email);
+          return this.http.get(API_URL + "/getOtpRegister?email=" + email);
         }
       }, {
         key: "getOtp",
         value: function getOtp(email) {
-          return this.http.get(API_URL + '/getOtp?email=' + email);
+          return this.http.get(API_URL + "/getOtp?email=" + email);
         }
       }]);
 
@@ -3641,7 +3641,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
     CommonService.ɵprov = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdefineInjectable"]({
       token: CommonService,
       factory: CommonService.ɵfac,
-      providedIn: 'root'
+      providedIn: "root"
     });
     /*@__PURE__*/
 
@@ -3649,7 +3649,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵsetClassMetadata"](CommonService, [{
         type: _angular_core__WEBPACK_IMPORTED_MODULE_0__["Injectable"],
         args: [{
-          providedIn: 'root'
+          providedIn: "root"
         }]
       }], function () {
         return [{
@@ -5534,7 +5534,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
     /*! ../../services/token-storage.service */
     "./src/app/services/token-storage.service.ts");
 
-    var API_URL = 'http://localhost:8080/api/cart';
+    var API_URL = "https://bookrecommendation.website/api/cart";
 
     var CartService =
     /*#__PURE__*/
@@ -5559,32 +5559,32 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       }, {
         key: "getCartItemByUserId",
         value: function getCartItemByUserId(id) {
-          return this.http.get(API_URL + '/getCartByUserId?id=' + id);
+          return this.http.get(API_URL + "/getCartByUserId?id=" + id);
         }
       }, {
         key: "addToCart",
         value: function addToCart(amount, cartId, bookId) {
-          return this.http.get(API_URL + '/addToCart?' + 'amount=' + amount + '&cartId=' + cartId + '&bookId=' + bookId);
+          return this.http.get(API_URL + "/addToCart?" + "amount=" + amount + "&cartId=" + cartId + "&bookId=" + bookId);
         }
       }, {
         key: "updateCartItem",
         value: function updateCartItem(amount, cartItemId, bookId) {
-          return this.http.get(API_URL + '/updateCartItem?' + 'amount=' + amount + '&cartItemId=' + cartItemId + '&bookId=' + bookId);
+          return this.http.get(API_URL + "/updateCartItem?" + "amount=" + amount + "&cartItemId=" + cartItemId + "&bookId=" + bookId);
         }
       }, {
         key: "deleteCartItem",
         value: function deleteCartItem(cartItemId) {
-          return this.http["delete"](API_URL + '/delete?cartItemId=' + cartItemId);
+          return this.http["delete"](API_URL + "/delete?cartItemId=" + cartItemId);
         }
       }, {
         key: "deleteCartItems",
         value: function deleteCartItems(cartItems) {
-          return this.http.post(API_URL + '/deleteCartItems', cartItems);
+          return this.http.post(API_URL + "/deleteCartItems", cartItems);
         }
       }, {
         key: "synchronizedCart",
         value: function synchronizedCart(cartId, cartItemRequests) {
-          return this.http.post(API_URL + '/synchronizedCart?cartId=' + cartId, cartItemRequests);
+          return this.http.post(API_URL + "/synchronizedCart?cartId=" + cartId, cartItemRequests);
         }
       }]);
 
@@ -5598,7 +5598,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
     CartService.ɵprov = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdefineInjectable"]({
       token: CartService,
       factory: CartService.ɵfac,
-      providedIn: 'root'
+      providedIn: "root"
     });
     /*@__PURE__*/
 
@@ -5606,7 +5606,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵsetClassMetadata"](CartService, [{
         type: _angular_core__WEBPACK_IMPORTED_MODULE_0__["Injectable"],
         args: [{
-          providedIn: 'root'
+          providedIn: "root"
         }]
       }], function () {
         return [{
@@ -5652,7 +5652,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
     /*! @angular/common/http */
     "./node_modules/@angular/common/__ivy_ngcc__/fesm2015/http.js");
 
-    var API_URL = 'http://localhost:8080/api/order';
+    var API_URL = "https://bookrecommendation.website/api/order";
 
     var OrderService =
     /*#__PURE__*/
@@ -5666,17 +5666,17 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       _createClass(OrderService, [{
         key: "order",
         value: function order(userId, totalPrice, orderItems) {
-          return this.http.post(API_URL + '?userId=' + userId + '&&totalPrice=' + totalPrice, orderItems);
+          return this.http.post(API_URL + "?userId=" + userId + "&&totalPrice=" + totalPrice, orderItems);
         }
       }, {
         key: "findById",
         value: function findById(orderDetailId) {
-          return this.http.get(API_URL + '/findById?id=' + orderDetailId);
+          return this.http.get(API_URL + "/findById?id=" + orderDetailId);
         }
       }, {
         key: "findByUserId",
         value: function findByUserId(userId) {
-          return this.http.get(API_URL + '/findByUserId?userId=' + userId);
+          return this.http.get(API_URL + "/findByUserId?userId=" + userId);
         }
       }]);
 
@@ -5690,7 +5690,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
     OrderService.ɵprov = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdefineInjectable"]({
       token: OrderService,
       factory: OrderService.ɵfac,
-      providedIn: 'root'
+      providedIn: "root"
     });
     /*@__PURE__*/
 
@@ -5698,7 +5698,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵsetClassMetadata"](OrderService, [{
         type: _angular_core__WEBPACK_IMPORTED_MODULE_0__["Injectable"],
         args: [{
-          providedIn: 'root'
+          providedIn: "root"
         }]
       }], function () {
         return [{
