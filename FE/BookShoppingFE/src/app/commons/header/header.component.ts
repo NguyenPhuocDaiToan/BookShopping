@@ -94,7 +94,7 @@ export class HeaderComponent implements OnInit {
   }
 
   resetUrl() {
-    window.location.href = 'http://localhost:4200';
+    window.location.href = '/';
   }
 
   search() {

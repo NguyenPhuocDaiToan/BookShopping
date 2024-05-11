@@ -23,15 +23,7 @@
         {{imageUrl}}
       </div>
       <div class="row">
-        <div class="col-1-2 m-3" *ngFor="let category of categories">
-          <div class="category-item" (click)="search(category.name)">
-            <img [src]="category?.imageUrl" alt="Image error" class="category-item-image">
-            <p class="category-item-name">{{category.name}}</p>
-          </div>
-        </div>
-      </div>
-      <div class="row">
-        <div class="col-1-2 m-3" *ngFor="let category of categories">
+        <div class="col-1-2 m-3" *ngFor="let category of categories | slice : 0 : 20">
           <div class="category-item" (click)="search(category.name)">
             <img [src]="category?.imageUrl" alt="Image error" class="category-item-image">
             <p class="category-item-name">{{category.name}}</p>
