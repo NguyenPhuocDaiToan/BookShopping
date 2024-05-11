@@ -5,18 +5,19 @@ export interface Book {
   name?: string;
   avatar?: string;
   description?: string;
-  language?: string;
   price?: number;
-  page?: number;
+
   author?: string;
   coverForm?: string;
   publisher?: string;
-  yearPublisher?: string;
   supplier?: string;
-  weight?: number;
-  packagingSize?: string;
+  
+  moreInformation?: any;
+
   amount?: number;
-  pointReward?: number;
   category: Category;
+  category1?: number;
+  category2?: number;
+  category3?: number;
   numberRating?: number;
 }

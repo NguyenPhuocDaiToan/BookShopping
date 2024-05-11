@@ -170,34 +170,16 @@
         Thông tin sản phẩm
       </div>
       <div class="component-body">
-        <div class="row">
+
+        <div class="row" *ngFor="let info of book?.moreInformation">
           <div class="col-3 product-info-title">
-            <span>Mã hàng</span>
-            <span>Tên nhà cung cấp</span>
-            <span>Tác giả</span>
-            <span>Nhà xuất bản</span>
-            <span>Năm xuất bản</span>
-            <span>Ngôn ngữ</span>
-            <span>Trọng lượng (gr)</span>
-            <span>Kích thước bao bì</span>
-            <span>Số trang</span>
-            <span>Hình thức</span>
-            <span>Sản phẩm bán chạy trong</span>
+            <span>{{info?.key}}</span>
           </div>
           <div class="col-9 product-info-content">
-            <span>{{book?.id}}</span>
-            <span class="color-blue">{{book?.supplier}}</span>
-            <span>{{book?.author}}</span>
-            <span>{{book?.publisher}}</span>
-            <span>{{book?.yearPublisher}}</span>
-            <span>{{book?.language}}</span>
-            <span>{{book?.weight}}</span>
-            <span>{{book?.packagingSize}}</span>
-            <span>{{book?.page}}</span>
-            <span>{{book?.coverForm}}</span>
-            <span class="color-blue">Top 100 sản phẩm Kỹ năng sống bán chạy của tháng</span>
+            <span>{{info?.value}}</span>
           </div>
         </div>
+
         <div class="color-333 fs-14 pb-8 mt-4">
           Giá sản phẩm trên Fahasa.com đã bao gồm thuế theo luật hiện hành.
           Bên cạnh đó, tuỳ vào loại sản phẩm, hình thức và địa chỉ giao hàng mà có thể phát sinh
@@ -211,7 +193,8 @@
             <p *ngFor="let desc of descriptions">{{desc}}</p>
           </div>
           <div class="product-description-content" *ngIf="!isViewDesc">
-            <p>Xem thêm ...</p>
+            <p *ngFor="let desc of descriptions | slice : 0 : 3">{{desc}}</p>
+            <p class="fw-bold">Xem thêm ...</p>
           </div>
           <div class="d-flex-justify-center">
             <button class="btn btn-view-desc" (click)="changeView()" *ngIf="!isViewDesc">Xem thêm</button>

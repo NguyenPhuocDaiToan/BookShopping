@@ -68,6 +68,9 @@ export class HomepageComponent implements OnInit, AfterViewInit  {
     });
   }
   getBooks() {
+    if (this.numberRecord < 0) {
+      this.numberRecord = 36;
+    }
     this.bookService.getBooksByNumberRecord(this.numberRecord).subscribe(books => {
       if (books.length === this.books.length) {
         this.numberRecord -= 36;
