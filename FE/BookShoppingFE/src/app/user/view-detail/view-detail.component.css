@@ -40,9 +40,7 @@
 }
 
 .product-avatar-image {
-  margin: 0 auto;
-  width: 300px;
-  height: 350px;
+  width: 100%;
   object-fit: contain;
 }
 
@@ -104,6 +102,10 @@
 }
 .product-name {
   margin: 4px 0;
+  overflow: hidden;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
 }
 .product-rate {
   margin-bottom: 6px;

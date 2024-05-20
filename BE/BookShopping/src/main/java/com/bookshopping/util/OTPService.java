@@ -40,6 +40,10 @@ public class OTPService {
         }
     }
 
+    public void setOtp(String key, int otp) {
+        otpCache.put(key, otp);
+    }
+
     public void clearOTP(String key){
         otpCache.invalidate(key);
     }

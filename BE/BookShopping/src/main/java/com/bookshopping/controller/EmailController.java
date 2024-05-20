@@ -8,10 +8,7 @@ import com.bookshopping.util.OTPService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 @RestController
 @RequestMapping("/email")
@@ -47,5 +44,11 @@ public class EmailController {
         if(emailService.sendEmail(email, "DT BookStore", message))
             return new ResponseEntity<>(new ResponseMessage(String.valueOf(otp)), HttpStatus.OK);
         return new ResponseEntity<>(new ResponseMessage("Gửi email bị lỗi"), HttpStatus.BAD_REQUEST);
+    }
+
+    @PostMapping("/setOtp")
+    public ResponseEntity<ResponseMessage> getOtp(@RequestParam String email, @RequestParam int otp) {
+        otpService.setOtp(email, otp);
+        return new ResponseEntity<>(new ResponseMessage("OK"), HttpStatus.OK);
     }
 }

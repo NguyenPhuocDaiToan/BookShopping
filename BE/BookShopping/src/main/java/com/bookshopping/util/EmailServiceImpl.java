@@ -1,7 +1,6 @@
 package com.bookshopping.util;
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.beans.factory.annotation.Value;
 import org.springframework.mail.javamail.JavaMailSender;
 import org.springframework.mail.javamail.MimeMessageHelper;
 import org.springframework.stereotype.Service;
@@ -13,7 +12,7 @@ public class EmailServiceImpl implements EmailService {
     @Autowired
     private JavaMailSender javaMailSender;
 
-//    @Value("${spring.mail.username}") private String sender;
+    //    @Value("${spring.mail.username}") private String sender;
     @Override
     public boolean sendEmail(String to, String subject, String message) {
         try {
