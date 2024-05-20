@@ -32,9 +32,9 @@ public class Book {
     private String publisher;
     private String supplier;
 
-    @Column(length = 5000)
+    @Column(length = 8000)
     private String description;
-    @Column(length = 5000)
+    @Column(length = 2000)
     private String moreInformation;
 
     @ManyToOne(targetEntity = Category.class)

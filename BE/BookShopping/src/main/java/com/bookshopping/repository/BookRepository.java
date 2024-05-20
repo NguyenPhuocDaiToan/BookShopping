@@ -45,4 +45,6 @@ public interface BookRepository extends JpaRepository<Book, Integer> {
                     "where book.name like %:search% or book.author like %:search% or category.name like %:search%",
             nativeQuery = true)
     Page<Book> search(String search, Pageable page);
+
+    Page<Book> findAll(Pageable page);
 }

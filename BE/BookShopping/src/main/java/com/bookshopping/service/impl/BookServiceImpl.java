@@ -64,4 +64,9 @@ public class BookServiceImpl implements BookService {
     public Page<Book> search(String book, Pageable page) {
         return bookRepository.search(book, page);
     }
+
+    @Override
+    public Page<Book> paginate( Pageable page) {
+        return bookRepository.findAll(page);
+    }
 }

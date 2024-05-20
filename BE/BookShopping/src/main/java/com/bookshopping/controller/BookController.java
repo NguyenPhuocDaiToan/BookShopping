@@ -21,7 +21,13 @@ public class BookController {
 
     @GetMapping("/findAll")
     public ResponseEntity<List<Book>> getAllBooks() {
+	   //  return new ResponseEntity<>([], HttpStatus.OK);
         return new ResponseEntity<>(bookService.findAll(), HttpStatus.OK);
+    }
+
+    @GetMapping("/")
+    public ResponseEntity<Page<Book>> paginate(@PageableDefault(size = 48) Pageable pageable) {
+        return new ResponseEntity<>(bookService.paginate(pageable), HttpStatus.OK);
     }
 
     @GetMapping("/findByNumberRecord")
