@@ -19,4 +19,5 @@ public interface BookService {
     List<Book> findBookByNumberRecordSameAuthor(String author, int numberRecord);
     List<Book> findBookByNumberRecordSameCategory(String category, int numberRecord);
     Page<Book> search(String book, Pageable page);
+    Page<Book> paginate(Pageable page);
 }

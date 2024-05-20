@@ -89,4 +89,24 @@ public class AuthController {
             return new ResponseEntity<>(new ResponseMessage("OTP không hợp lệ !!!"), HttpStatus.BAD_REQUEST);
         }
     }
+
+    @PostMapping("/register-no-public")
+    public ResponseEntity<ResponseMessage> register1(@RequestBody RegisterRequest register) {
+        if(true) {
+            if(true) {
+                User user = new User();
+                user.setName(register.getName());
+                user.setEmail(register.getEmail());
+                user.setPassword(passwordEncoder.encode(register.getNewPass()));
+                user.setProvider(AuthProvider.local);
+
+                //  otpService.clearOTP(register.getEmail());
+                userService.saveCreateRelationship(user);
+                return new ResponseEntity<>(new ResponseMessage("Đăng ký thành công !!!"), HttpStatus.OK);
+            }
+            else return new ResponseEntity<>(new ResponseMessage("Mật khẩu không trùng khớp !!!"), HttpStatus.BAD_REQUEST);
+        } else {
+            return new ResponseEntity<>(new ResponseMessage("OTP không hợp lệ !!!"), HttpStatus.BAD_REQUEST);
+        }
+    }
 }
