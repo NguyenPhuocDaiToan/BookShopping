@@ -69,4 +69,9 @@ public class BookServiceImpl implements BookService {
     public Page<Book> paginate( Pageable page) {
         return bookRepository.findAll(page);
     }
+
+    @Override
+    public List<Integer> findRandomBooksByCategoryIds(List<Integer> ids) {
+        return bookRepository.findRandomBooksByCategoryIds(ids);
+    }
 }

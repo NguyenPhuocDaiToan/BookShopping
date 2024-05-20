@@ -47,4 +47,7 @@ public interface BookRepository extends JpaRepository<Book, Integer> {
     Page<Book> search(String search, Pageable page);
 
     Page<Book> findAll(Pageable page);
+
+    @Query(value = "SELECT id FROM books WHERE category_id IN :categoryIds ORDER BY RAND() LIMIT 20", nativeQuery = true)
+    List<Integer> findRandomBooksByCategoryIds(List<Integer> categoryIds);
 }

@@ -20,4 +20,6 @@ public interface BookService {
     List<Book> findBookByNumberRecordSameCategory(String category, int numberRecord);
     Page<Book> search(String book, Pageable page);
     Page<Book> paginate(Pageable page);
+
+    List<Integer> findRandomBooksByCategoryIds(List<Integer> ids);
 }
