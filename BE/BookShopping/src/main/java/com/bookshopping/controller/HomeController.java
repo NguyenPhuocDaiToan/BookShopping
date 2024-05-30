@@ -9,7 +9,7 @@ import org.springframework.web.bind.annotation.RestController;
 import java.util.List;
 
 @RestController
-@RequestMapping("/")
+@RequestMapping("/api")
 public class HomeController {
     @GetMapping("")
     public ResponseEntity<String> getAllCategories() {

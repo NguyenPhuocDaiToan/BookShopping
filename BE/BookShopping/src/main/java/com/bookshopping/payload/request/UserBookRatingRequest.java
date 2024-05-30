@@ -4,11 +4,13 @@ import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
+import java.util.List;
+
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
 public class UserBookRatingRequest {
     private int userId;
-    private int bookId;
-    private int ratingRecommendation;
+    private List<Integer> bookIds;
+    private List<Float> ratingRecommendations;
 }

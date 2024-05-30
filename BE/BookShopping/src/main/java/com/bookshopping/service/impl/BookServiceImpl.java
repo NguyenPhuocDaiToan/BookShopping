@@ -71,7 +71,7 @@ public class BookServiceImpl implements BookService {
     }
 
     @Override
-    public List<Integer> findRandomBooksByCategoryIds(List<Integer> ids) {
-        return bookRepository.findRandomBooksByCategoryIds(ids);
+    public List<Integer> findRandomBooksByCategoryIds(List<Integer> ids, int numberRecord) {
+        return bookRepository.findRandomBooksByCategoryIds(ids, numberRecord);
     }
 }

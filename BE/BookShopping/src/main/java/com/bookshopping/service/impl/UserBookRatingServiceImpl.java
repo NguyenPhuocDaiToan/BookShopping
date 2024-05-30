@@ -16,12 +16,13 @@ public class UserBookRatingServiceImpl implements UserBookRatingService {
     UserBookRatingRepository userBookRatingRepository;
 
     @Override
-    public boolean existsByUserIdAndBookId(int userId, int bookId) {
-        return userBookRatingRepository.existsByUserIdAndBookId(userId, bookId);
+    public UserBookRating findByUserIdAndBookId(int userId, int bookId) {
+        Optional<UserBookRating> optionalRating = userBookRatingRepository.findByUserIdAndBookId(userId, bookId);
+        return optionalRating.orElse(null);
     }
 
     @Override
-    public UserBookRating addRating(int userId, int bookId, int ratingRecommendation) {
+    public UserBookRating addRating(int userId, int bookId, float ratingRecommendation) {
         UserBookRating newRating = new UserBookRating();
         newRating.setUserId(userId);
         newRating.setBookId(bookId);
@@ -31,7 +32,7 @@ public class UserBookRatingServiceImpl implements UserBookRatingService {
     }
 
     @Override
-    public UserBookRating updateRating(int userId, int bookId, int newRatingRecommendation) {
+    public UserBookRating updateRating(int userId, int bookId, float newRatingRecommendation) {
         Optional<UserBookRating> optionalRating = userBookRatingRepository.findByUserIdAndBookId(userId, bookId);
 
         if (optionalRating.isPresent()) {

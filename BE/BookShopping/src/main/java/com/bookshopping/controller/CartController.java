@@ -107,6 +107,8 @@ public class CartController {
         for (CartItemRequest cartItemRequest : cartItemRequests) {
             book = bookService.findById(cartItemRequest.getBookId());
             cartItem = cartItemService.findByCartIdAndBookId(cartId, cartItemRequest.getBookId());
+            System.out.print(book);
+            System.out.print(cartItem);
             if(cartItem == null) {
                 if(book.getAmount() >= cartItemRequest.getAmount()) {
                     cartItemService.save(cartItemRequest.getAmount(), cartId, cartItemRequest.getBookId());

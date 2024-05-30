@@ -21,5 +21,7 @@ public class UserBookRating {
     private int userId;
     private int bookId;
 
-    private int ratingRecommendation;
+    private boolean isUserRating = false;
+
+    private float ratingRecommendation;
 }

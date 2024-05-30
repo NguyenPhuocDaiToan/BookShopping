@@ -21,5 +21,5 @@ public interface BookService {
     Page<Book> search(String book, Pageable page);
     Page<Book> paginate(Pageable page);
 
-    List<Integer> findRandomBooksByCategoryIds(List<Integer> ids);
+    List<Integer> findRandomBooksByCategoryIds(List<Integer> ids, int numberRecord);
 }

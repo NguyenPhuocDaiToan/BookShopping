@@ -11,7 +11,7 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 @RestController
-@RequestMapping("/email")
+@RequestMapping("/api/email")
 public class EmailController {
     @Autowired
     private OTPService otpService;
@@ -29,7 +29,7 @@ public class EmailController {
                     + "<p>Mã OTP để đăng ký tài khoản của bạn là: " + otp + ".</p>"
                     + "<p>Mã OTP có hiệu lực trong thời gian 4 phút.</p>";
             if(emailService.sendEmail(email, "DT BookStore", message))
-                return new ResponseEntity<>(new ResponseMessage(String.valueOf(otp)), HttpStatus.OK);
+                return new ResponseEntity<>(new ResponseMessage("OK"), HttpStatus.OK);
             return new ResponseEntity<>(new ResponseMessage("Gửi email bị lỗi"), HttpStatus.BAD_REQUEST);
         }
         else return new ResponseEntity<>(new ResponseMessage("Email đã tồn tại trong hệ thống"), HttpStatus.BAD_REQUEST);
@@ -42,13 +42,7 @@ public class EmailController {
                 + "<p>Mã OTP để thay đổi mật khẩu của bạn là: " + otp + ".</p>"
                 + "<p>Mã OTP có hiệu lực trong thời gian 4 phút.</p>";
         if(emailService.sendEmail(email, "DT BookStore", message))
-            return new ResponseEntity<>(new ResponseMessage(String.valueOf(otp)), HttpStatus.OK);
+            return new ResponseEntity<>(new ResponseMessage("OK"), HttpStatus.OK);
         return new ResponseEntity<>(new ResponseMessage("Gửi email bị lỗi"), HttpStatus.BAD_REQUEST);
-    }
-
-    @PostMapping("/setOtp")
-    public ResponseEntity<ResponseMessage> getOtp(@RequestParam String email, @RequestParam int otp) {
-        otpService.setOtp(email, otp);
-        return new ResponseEntity<>(new ResponseMessage("OK"), HttpStatus.OK);
     }
 }

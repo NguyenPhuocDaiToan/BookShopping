@@ -19,4 +19,5 @@ import java.util.List;
 @AllArgsConstructor
 public class BookIdsRequest {
     private List<Integer> ids;
+    private int numberRecord = 20;
 }

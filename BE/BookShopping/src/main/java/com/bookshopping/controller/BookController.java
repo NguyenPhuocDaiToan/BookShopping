@@ -1,6 +1,7 @@
 package com.bookshopping.controller;
 
 import com.bookshopping.model.Book;
+import com.bookshopping.payload.request.BookIdsRequest;
 import com.bookshopping.payload.response.ResponseMessage;
 import com.bookshopping.service.BookService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -25,8 +26,8 @@ public class BookController {
     }
 
     @PostMapping("/findRandomBooksByCategoryIds")
-    public ResponseEntity<List<Integer>> findRandomBooksByCategoryIds(@RequestBody List<Integer> ids) {
-        return new ResponseEntity<>(bookService.findRandomBooksByCategoryIds(ids), HttpStatus.OK);
+    public ResponseEntity<List<Integer>> findRandomBooksByCategoryIds(@RequestBody BookIdsRequest data) {
+        return new ResponseEntity<>(bookService.findRandomBooksByCategoryIds(data.getIds(), data.getNumberRecord()), HttpStatus.OK);
     }
 
     @GetMapping("")
