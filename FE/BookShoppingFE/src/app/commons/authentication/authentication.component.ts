@@ -18,7 +18,7 @@ import { CommonService } from "../../services/common.service";
 import { AuthenService } from "../../services/authen.service";
 import { TokenStorageService } from "../../services/token-storage.service";
 import { UserService } from "../../user/service/user.service";
-
+import { environment } from "src/environments/environment";
 @Component({
   selector: "app-authentication",
   templateUrl: "./authentication.component.html",
@@ -241,7 +241,7 @@ export class AuthenticationComponent implements OnInit {
             (user) => {
               this.tokenStorageService.saveUser(user);
               this.tokenStorageService.isLogin();
-              window.location.href = "https://bookrecommendation.website";
+              window.location.href = environment.domain;
             },
             (error) => {
               alert(error);

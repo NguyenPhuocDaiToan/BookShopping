@@ -6,18 +6,12 @@ import { ResponseMessage } from "../../models/response-message";
 import { User } from "../../models/user";
 import { TokenStorageService } from "../../services/token-storage.service";
 
-const API_URL = `${environment.url}` + "/user";
+const API_URL = `${environment.apiurl}` + "/user";
 
 @Injectable({
   providedIn: "root",
 })
 export class UserService {
-  // httpOptions = {
-  //   headers: new HttpHeaders({
-  //     'Content-Type': 'application/json',
-  //     Authorization: 'Bearer ' + this.tokenStorageService.getToken()
-  //   }),
-  //   'Access-Control-Allow-Origin': 'https://bookrecommendation.website/', 'Access-Control-Allow-Methods': 'GET,PUT,POST,DELETE,PATCH,OPTIONS'};
   constructor(
     private http: HttpClient,
     private tokenStorageService: TokenStorageService

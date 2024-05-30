@@ -4,17 +4,8 @@
 
 export const environment = {
   production: false,
-  // url: "http://localhost:8081/api",
-  url: "https://bookrecommendation.website/api",
+  domain: "http://localhost:4200",
+  apiurl: "http://localhost:8081/api",
   clientId:
     "AXPkXKpXxzFnLRNZHVAvewN-dvyt3zjRVr-bzveAEZz5aOQJWj6A7fxiUSr-kcXpvvrbW94m2ZufGl5L",
 };
-
-/*
- * For easier debugging in development mode, you can import the following file
- * to ignore zone related error stack frames such as `zone.run`, `zoneDelegate.invokeTask`.
- *
- * This import should be commented out in production mode because it will have a negative impact
- * on performance if an error is thrown.
- */
-// import 'zone.js/dist/zone-error';  // Included with Angular CLI.

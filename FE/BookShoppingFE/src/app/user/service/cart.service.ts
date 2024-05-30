@@ -4,8 +4,8 @@ import { BehaviorSubject, Observable } from "rxjs";
 import { CartItem } from "../../models/cart-item";
 import { ResponseMessage } from "../../models/response-message";
 import { TokenStorageService } from "../../services/token-storage.service";
-
-const API_URL = "https://bookrecommendation.website/api/cart";
+import { environment } from "src/environments/environment";
+const API_URL = `${environment.apiurl}/cart`;
 
 @Injectable({
   providedIn: "root",

@@ -1,4 +1,11 @@
-import {AfterViewChecked, Component, ElementRef, OnInit, ViewChild} from '@angular/core';
+import {
+  AfterViewChecked,
+  Component,
+  ElementRef,
+  OnInit,
+  ViewChild,
+  isDevMode,
+} from "@angular/core";
 import {CartStorageService} from './services/cart-storage.service';
 import {render} from 'creditcardpayments/creditCardPayments';
 import {environment} from '../environments/environment.prod';
@@ -16,5 +23,11 @@ export class AppComponent implements OnInit {
 
   ngOnInit(): void {
     this.cartStorageService.loadCart();
+
+    if (isDevMode()) {
+      console.log("Development!");
+    } else {
+      console.log("Production!");
+    }
   }
 }

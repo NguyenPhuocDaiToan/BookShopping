@@ -4,7 +4,11 @@ import { LoginRequest } from "../models/login-request";
 import { RegisterRequest } from "../models/register-request";
 import { Observable } from "rxjs";
 import { ResponseMessage } from "../models/response-message";
-const API_URL = "https://bookrecommendation.website/auth";
+
+import { environment } from "../../environments/environment";
+
+const API_URL = `${environment.apiurl}/auth`;
+
 @Injectable({
   providedIn: "root",
 })

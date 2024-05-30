@@ -2,7 +2,9 @@ import { Injectable } from "@angular/core";
 import { HttpClient } from "@angular/common/http";
 import { Observable } from "rxjs";
 import { ResponseMessage } from "../models/response-message";
-const API_URL = "https://bookrecommendation.website/email";
+import { environment } from "../../environments/environment";
+
+const API_URL = `${environment.apiurl}/email`;
 @Injectable({
   providedIn: "root",
 })

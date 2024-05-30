@@ -4,7 +4,10 @@ import { ResponseMessage } from "../../models/response-message";
 import { OrderItem } from "../../models/order-item";
 import { HttpClient } from "@angular/common/http";
 import { OrderDetail } from "../../models/order-detail";
-const API_URL = "https://bookrecommendation.website/api/order";
+import { environment } from "../../../environments/environment";
+
+const API_URL = `${environment.apiurl}/order`;
+
 @Injectable({
   providedIn: "root",
 })
