@@ -32,7 +32,7 @@ public class AIServiceImpl implements AIService {
 
         HttpEntity<RecommendationRequest> entity = new HttpEntity<>(request, headers);
 
-        ResponseEntity<RecommendResponse> response = restTemplate.exchange(URL + "/recommend/predict-top-K", HttpMethod.POST, entity, RecommendResponse.class);
+        ResponseEntity<RecommendResponse> response = restTemplate.exchange(URL + "/recommend/hybrid_recommend", HttpMethod.POST, entity, RecommendResponse.class);
 
         // Chuyển đổi mảng kết quả sang List
         if (response.getStatusCode().is2xxSuccessful()) {
