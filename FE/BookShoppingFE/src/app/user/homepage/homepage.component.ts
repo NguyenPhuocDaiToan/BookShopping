@@ -107,6 +107,10 @@ export class HomepageComponent implements OnInit, AfterViewInit {
       (books) => {
         this.books = this.books.concat(books);
         this.isLoading = false;
+
+        if (books.length < this.pageSize) {
+          this.getBooks();
+        }
       },
       (error) => {
         this.toastrService.error("Lỗi tìm kiếm sản phẩm");
@@ -137,7 +141,7 @@ export class HomepageComponent implements OnInit, AfterViewInit {
       this.getBooksRecommend();
       return;
     }
-    
+
     if (this.page < this.totalPages - 1) {
       this.page = this.page + 1;
       this.getBooks();
