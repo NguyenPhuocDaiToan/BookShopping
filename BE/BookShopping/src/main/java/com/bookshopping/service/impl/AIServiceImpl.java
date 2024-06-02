@@ -22,7 +22,7 @@ public class AIServiceImpl implements AIService {
     private final String URL = "http://localhost:5000";
 
     @Override
-    public List<Integer> getRecommendation(List<Integer> bookIds) {
+    public List<Integer> getRecommendation(List<Integer> bookIds, int topK) {
         RecommendationRequest request = new RecommendationRequest();
         request.setBook_ids(bookIds);
         request.setTopK(100);
