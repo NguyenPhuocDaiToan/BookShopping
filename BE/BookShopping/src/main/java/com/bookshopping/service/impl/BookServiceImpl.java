@@ -9,6 +9,7 @@ import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
+import java.util.stream.Collectors;
 
 @Service
 public class BookServiceImpl implements BookService {
@@ -73,5 +74,10 @@ public class BookServiceImpl implements BookService {
     @Override
     public List<Integer> findRandomBooksByCategoryIds(List<Integer> ids, int numberRecord) {
         return bookRepository.findRandomBooksByCategoryIds(ids, numberRecord);
+    }
+
+    @Override
+    public List<Book> getBooksRecommend(List<Integer> ids) {
+        return bookRepository.findByIdIn(ids);
     }
 }

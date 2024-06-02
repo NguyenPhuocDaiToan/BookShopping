@@ -7,9 +7,11 @@ import org.springframework.data.domain.Pageable;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Modifying;
 import org.springframework.data.jpa.repository.Query;
+import org.springframework.data.repository.query.Param;
 import org.springframework.stereotype.Repository;
 import org.springframework.transaction.annotation.Transactional;
 
+import java.util.Collection;
 import java.util.List;
 
 @Repository
@@ -50,4 +52,6 @@ public interface BookRepository extends JpaRepository<Book, Integer> {
 
     @Query(value = "SELECT id FROM book WHERE category_id IN :categoryIds and id <= 5000 ORDER BY RAND() LIMIT :numberRecord", nativeQuery = true)
     List<Integer> findRandomBooksByCategoryIds(List<Integer> categoryIds, int numberRecord);
+
+    List<Book> findByIdIn(Collection<Integer> ids);
 }

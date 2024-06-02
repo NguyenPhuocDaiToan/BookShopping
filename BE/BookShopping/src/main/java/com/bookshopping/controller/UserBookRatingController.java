@@ -49,4 +49,9 @@ public class UserBookRatingController {
     public ResponseEntity<Page<UserBookRating>> paginate(@PageableDefault(size = 48) Pageable pageable) {
         return new ResponseEntity<>(userBookRatingService.paginate(pageable), HttpStatus.OK);
     }
+
+    @GetMapping("/getBooksCare")
+    public ResponseEntity<List<Integer>> getBooksCare(@RequestParam Integer userId, @RequestParam(defaultValue = "50") Integer limit) {
+        return new ResponseEntity<>(userBookRatingService.getBooksCare(userId, limit), HttpStatus.OK);
+    }
 }

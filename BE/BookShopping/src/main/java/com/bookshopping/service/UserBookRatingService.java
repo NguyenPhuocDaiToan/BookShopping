@@ -4,6 +4,7 @@ import com.bookshopping.model.UserBookRating;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 
+import java.util.List;
 import java.util.Optional;
 
 public interface UserBookRatingService {
@@ -16,4 +17,5 @@ public interface UserBookRatingService {
     UserBookRating updateRating(int userId, int bookId, float newRatingRecommendation);
 
     Page<UserBookRating> paginate(Pageable page);
+    List<Integer> getBooksCare(int userId, int limit);
 }

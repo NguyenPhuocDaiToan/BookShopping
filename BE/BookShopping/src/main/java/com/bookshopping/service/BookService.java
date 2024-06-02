@@ -11,7 +11,6 @@ public interface BookService {
 
     int updateAmount(Integer bookId, int amount);
     int subAmount(Integer bookId, int amount);
-
     Book findById(Integer id);
     List<Book> findAll();
     List<Book> findBookByNumberRecord(int numberRecord);
@@ -22,4 +21,6 @@ public interface BookService {
     Page<Book> paginate(Pageable page);
 
     List<Integer> findRandomBooksByCategoryIds(List<Integer> ids, int numberRecord);
+
+    List<Book> getBooksRecommend(List<Integer> ids);
 }
