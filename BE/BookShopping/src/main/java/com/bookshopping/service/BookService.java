@@ -22,5 +22,7 @@ public interface BookService {
 
     List<Integer> findRandomBooksByCategoryIds(List<Integer> ids, int numberRecord);
 
-    List<Book> getBooksRecommend(List<Integer> ids);
+    List<Book> getBooksRecommend(String idBooks, int page, int size);
+
+    List<Book> findBookByIds(List<Integer> ids);
 }

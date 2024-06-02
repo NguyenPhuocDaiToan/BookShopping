@@ -2,12 +2,15 @@ package com.bookshopping.service.impl;
 
 import com.bookshopping.model.Book;
 import com.bookshopping.repository.BookRepository;
+import com.bookshopping.service.AIService;
 import com.bookshopping.service.BookService;
+import com.bookshopping.util.RecommendCacheService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
 
+import java.util.Arrays;
 import java.util.List;
 import java.util.stream.Collectors;
 
@@ -15,6 +18,12 @@ import java.util.stream.Collectors;
 public class BookServiceImpl implements BookService {
     @Autowired
     private BookRepository bookRepository;
+
+    @Autowired
+    private RecommendCacheService cacheRecommend;
+
+    @Autowired
+    private AIService aiService;
 
     @Override
     public Book save(Book book) {
@@ -77,7 +86,24 @@ public class BookServiceImpl implements BookService {
     }
 
     @Override
-    public List<Book> getBooksRecommend(List<Integer> ids) {
+    public List<Book> getBooksRecommend(String idBooks, int page, int size) {
+        List<Integer> idsRecommend = cacheRecommend.getRecommend(idBooks);
+
+        if (idsRecommend.isEmpty() || idsRecommend.size() < (page + 1) * size) {
+            List<Integer> list = Arrays.asList(idBooks.split(",")).stream().map(s -> Integer.parseInt(s.trim())).collect(Collectors.toList());
+            List<Integer> bookIdsRecommend = aiService.getRecommendation(list, (page + 1) * size + 100);
+            cacheRecommend.setRecommend(idBooks, bookIdsRecommend);
+
+            List<Integer> ids = bookIdsRecommend.subList(page * size, (page + 1) * size);
+            return this.findBookByIds(ids);
+        }
+
+        List<Integer> ids = idsRecommend.subList(page * size, (page + 1) * size);
+        return this.findBookByIds(ids);
+    }
+
+    @Override
+    public List<Book> findBookByIds(List<Integer> ids) {
         return bookRepository.findByIdIn(ids);
     }
 }

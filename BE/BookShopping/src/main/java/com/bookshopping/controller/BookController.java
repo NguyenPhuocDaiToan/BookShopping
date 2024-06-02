@@ -110,15 +110,8 @@ public class BookController {
     }
 
     @GetMapping("/recommend")
-    public ResponseEntity<List<Book>> recommendation(@RequestParam String idBooks) {
-        List<Integer> list = Arrays.asList(idBooks.split(",")).stream().map(s -> Integer.parseInt(s.trim())).collect(Collectors.toList());
-
-
-        System.out.println(list);
-
-        List<Integer> bookIdsRecommend = aiService.getRecommendation(list);
-
-        List<Book> books = bookService.getBooksRecommend(bookIdsRecommend);
+    public ResponseEntity<List<Book>> recommendation(@RequestParam String idBooks, @RequestParam Integer page, @RequestParam Integer size) {
+        List<Book> books = bookService.getBooksRecommend(idBooks, page, size);
         return new ResponseEntity<>(books, HttpStatus.OK);
     }
 
@@ -126,7 +119,7 @@ public class BookController {
     public ResponseEntity<List<Book>> getRelative(@RequestParam Integer bookId) {
         List<RelativeResponse> relatives = aiService.getBooksRelative(bookId);
         List<Integer> listIds = relatives.stream().map(RelativeResponse::get_id).collect(Collectors.toList());
-        List<Book> books = bookService.getBooksRecommend(listIds);
+        List<Book> books = bookService.findBookByIds(listIds);
         return new ResponseEntity<>(books, HttpStatus.OK);
     }
 
@@ -136,7 +129,7 @@ public class BookController {
         List<SemanticResponse> semantics = aiService.getBooksSemantic(book.getDescription());
         List<Integer> listIds = semantics.stream().map(SemanticResponse::get_id).collect(Collectors.toList());
 
-        List<Book> books = bookService.getBooksRecommend(listIds);
+        List<Book> books = bookService.findBookByIds(listIds);
         return new ResponseEntity<>(books, HttpStatus.OK);
     }
 }
