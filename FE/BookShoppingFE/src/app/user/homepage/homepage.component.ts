@@ -132,6 +132,12 @@ export class HomepageComponent implements OnInit, AfterViewInit {
   }
 
   viewMore() {
+    if (this.isRecommend) {
+      this.page = this.page + 1;
+      this.getBooksRecommend();
+      return;
+    }
+    
     if (this.page < this.totalPages - 1) {
       this.page = this.page + 1;
       this.getBooks();
