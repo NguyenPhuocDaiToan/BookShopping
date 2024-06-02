@@ -16,6 +16,7 @@ import {NgxPayPalModule} from 'ngx-paypal';
 import { PaymentComponent } from './payment/payment.component';
 import { ViewHistoryTransactionComponent } from './view-history-transaction/view-history-transaction.component';
 import { ViewHistoryTransactionDetailComponent } from './view-history-transaction-detail/view-history-transaction-detail.component';
+import { SliderBookComponent } from './layers/slider-book/slider-book.component';
 
 
 @NgModule({
@@ -29,7 +30,8 @@ import { ViewHistoryTransactionDetailComponent } from './view-history-transactio
     SidebarComponent,
     PaymentComponent,
     ViewHistoryTransactionComponent,
-    ViewHistoryTransactionDetailComponent
+    ViewHistoryTransactionDetailComponent,
+    SliderBookComponent
   ],
   imports: [
     CommonModule,

@@ -374,6 +374,19 @@ a {
   animation-delay: -0.2s;
 }
 
+.loader {
+    border: 3px solid #f3f3f3;
+    border-radius: 50%;
+    border-top: 3px solid rgb(8, 79, 154);
+    width: 16px;
+    height: 16px;
+    -webkit-animation: spin 2s linear infinite;
+    /* Safari */
+    animation: spin 2s linear infinite;
+    margin-right: 8px
+}
+
+
 @keyframes wave {
   from {
     transform: translateY(-100%);

@@ -1,5 +1,10 @@
 import { Component, ElementRef, OnInit } from "@angular/core";
-import { ActivatedRoute, ParamMap, Router } from "@angular/router";
+import {
+  ActivatedRoute,
+  NavigationEnd,
+  ParamMap,
+  Router,
+} from "@angular/router";
 import { Book } from "../../models/book";
 import { BookService } from "../service/book.service";
 import { CartService } from "../service/cart.service";
@@ -7,6 +12,10 @@ import { TokenStorageService } from "../../services/token-storage.service";
 import { ToastrService } from "ngx-toastr";
 import { CartItem } from "../../models/cart-item";
 import { CartStorageService } from "../../services/cart-storage.service";
+import { UserBookRatingService } from "../service/user_book_rating.service";
+import { User } from "src/app/models/user";
+import { WEIGHT_RATING } from "src/app/contants/variable";
+import { BookCareStorageService } from "src/app/services/book-care-storage.service";
 
 @Component({
   selector: "app-view-detail",
@@ -18,99 +27,100 @@ export class ViewDetailComponent implements OnInit {
   book: Book;
   descriptions: string[];
   isViewDesc = false;
-  sliderBooksCategory: Book[];
-  sliderBooksAuthor: Book[];
-  indexSliderBooksCategory = 0;
-  // indexSliderBooksAuthor = 0;
+  booksCategory: Book[];
+  booksAuthor: Book[];
+  booksRelative: Book[];
+  indexbooksCategory = 0;
+  user: User;
+
+  titlebooksCategory = "Sách cùng thể loại";
+  titlebooksAuthor = "Sách cùng tác giả";
+  titlebooksRelative = "Sách liên quan";
+
+  // indexbooksAuthor = 0;
   numberRatings: number[] = [1, 2, 3, 4, 5];
 
   constructor(
     private route: ActivatedRoute,
     private bookService: BookService,
     private el: ElementRef,
-    private router: Router,
     private cartService: CartService,
     private storageService: TokenStorageService,
     private toastrService: ToastrService,
-    private cartStorageService: CartStorageService
+    private cartStorageService: CartStorageService,
+    private userBookRatingService: UserBookRatingService,
+    private bookCareStorageService: BookCareStorageService,
+    private router: Router
   ) {}
 
   ngOnInit(): void {
-    this.reset();
+    this.router.events.subscribe((event) => {
+      if (event instanceof NavigationEnd) {
+        window.scrollTo({
+          top: 0,
+          behavior: "smooth",
+        }); // Di chuyển màn hình lên đầu trang
+      }
+    });
 
     this.route.paramMap.subscribe((param: ParamMap) => {
       this.id = Number(param.get("id"));
+
+      this.getBooksRelative();
+
       this.bookService.findById(this.id).subscribe((b) => {
         this.book = b;
         this.descriptions = b.description.split("\n");
-        this.bookService
-          .findBooksSameCategoryLimit(b.category.name)
-          .subscribe((bs) => {
-            this.sliderBooksCategory = bs;
-          });
-        this.bookService.findBooksSameAuthor(b.author).subscribe((bs) => {
-          this.sliderBooksAuthor = bs;
-          this.el.nativeElement.querySelector(".row-same-author").scrollTop = 0;
-        });
-
         this.book.moreInformation = JSON.parse(this.book.moreInformation);
+
+        this.saveBookCare(WEIGHT_RATING.RATING_CARE);
+        this.getBooksSameCategory(b.category.name);
+        this.getBooksSameAuthor(b.author);
       });
     });
   }
 
-  reset() {
-    this.el.nativeElement.querySelector(".input-change-quantity").value = 1;
-    this.indexSliderBooksCategory = 0;
-    window.scroll({
-      top: 0,
-      behavior: "smooth",
-    });
-
-    const products = this.el.nativeElement.querySelectorAll(
-      ".row-same-category .product-item-wrapper"
-    );
-    for (const p of products) {
-      p.style.left = 0 + "px";
+  saveBookCare(point: number) {
+    if (this.storageService.checkIsLogin()) {
+      this.user = this.storageService.getUser();
+      this.userBookRatingService
+        .updateRating(this.user.id, this.id, point)
+        .subscribe(
+          (next) => {
+            console.log("RATING OK", point);
+          },
+          (error) => {
+            console.log("RATING ERROR");
+          }
+        );
+      this.bookCareStorageService.saveBooksCare(this.id);
+    } else {
+      this.bookCareStorageService.saveBooksCare(this.id);
     }
+  }
+
+  getBooksSameCategory(categoryName: any) {
+    this.bookService
+      .findBooksSameCategoryLimit(categoryName)
+      .subscribe((bs) => {
+        this.booksCategory = bs;
+      });
+  }
+
+  getBooksSameAuthor(author: any) {
+    this.bookService.findBooksSameAuthor(author).subscribe((bs) => {
+      this.booksAuthor = bs;
+    });
+  }
+
+  getBooksRelative() {
+    this.bookService.findBooksRelative(this.id).subscribe((bs) => {
+      this.booksRelative = bs;
+    });
   }
 
   changeView() {
     this.isViewDesc = !this.isViewDesc;
-  }
-
-  previousBooksCategory() {
-    if (this.indexSliderBooksCategory > 0) {
-      this.indexSliderBooksCategory--;
-      const products = this.el.nativeElement.querySelectorAll(
-        ".row-same-category .product-item-wrapper"
-      );
-      const width = products[0].offsetWidth + 16.2;
-
-      for (const p of products) {
-        const result = Number(p.style.left.replace("px", "")) + width;
-        p.style.left = result + "px";
-      }
-    }
-  }
-
-  nextBooksCategory() {
-    if (this.indexSliderBooksCategory < this.sliderBooksCategory.length - 6) {
-      this.indexSliderBooksCategory++;
-      const products = this.el.nativeElement.querySelectorAll(
-        ".row-same-category .product-item-wrapper"
-      );
-      const width = products[0].offsetWidth + 16.2;
-
-      for (const p of products) {
-        const result = Number(p.style.left.replace("px", "")) - width;
-        p.style.left = result + "px";
-      }
-    }
-  }
-
-  viewAnotherBook(id: number) {
-    this.router.navigateByUrl("/detail/" + id);
-    this.ngOnInit();
   }
 
   addToCart() {
@@ -129,6 +139,8 @@ export class ViewDetailComponent implements OnInit {
           .subscribe((next) => {
             this.toastrService.success("Thêm vào giỏ hàng thành công !!!");
             this.cartService.reloadCartItems();
+
+            this.saveBookCare(WEIGHT_RATING.RATING_ADD_TO_CART);
           });
       } else {
         const cartItem: CartItem = {
@@ -138,6 +150,7 @@ export class ViewDetailComponent implements OnInit {
         this.cartStorageService.addToCart(cartItem);
         this.toastrService.success("Thêm vào giỏ hàng thành công !!!");
         this.cartService.cartItems$.next(this.cartStorageService.cartItems);
+        this.saveBookCare(WEIGHT_RATING.RATING_ADD_TO_CART);
       }
     }
   }

@@ -28,7 +28,7 @@ export class CartStorageService {
     return this.cartItems;
   }
 
-  setItems(cartItems) {
+  setItems(cartItems: any) {
     this.cartItems = cartItems;
   }
 
@@ -45,7 +45,7 @@ export class CartStorageService {
     localStorage.removeItem('cart_items');
   }
 
-  removeItem(item) {
+  removeItem(item: any) {
     const index = this.cartItems.findIndex(o => o.id === item.id);
 
     if (index > -1) {
@@ -54,7 +54,7 @@ export class CartStorageService {
     }
   }
 
-  itemInCart(item): boolean {
+  itemInCart(item: any): boolean {
     return this.cartItems.findIndex(o => o.id === item.id) > -1;
   }
 }
