@@ -5017,6 +5017,10 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
           this.bookService.findBooksRecommend(this.page, this.pageSize).subscribe(function (books) {
             _this11.books = _this11.books.concat(books);
             _this11.isLoading = false;
+
+            if (books.length < _this11.pageSize) {
+              _this11.getBooks();
+            }
           }, function (error) {
             _this11.toastrService.error("Lỗi tìm kiếm sản phẩm");
 

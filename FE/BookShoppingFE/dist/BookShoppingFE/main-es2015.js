@@ -2580,6 +2580,9 @@ class HomepageComponent {
         this.bookService.findBooksRecommend(this.page, this.pageSize).subscribe((books) => {
             this.books = this.books.concat(books);
             this.isLoading = false;
+            if (books.length < this.pageSize) {
+                this.getBooks();
+            }
         }, (error) => {
             this.toastrService.error("Lỗi tìm kiếm sản phẩm");
             this.isLoading = false;
