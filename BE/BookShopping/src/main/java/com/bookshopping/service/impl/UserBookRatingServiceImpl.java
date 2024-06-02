@@ -8,6 +8,7 @@ import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
 
+import java.util.List;
 import java.util.Optional;
 
 @Service
@@ -48,5 +49,10 @@ public class UserBookRatingServiceImpl implements UserBookRatingService {
     @Override
     public Page<UserBookRating> paginate(Pageable page) {
         return userBookRatingRepository.findAll(page);
+    }
+
+    @Override
+    public List<Integer> getBooksCare(int userId, int limit) {
+        return userBookRatingRepository.getBooksCare(userId, limit);
     }
 }
