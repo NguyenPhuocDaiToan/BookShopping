@@ -49,6 +49,19 @@ public class BookController {
         return new ResponseEntity<>(new ResponseMessage("Thêm mới sách thành công !!!"), HttpStatus.OK);
     }
 
+    
+    @PostMapping("/create-multi")
+    public ResponseEntity<ResponseMessage> createMultiBook(@RequestBody List<Book> books) {
+        for (int i = 0; i < books.size(); i++) {
+            System.out.println("Create new book");
+            Book bookCreate = bookService.save(books.get(i));
+            //            if(bookCreate == null)
+            //                return new ResponseEntity<>(new ResponseMessage("Thêm sách thất bại."), HttpStatus.BAD_REQUEST);
+            //            return new ResponseEntity<>(new ResponseMessage("Thêm mới sách thành công !!!"), HttpStatus.OK);
+        }
+        return new ResponseEntity<>(new ResponseMessage("Thêm mới sách thành công !!!"), HttpStatus.OK);
+    }
+    
     @GetMapping("/findById")
     public ResponseEntity<Book> findById(@RequestParam Integer id) {
         System.out.println("Find by id");
