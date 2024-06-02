@@ -25,7 +25,7 @@ public class AIServiceImpl implements AIService {
     public List<Integer> getRecommendation(List<Integer> bookIds, int topK) {
         RecommendationRequest request = new RecommendationRequest();
         request.setBook_ids(bookIds);
-        request.setTopK(100);
+        request.setTopK(topK);
 
         HttpHeaders headers = new HttpHeaders();
         headers.setContentType(MediaType.APPLICATION_JSON);
