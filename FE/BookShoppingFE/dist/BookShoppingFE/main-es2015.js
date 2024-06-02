@@ -123,16 +123,18 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/__ivy_ngcc__/fesm2015/core.js");
 /* harmony import */ var _app_routing_module__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./app-routing.module */ "./src/app/app-routing.module.ts");
 /* harmony import */ var _app_component__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./app.component */ "./src/app/app.component.ts");
-/* harmony import */ var _angular_common_http__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @angular/common/http */ "./node_modules/@angular/common/__ivy_ngcc__/fesm2015/http.js");
-/* harmony import */ var _helpers_auth_interceptor__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./helpers/auth.interceptor */ "./src/app/helpers/auth.interceptor.ts");
-/* harmony import */ var _commons_header_header_component__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./commons/header/header.component */ "./src/app/commons/header/header.component.ts");
-/* harmony import */ var _commons_footer_footer_component__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ./commons/footer/footer.component */ "./src/app/commons/footer/footer.component.ts");
-/* harmony import */ var _user_user_module__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ./user/user.module */ "./src/app/user/user.module.ts");
-/* harmony import */ var ngx_toastr__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ngx-toastr */ "./node_modules/ngx-toastr/__ivy_ngcc__/fesm2015/ngx-toastr.js");
-/* harmony import */ var _angular_platform_browser_animations__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! @angular/platform-browser/animations */ "./node_modules/@angular/platform-browser/__ivy_ngcc__/fesm2015/animations.js");
-/* harmony import */ var _angular_forms__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! @angular/forms */ "./node_modules/@angular/forms/__ivy_ngcc__/fesm2015/forms.js");
-/* harmony import */ var _commons_authentication_authentication_component__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! ./commons/authentication/authentication.component */ "./src/app/commons/authentication/authentication.component.ts");
-/* harmony import */ var _share_module_share_module_module__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(/*! ./share-module/share-module.module */ "./src/app/share-module/share-module.module.ts");
+/* harmony import */ var _helpers_auth_interceptor__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./helpers/auth.interceptor */ "./src/app/helpers/auth.interceptor.ts");
+/* harmony import */ var _commons_header_header_component__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./commons/header/header.component */ "./src/app/commons/header/header.component.ts");
+/* harmony import */ var _commons_footer_footer_component__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./commons/footer/footer.component */ "./src/app/commons/footer/footer.component.ts");
+/* harmony import */ var _user_user_module__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ./user/user.module */ "./src/app/user/user.module.ts");
+/* harmony import */ var ngx_toastr__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ngx-toastr */ "./node_modules/ngx-toastr/__ivy_ngcc__/fesm2015/ngx-toastr.js");
+/* harmony import */ var _angular_platform_browser_animations__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! @angular/platform-browser/animations */ "./node_modules/@angular/platform-browser/__ivy_ngcc__/fesm2015/animations.js");
+/* harmony import */ var _angular_forms__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! @angular/forms */ "./node_modules/@angular/forms/__ivy_ngcc__/fesm2015/forms.js");
+/* harmony import */ var _commons_authentication_authentication_component__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! ./commons/authentication/authentication.component */ "./src/app/commons/authentication/authentication.component.ts");
+/* harmony import */ var _share_module_share_module_module__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! ./share-module/share-module.module */ "./src/app/share-module/share-module.module.ts");
+/* harmony import */ var _helpers_cache_interceptor__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(/*! ./helpers/cache.interceptor */ "./src/app/helpers/cache.interceptor.ts");
+/* harmony import */ var _angular_common_http__WEBPACK_IMPORTED_MODULE_14__ = __webpack_require__(/*! @angular/common/http */ "./node_modules/@angular/common/__ivy_ngcc__/fesm2015/http.js");
+
 
 
 
@@ -152,61 +154,61 @@ __webpack_require__.r(__webpack_exports__);
 class AppModule {
 }
 AppModule.ɵmod = _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵdefineNgModule"]({ type: AppModule, bootstrap: [_app_component__WEBPACK_IMPORTED_MODULE_3__["AppComponent"]] });
-AppModule.ɵinj = _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵdefineInjector"]({ factory: function AppModule_Factory(t) { return new (t || AppModule)(); }, providers: [_helpers_auth_interceptor__WEBPACK_IMPORTED_MODULE_5__["authInterceptorProviders"]], imports: [[
+AppModule.ɵinj = _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵdefineInjector"]({ factory: function AppModule_Factory(t) { return new (t || AppModule)(); }, providers: [_helpers_auth_interceptor__WEBPACK_IMPORTED_MODULE_4__["authInterceptorProviders"], _helpers_cache_interceptor__WEBPACK_IMPORTED_MODULE_13__["cacheInterceptor"]], imports: [[
             _angular_platform_browser__WEBPACK_IMPORTED_MODULE_0__["BrowserModule"],
             _app_routing_module__WEBPACK_IMPORTED_MODULE_2__["AppRoutingModule"],
-            _angular_common_http__WEBPACK_IMPORTED_MODULE_4__["HttpClientModule"],
-            _angular_forms__WEBPACK_IMPORTED_MODULE_11__["FormsModule"],
-            _angular_forms__WEBPACK_IMPORTED_MODULE_11__["ReactiveFormsModule"],
-            _user_user_module__WEBPACK_IMPORTED_MODULE_8__["UserModule"],
-            _angular_platform_browser_animations__WEBPACK_IMPORTED_MODULE_10__["BrowserAnimationsModule"],
-            _share_module_share_module_module__WEBPACK_IMPORTED_MODULE_13__["ShareModuleModule"],
-            ngx_toastr__WEBPACK_IMPORTED_MODULE_9__["ToastrModule"].forRoot({
+            _angular_common_http__WEBPACK_IMPORTED_MODULE_14__["HttpClientModule"],
+            _angular_forms__WEBPACK_IMPORTED_MODULE_10__["FormsModule"],
+            _angular_forms__WEBPACK_IMPORTED_MODULE_10__["ReactiveFormsModule"],
+            _user_user_module__WEBPACK_IMPORTED_MODULE_7__["UserModule"],
+            _angular_platform_browser_animations__WEBPACK_IMPORTED_MODULE_9__["BrowserAnimationsModule"],
+            _share_module_share_module_module__WEBPACK_IMPORTED_MODULE_12__["ShareModuleModule"],
+            ngx_toastr__WEBPACK_IMPORTED_MODULE_8__["ToastrModule"].forRoot({
                 timeOut: 2000,
                 progressBar: true,
-                progressAnimation: 'increasing',
-                preventDuplicates: true
-            })
+                progressAnimation: "increasing",
+                preventDuplicates: true,
+            }),
         ]] });
 (function () { (typeof ngJitMode === "undefined" || ngJitMode) && _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵsetNgModuleScope"](AppModule, { declarations: [_app_component__WEBPACK_IMPORTED_MODULE_3__["AppComponent"],
-        _commons_header_header_component__WEBPACK_IMPORTED_MODULE_6__["HeaderComponent"],
-        _commons_footer_footer_component__WEBPACK_IMPORTED_MODULE_7__["FooterComponent"],
-        _commons_authentication_authentication_component__WEBPACK_IMPORTED_MODULE_12__["AuthenticationComponent"]], imports: [_angular_platform_browser__WEBPACK_IMPORTED_MODULE_0__["BrowserModule"],
+        _commons_header_header_component__WEBPACK_IMPORTED_MODULE_5__["HeaderComponent"],
+        _commons_footer_footer_component__WEBPACK_IMPORTED_MODULE_6__["FooterComponent"],
+        _commons_authentication_authentication_component__WEBPACK_IMPORTED_MODULE_11__["AuthenticationComponent"]], imports: [_angular_platform_browser__WEBPACK_IMPORTED_MODULE_0__["BrowserModule"],
         _app_routing_module__WEBPACK_IMPORTED_MODULE_2__["AppRoutingModule"],
-        _angular_common_http__WEBPACK_IMPORTED_MODULE_4__["HttpClientModule"],
-        _angular_forms__WEBPACK_IMPORTED_MODULE_11__["FormsModule"],
-        _angular_forms__WEBPACK_IMPORTED_MODULE_11__["ReactiveFormsModule"],
-        _user_user_module__WEBPACK_IMPORTED_MODULE_8__["UserModule"],
-        _angular_platform_browser_animations__WEBPACK_IMPORTED_MODULE_10__["BrowserAnimationsModule"],
-        _share_module_share_module_module__WEBPACK_IMPORTED_MODULE_13__["ShareModuleModule"], ngx_toastr__WEBPACK_IMPORTED_MODULE_9__["ToastrModule"]] }); })();
+        _angular_common_http__WEBPACK_IMPORTED_MODULE_14__["HttpClientModule"],
+        _angular_forms__WEBPACK_IMPORTED_MODULE_10__["FormsModule"],
+        _angular_forms__WEBPACK_IMPORTED_MODULE_10__["ReactiveFormsModule"],
+        _user_user_module__WEBPACK_IMPORTED_MODULE_7__["UserModule"],
+        _angular_platform_browser_animations__WEBPACK_IMPORTED_MODULE_9__["BrowserAnimationsModule"],
+        _share_module_share_module_module__WEBPACK_IMPORTED_MODULE_12__["ShareModuleModule"], ngx_toastr__WEBPACK_IMPORTED_MODULE_8__["ToastrModule"]] }); })();
 /*@__PURE__*/ (function () { _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵsetClassMetadata"](AppModule, [{
         type: _angular_core__WEBPACK_IMPORTED_MODULE_1__["NgModule"],
         args: [{
                 declarations: [
                     _app_component__WEBPACK_IMPORTED_MODULE_3__["AppComponent"],
-                    _commons_header_header_component__WEBPACK_IMPORTED_MODULE_6__["HeaderComponent"],
-                    _commons_footer_footer_component__WEBPACK_IMPORTED_MODULE_7__["FooterComponent"],
-                    _commons_authentication_authentication_component__WEBPACK_IMPORTED_MODULE_12__["AuthenticationComponent"],
+                    _commons_header_header_component__WEBPACK_IMPORTED_MODULE_5__["HeaderComponent"],
+                    _commons_footer_footer_component__WEBPACK_IMPORTED_MODULE_6__["FooterComponent"],
+                    _commons_authentication_authentication_component__WEBPACK_IMPORTED_MODULE_11__["AuthenticationComponent"],
                 ],
                 imports: [
                     _angular_platform_browser__WEBPACK_IMPORTED_MODULE_0__["BrowserModule"],
                     _app_routing_module__WEBPACK_IMPORTED_MODULE_2__["AppRoutingModule"],
-                    _angular_common_http__WEBPACK_IMPORTED_MODULE_4__["HttpClientModule"],
-                    _angular_forms__WEBPACK_IMPORTED_MODULE_11__["FormsModule"],
-                    _angular_forms__WEBPACK_IMPORTED_MODULE_11__["ReactiveFormsModule"],
-                    _user_user_module__WEBPACK_IMPORTED_MODULE_8__["UserModule"],
-                    _angular_platform_browser_animations__WEBPACK_IMPORTED_MODULE_10__["BrowserAnimationsModule"],
-                    _share_module_share_module_module__WEBPACK_IMPORTED_MODULE_13__["ShareModuleModule"],
-                    ngx_toastr__WEBPACK_IMPORTED_MODULE_9__["ToastrModule"].forRoot({
+                    _angular_common_http__WEBPACK_IMPORTED_MODULE_14__["HttpClientModule"],
+                    _angular_forms__WEBPACK_IMPORTED_MODULE_10__["FormsModule"],
+                    _angular_forms__WEBPACK_IMPORTED_MODULE_10__["ReactiveFormsModule"],
+                    _user_user_module__WEBPACK_IMPORTED_MODULE_7__["UserModule"],
+                    _angular_platform_browser_animations__WEBPACK_IMPORTED_MODULE_9__["BrowserAnimationsModule"],
+                    _share_module_share_module_module__WEBPACK_IMPORTED_MODULE_12__["ShareModuleModule"],
+                    ngx_toastr__WEBPACK_IMPORTED_MODULE_8__["ToastrModule"].forRoot({
                         timeOut: 2000,
                         progressBar: true,
-                        progressAnimation: 'increasing',
-                        preventDuplicates: true
-                    })
+                        progressAnimation: "increasing",
+                        preventDuplicates: true,
+                    }),
                 ],
-                providers: [_helpers_auth_interceptor__WEBPACK_IMPORTED_MODULE_5__["authInterceptorProviders"]],
+                providers: [_helpers_auth_interceptor__WEBPACK_IMPORTED_MODULE_4__["authInterceptorProviders"], _helpers_cache_interceptor__WEBPACK_IMPORTED_MODULE_13__["cacheInterceptor"]],
                 exports: [],
-                bootstrap: [_app_component__WEBPACK_IMPORTED_MODULE_3__["AppComponent"]]
+                bootstrap: [_app_component__WEBPACK_IMPORTED_MODULE_3__["AppComponent"]],
             }]
     }], null, null); })();
 
@@ -1759,6 +1761,60 @@ const authInterceptorProviders = [
 
 /***/ }),
 
+/***/ "./src/app/helpers/cache.interceptor.ts":
+/*!**********************************************!*\
+  !*** ./src/app/helpers/cache.interceptor.ts ***!
+  \**********************************************/
+/*! exports provided: CacheInterceptor, cacheInterceptor */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "CacheInterceptor", function() { return CacheInterceptor; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "cacheInterceptor", function() { return cacheInterceptor; });
+/* harmony import */ var _angular_common_http__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @angular/common/http */ "./node_modules/@angular/common/__ivy_ngcc__/fesm2015/http.js");
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/__ivy_ngcc__/fesm2015/core.js");
+/* harmony import */ var rxjs__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! rxjs */ "./node_modules/rxjs/_esm2015/index.js");
+/* harmony import */ var rxjs_operators__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! rxjs/operators */ "./node_modules/rxjs/_esm2015/operators/index.js");
+
+
+
+
+
+class CacheInterceptor {
+    constructor() {
+        this.cache = new Map();
+    }
+    intercept(req, next) {
+        // Only cache GET requests
+        if (req.method !== "GET") {
+            return next.handle(req);
+        }
+        const cachedResponse = this.cache.get(req.urlWithParams);
+        if (cachedResponse) {
+            // Serve from cache
+            return Object(rxjs__WEBPACK_IMPORTED_MODULE_2__["of"])(cachedResponse);
+        }
+        return next.handle(req).pipe(Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_3__["tap"])((event) => {
+            if (event instanceof _angular_common_http__WEBPACK_IMPORTED_MODULE_0__["HttpResponse"]) {
+                // Cache the new response
+                this.cache.set(req.urlWithParams, event);
+            }
+        }));
+    }
+}
+CacheInterceptor.ɵfac = function CacheInterceptor_Factory(t) { return new (t || CacheInterceptor)(); };
+CacheInterceptor.ɵprov = _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵdefineInjectable"]({ token: CacheInterceptor, factory: CacheInterceptor.ɵfac });
+/*@__PURE__*/ (function () { _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵsetClassMetadata"](CacheInterceptor, [{
+        type: _angular_core__WEBPACK_IMPORTED_MODULE_1__["Injectable"]
+    }], null, null); })();
+const cacheInterceptor = [
+    { provide: _angular_common_http__WEBPACK_IMPORTED_MODULE_0__["HTTP_INTERCEPTORS"], useClass: CacheInterceptor, multi: true },
+];
+
+
+/***/ }),
+
 /***/ "./src/app/services/authen.service.ts":
 /*!********************************************!*\
   !*** ./src/app/services/authen.service.ts ***!
@@ -2940,12 +2996,12 @@ class PaymentComponent {
     ngOnInit() {
         this.priceUSD = (this.price / 23000).toFixed(2);
         Object(creditcardpayments_creditCardPayments__WEBPACK_IMPORTED_MODULE_1__["render"])({
-            id: '#paypalBtn',
-            currency: 'USD',
+            id: "#paypalBtn",
+            currency: "USD",
             value: this.priceUSD,
             onApprove: (details) => {
                 this.newItemEvent.emit();
-            }
+            },
         });
     }
 }
@@ -3001,9 +3057,9 @@ PaymentComponent.ɵcmp = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdefineC
 /*@__PURE__*/ (function () { _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵsetClassMetadata"](PaymentComponent, [{
         type: _angular_core__WEBPACK_IMPORTED_MODULE_0__["Component"],
         args: [{
-                selector: 'app-payment',
-                templateUrl: './payment.component.html',
-                styleUrls: ['./payment.component.css']
+                selector: "app-payment",
+                templateUrl: "./payment.component.html",
+                styleUrls: ["./payment.component.css"],
             }]
     }], function () { return []; }, { cartItems: [{
             type: _angular_core__WEBPACK_IMPORTED_MODULE_0__["Input"]
@@ -3851,36 +3907,40 @@ class ViewCartComponent {
         }
     }
     getCartByUserId() {
-        this.cartService.getCartItemByUserId(this.storageService.getUser().id).subscribe(items => {
+        this.cartService
+            .getCartItemByUserId(this.storageService.getUser().id)
+            .subscribe((items) => {
             this.cartItems = items;
             this.cartService.cartItems$.next(items);
         });
     }
     openModalDelete(id) {
         this.idCartItemDelete = id;
-        this.book = this.cartItems.find(c => c.id === id).book;
-        const modal = this.el.nativeElement.querySelector('.modal.modal-delete');
-        modal.style.display = 'block';
+        this.book = this.cartItems.find((c) => c.id === id).book;
+        const modal = this.el.nativeElement.querySelector(".modal.modal-delete");
+        modal.style.display = "block";
     }
     hiddenModalDelete() {
-        const modal = this.el.nativeElement.querySelector('.modal.modal-delete');
-        modal.style.display = 'none';
+        const modal = this.el.nativeElement.querySelector(".modal.modal-delete");
+        modal.style.display = "none";
     }
     subQuantity(id, bookId) {
-        const inputQuantity = this.el.nativeElement.querySelector('#inputQuantity' + id);
-        const checkedItem = this.el.nativeElement.querySelector('#checkedItem' + id);
+        const inputQuantity = this.el.nativeElement.querySelector("#inputQuantity" + id);
+        const checkedItem = this.el.nativeElement.querySelector("#checkedItem" + id);
         if (this.storageService.checkIsLogin()) {
             if (inputQuantity.value > 1) {
-                this.cartService.updateCartItem(Number(inputQuantity.value) - 1, id, bookId).subscribe(next => {
-                    const cartItem = this.cartItems.find(t => t.id === id);
+                this.cartService
+                    .updateCartItem(Number(inputQuantity.value) - 1, id, bookId)
+                    .subscribe((next) => {
+                    const cartItem = this.cartItems.find((t) => t.id === id);
                     cartItem.amount--;
                     inputQuantity.value--;
                     this.cartService.reloadCartItems();
                     if (checkedItem.checked) {
                         this.totalPrice -= cartItem.book.price;
                     }
-                }, error => {
-                    this.toastrService.warning(error.error.message, 'Thông báo');
+                }, (error) => {
+                    this.toastrService.warning(error.error.message, "Thông báo");
                 });
             }
             else {
@@ -3888,7 +3948,7 @@ class ViewCartComponent {
             }
         }
         else {
-            const cartItem = this.cartItems.find(t => t.id === id);
+            const cartItem = this.cartItems.find((t) => t.id === id);
             if (cartItem.amount === 1) {
                 this.openModalDelete(id);
             }
@@ -3903,25 +3963,27 @@ class ViewCartComponent {
         }
     }
     addQuantity(id, bookId) {
-        const selector = '#inputQuantity' + id;
-        const checkedItem = this.el.nativeElement.querySelector('#checkedItem' + id);
+        const selector = "#inputQuantity" + id;
+        const checkedItem = this.el.nativeElement.querySelector("#checkedItem" + id);
         const inputQuantity = this.el.nativeElement.querySelector(selector);
         if (this.storageService.checkIsLogin()) {
-            this.cartService.updateCartItem(Number(inputQuantity.value) + 1, id, bookId).subscribe(next => {
+            this.cartService
+                .updateCartItem(Number(inputQuantity.value) + 1, id, bookId)
+                .subscribe((next) => {
                 inputQuantity.value++;
-                const cartItem = this.cartItems.find(t => t.id === id);
+                const cartItem = this.cartItems.find((t) => t.id === id);
                 cartItem.amount++;
                 this.cartService.reloadCartItems();
                 if (checkedItem.checked) {
                     this.totalPrice += cartItem.book.price;
                 }
-            }, error => {
-                this.toastrService.warning(error.error.message, 'Thông báo');
+            }, (error) => {
+                this.toastrService.warning(error.error.message, "Thông báo");
             });
         }
         else {
             inputQuantity.value++;
-            const cartItem = this.cartItems.find(t => t.id === id);
+            const cartItem = this.cartItems.find((t) => t.id === id);
             cartItem.amount++;
             if (checkedItem.checked) {
                 this.totalPrice += cartItem.book.price;
@@ -3932,29 +3994,30 @@ class ViewCartComponent {
     checkedItem(cartItem, checkbox) {
         if (checkbox.checked) {
             this.quantityCheck++;
-            this.totalPrice += (cartItem.amount * cartItem.book.price);
+            this.totalPrice += cartItem.amount * cartItem.book.price;
             this.cartItemsChecked.push(cartItem);
         }
         else {
-            this.totalPrice -= (cartItem.amount * cartItem.book.price);
+            this.totalPrice -= cartItem.amount * cartItem.book.price;
             this.quantityCheck--;
-            this.cartItemsChecked.splice(this.cartItemsChecked.findIndex(c => c.id === cartItem.id), 1);
+            this.cartItemsChecked.splice(this.cartItemsChecked.findIndex((c) => c.id === cartItem.id), 1);
         }
         let isCheckedAll = true;
-        const checkItems = this.el.nativeElement.querySelectorAll('.checked-item');
-        checkItems.forEach(c => {
+        const checkItems = this.el.nativeElement.querySelectorAll(".checked-item");
+        checkItems.forEach((c) => {
             if (c.checked === false) {
                 isCheckedAll = false;
                 return;
             }
         });
-        this.el.nativeElement.querySelector('.check-add-all-products').checked = isCheckedAll;
+        this.el.nativeElement.querySelector(".check-add-all-products").checked =
+            isCheckedAll;
     }
     checkAllProducts(event) {
-        const checkItems = this.el.nativeElement.querySelectorAll('.checked-item');
+        const checkItems = this.el.nativeElement.querySelectorAll(".checked-item");
         if (event.target.checked) {
             this.quantityCheck = this.cartItems.length;
-            checkItems.forEach(t => {
+            checkItems.forEach((t) => {
                 t.checked = true;
                 this.calculateTotalPrice();
             });
@@ -3962,26 +4025,28 @@ class ViewCartComponent {
         }
         else {
             this.cartItemsChecked = [];
-            checkItems.forEach(t => t.checked = false);
+            checkItems.forEach((t) => (t.checked = false));
             this.quantityCheck = 0;
             this.totalPrice = 0;
         }
     }
     calculateTotalPrice() {
         this.totalPrice = 0;
-        this.cartItems.forEach(c => this.totalPrice += (c.amount * c.book.price));
+        this.cartItems.forEach((c) => (this.totalPrice += c.amount * c.book.price));
     }
     removeItem() {
         this.hiddenModalDelete();
-        const index = this.cartItems.findIndex(c => c.id === this.idCartItemDelete);
-        const indexCartChecked = this.cartItemsChecked.findIndex(c => c.id === this.idCartItemDelete);
+        const index = this.cartItems.findIndex((c) => c.id === this.idCartItemDelete);
+        const indexCartChecked = this.cartItemsChecked.findIndex((c) => c.id === this.idCartItemDelete);
         if (this.storageService.checkIsLogin()) {
-            this.cartService.deleteCartItem(this.idCartItemDelete).subscribe(next => {
+            this.cartService
+                .deleteCartItem(this.idCartItemDelete)
+                .subscribe((next) => {
                 this.totalPrice -= this.cartItems[index].book.price;
                 this.cartItems.splice(index, 1);
                 this.cartItemsChecked.splice(indexCartChecked, 1);
                 this.cartService.reloadCartItems();
-                this.toastrService.success('Xoá sản phẩm khỏi giỏ hàng thành công !!!', 'Thông báo');
+                this.toastrService.success("Xoá sản phẩm khỏi giỏ hàng thành công !!!", "Thông báo");
             });
         }
         else {
@@ -3994,33 +4059,35 @@ class ViewCartComponent {
     openModalPayment() {
         this.isOpenModalPayment = true;
         if (this.totalPrice > 0) {
-            const modal = this.el.nativeElement.querySelector('.modal.modal-payment');
-            modal.style.display = 'block';
+            const modal = this.el.nativeElement.querySelector(".modal.modal-payment");
+            modal.style.display = "block";
         }
     }
     hiddenModalPayment() {
         this.isOpenModalPayment = false;
-        const modal = this.el.nativeElement.querySelector('.modal.modal-payment');
-        modal.style.display = 'none';
+        const modal = this.el.nativeElement.querySelector(".modal.modal-payment");
+        modal.style.display = "none";
     }
     paymentSuccess() {
         const orderItems = [];
         const cartItemIds = [];
-        this.cartItemsChecked.forEach(c => {
+        this.cartItemsChecked.forEach((c) => {
             orderItems.push({
                 price: c.book.price,
                 amount: c.amount,
-                book: c.book
+                book: c.book,
             });
             cartItemIds.push(c.id);
         });
         // delete cart item
-        this.cartService.deleteCartItems(cartItemIds).subscribe(next => {
+        this.cartService.deleteCartItems(cartItemIds).subscribe((next) => {
             this.getCartByUserId();
         });
         // gọi hàm order: trong hàm order thì save OrderDetail + OrderItem + Update amount book
-        this.orderService.order(this.storageService.getUser().id, this.totalPrice, orderItems).subscribe(next => {
-            this.router.navigateByUrl('/info/me/history-transaction/' + next.id);
+        this.orderService
+            .order(this.storageService.getUser().id, this.totalPrice, orderItems)
+            .subscribe((next) => {
+            this.router.navigateByUrl("/info/me/history-transaction/" + next.id);
         });
         // this.reset();
     }
@@ -4107,9 +4174,9 @@ ViewCartComponent.ɵcmp = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdefine
 /*@__PURE__*/ (function () { _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵsetClassMetadata"](ViewCartComponent, [{
         type: _angular_core__WEBPACK_IMPORTED_MODULE_0__["Component"],
         args: [{
-                selector: 'app-view-cart',
-                templateUrl: './view-cart.component.html',
-                styleUrls: ['./view-cart.component.css']
+                selector: "app-view-cart",
+                templateUrl: "./view-cart.component.html",
+                styleUrls: ["./view-cart.component.css"],
             }]
     }], function () { return [{ type: _service_cart_service__WEBPACK_IMPORTED_MODULE_1__["CartService"] }, { type: _services_token_storage_service__WEBPACK_IMPORTED_MODULE_2__["TokenStorageService"] }, { type: ngx_spinner__WEBPACK_IMPORTED_MODULE_3__["NgxSpinnerService"] }, { type: _angular_core__WEBPACK_IMPORTED_MODULE_0__["ElementRef"] }, { type: ngx_toastr__WEBPACK_IMPORTED_MODULE_4__["ToastrService"] }, { type: _services_cart_storage_service__WEBPACK_IMPORTED_MODULE_5__["CartStorageService"] }, { type: _service_order_service__WEBPACK_IMPORTED_MODULE_6__["OrderService"] }, { type: _angular_router__WEBPACK_IMPORTED_MODULE_7__["Router"] }]; }, null); })();
 

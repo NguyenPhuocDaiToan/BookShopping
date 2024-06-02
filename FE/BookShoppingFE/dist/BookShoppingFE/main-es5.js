@@ -278,63 +278,69 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
     /* harmony import */
 
 
-    var _angular_common_http__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(
-    /*! @angular/common/http */
-    "./node_modules/@angular/common/__ivy_ngcc__/fesm2015/http.js");
-    /* harmony import */
-
-
-    var _helpers_auth_interceptor__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(
+    var _helpers_auth_interceptor__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(
     /*! ./helpers/auth.interceptor */
     "./src/app/helpers/auth.interceptor.ts");
     /* harmony import */
 
 
-    var _commons_header_header_component__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(
+    var _commons_header_header_component__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(
     /*! ./commons/header/header.component */
     "./src/app/commons/header/header.component.ts");
     /* harmony import */
 
 
-    var _commons_footer_footer_component__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(
+    var _commons_footer_footer_component__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(
     /*! ./commons/footer/footer.component */
     "./src/app/commons/footer/footer.component.ts");
     /* harmony import */
 
 
-    var _user_user_module__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(
+    var _user_user_module__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(
     /*! ./user/user.module */
     "./src/app/user/user.module.ts");
     /* harmony import */
 
 
-    var ngx_toastr__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(
+    var ngx_toastr__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(
     /*! ngx-toastr */
     "./node_modules/ngx-toastr/__ivy_ngcc__/fesm2015/ngx-toastr.js");
     /* harmony import */
 
 
-    var _angular_platform_browser_animations__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(
+    var _angular_platform_browser_animations__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(
     /*! @angular/platform-browser/animations */
     "./node_modules/@angular/platform-browser/__ivy_ngcc__/fesm2015/animations.js");
     /* harmony import */
 
 
-    var _angular_forms__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(
+    var _angular_forms__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(
     /*! @angular/forms */
     "./node_modules/@angular/forms/__ivy_ngcc__/fesm2015/forms.js");
     /* harmony import */
 
 
-    var _commons_authentication_authentication_component__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(
+    var _commons_authentication_authentication_component__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(
     /*! ./commons/authentication/authentication.component */
     "./src/app/commons/authentication/authentication.component.ts");
     /* harmony import */
 
 
-    var _share_module_share_module_module__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(
+    var _share_module_share_module_module__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(
     /*! ./share-module/share-module.module */
     "./src/app/share-module/share-module.module.ts");
+    /* harmony import */
+
+
+    var _helpers_cache_interceptor__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(
+    /*! ./helpers/cache.interceptor */
+    "./src/app/helpers/cache.interceptor.ts");
+    /* harmony import */
+
+
+    var _angular_common_http__WEBPACK_IMPORTED_MODULE_14__ = __webpack_require__(
+    /*! @angular/common/http */
+    "./node_modules/@angular/common/__ivy_ngcc__/fesm2015/http.js");
 
     var AppModule =
     /*#__PURE__*/
@@ -350,19 +356,19 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       factory: function AppModule_Factory(t) {
         return new (t || AppModule)();
       },
-      providers: [_helpers_auth_interceptor__WEBPACK_IMPORTED_MODULE_5__["authInterceptorProviders"]],
-      imports: [[_angular_platform_browser__WEBPACK_IMPORTED_MODULE_0__["BrowserModule"], _app_routing_module__WEBPACK_IMPORTED_MODULE_2__["AppRoutingModule"], _angular_common_http__WEBPACK_IMPORTED_MODULE_4__["HttpClientModule"], _angular_forms__WEBPACK_IMPORTED_MODULE_11__["FormsModule"], _angular_forms__WEBPACK_IMPORTED_MODULE_11__["ReactiveFormsModule"], _user_user_module__WEBPACK_IMPORTED_MODULE_8__["UserModule"], _angular_platform_browser_animations__WEBPACK_IMPORTED_MODULE_10__["BrowserAnimationsModule"], _share_module_share_module_module__WEBPACK_IMPORTED_MODULE_13__["ShareModuleModule"], ngx_toastr__WEBPACK_IMPORTED_MODULE_9__["ToastrModule"].forRoot({
+      providers: [_helpers_auth_interceptor__WEBPACK_IMPORTED_MODULE_4__["authInterceptorProviders"], _helpers_cache_interceptor__WEBPACK_IMPORTED_MODULE_13__["cacheInterceptor"]],
+      imports: [[_angular_platform_browser__WEBPACK_IMPORTED_MODULE_0__["BrowserModule"], _app_routing_module__WEBPACK_IMPORTED_MODULE_2__["AppRoutingModule"], _angular_common_http__WEBPACK_IMPORTED_MODULE_14__["HttpClientModule"], _angular_forms__WEBPACK_IMPORTED_MODULE_10__["FormsModule"], _angular_forms__WEBPACK_IMPORTED_MODULE_10__["ReactiveFormsModule"], _user_user_module__WEBPACK_IMPORTED_MODULE_7__["UserModule"], _angular_platform_browser_animations__WEBPACK_IMPORTED_MODULE_9__["BrowserAnimationsModule"], _share_module_share_module_module__WEBPACK_IMPORTED_MODULE_12__["ShareModuleModule"], ngx_toastr__WEBPACK_IMPORTED_MODULE_8__["ToastrModule"].forRoot({
         timeOut: 2000,
         progressBar: true,
-        progressAnimation: 'increasing',
+        progressAnimation: "increasing",
         preventDuplicates: true
       })]]
     });
 
     (function () {
       (typeof ngJitMode === "undefined" || ngJitMode) && _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵsetNgModuleScope"](AppModule, {
-        declarations: [_app_component__WEBPACK_IMPORTED_MODULE_3__["AppComponent"], _commons_header_header_component__WEBPACK_IMPORTED_MODULE_6__["HeaderComponent"], _commons_footer_footer_component__WEBPACK_IMPORTED_MODULE_7__["FooterComponent"], _commons_authentication_authentication_component__WEBPACK_IMPORTED_MODULE_12__["AuthenticationComponent"]],
-        imports: [_angular_platform_browser__WEBPACK_IMPORTED_MODULE_0__["BrowserModule"], _app_routing_module__WEBPACK_IMPORTED_MODULE_2__["AppRoutingModule"], _angular_common_http__WEBPACK_IMPORTED_MODULE_4__["HttpClientModule"], _angular_forms__WEBPACK_IMPORTED_MODULE_11__["FormsModule"], _angular_forms__WEBPACK_IMPORTED_MODULE_11__["ReactiveFormsModule"], _user_user_module__WEBPACK_IMPORTED_MODULE_8__["UserModule"], _angular_platform_browser_animations__WEBPACK_IMPORTED_MODULE_10__["BrowserAnimationsModule"], _share_module_share_module_module__WEBPACK_IMPORTED_MODULE_13__["ShareModuleModule"], ngx_toastr__WEBPACK_IMPORTED_MODULE_9__["ToastrModule"]]
+        declarations: [_app_component__WEBPACK_IMPORTED_MODULE_3__["AppComponent"], _commons_header_header_component__WEBPACK_IMPORTED_MODULE_5__["HeaderComponent"], _commons_footer_footer_component__WEBPACK_IMPORTED_MODULE_6__["FooterComponent"], _commons_authentication_authentication_component__WEBPACK_IMPORTED_MODULE_11__["AuthenticationComponent"]],
+        imports: [_angular_platform_browser__WEBPACK_IMPORTED_MODULE_0__["BrowserModule"], _app_routing_module__WEBPACK_IMPORTED_MODULE_2__["AppRoutingModule"], _angular_common_http__WEBPACK_IMPORTED_MODULE_14__["HttpClientModule"], _angular_forms__WEBPACK_IMPORTED_MODULE_10__["FormsModule"], _angular_forms__WEBPACK_IMPORTED_MODULE_10__["ReactiveFormsModule"], _user_user_module__WEBPACK_IMPORTED_MODULE_7__["UserModule"], _angular_platform_browser_animations__WEBPACK_IMPORTED_MODULE_9__["BrowserAnimationsModule"], _share_module_share_module_module__WEBPACK_IMPORTED_MODULE_12__["ShareModuleModule"], ngx_toastr__WEBPACK_IMPORTED_MODULE_8__["ToastrModule"]]
       });
     })();
     /*@__PURE__*/
@@ -372,14 +378,14 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵsetClassMetadata"](AppModule, [{
         type: _angular_core__WEBPACK_IMPORTED_MODULE_1__["NgModule"],
         args: [{
-          declarations: [_app_component__WEBPACK_IMPORTED_MODULE_3__["AppComponent"], _commons_header_header_component__WEBPACK_IMPORTED_MODULE_6__["HeaderComponent"], _commons_footer_footer_component__WEBPACK_IMPORTED_MODULE_7__["FooterComponent"], _commons_authentication_authentication_component__WEBPACK_IMPORTED_MODULE_12__["AuthenticationComponent"]],
-          imports: [_angular_platform_browser__WEBPACK_IMPORTED_MODULE_0__["BrowserModule"], _app_routing_module__WEBPACK_IMPORTED_MODULE_2__["AppRoutingModule"], _angular_common_http__WEBPACK_IMPORTED_MODULE_4__["HttpClientModule"], _angular_forms__WEBPACK_IMPORTED_MODULE_11__["FormsModule"], _angular_forms__WEBPACK_IMPORTED_MODULE_11__["ReactiveFormsModule"], _user_user_module__WEBPACK_IMPORTED_MODULE_8__["UserModule"], _angular_platform_browser_animations__WEBPACK_IMPORTED_MODULE_10__["BrowserAnimationsModule"], _share_module_share_module_module__WEBPACK_IMPORTED_MODULE_13__["ShareModuleModule"], ngx_toastr__WEBPACK_IMPORTED_MODULE_9__["ToastrModule"].forRoot({
+          declarations: [_app_component__WEBPACK_IMPORTED_MODULE_3__["AppComponent"], _commons_header_header_component__WEBPACK_IMPORTED_MODULE_5__["HeaderComponent"], _commons_footer_footer_component__WEBPACK_IMPORTED_MODULE_6__["FooterComponent"], _commons_authentication_authentication_component__WEBPACK_IMPORTED_MODULE_11__["AuthenticationComponent"]],
+          imports: [_angular_platform_browser__WEBPACK_IMPORTED_MODULE_0__["BrowserModule"], _app_routing_module__WEBPACK_IMPORTED_MODULE_2__["AppRoutingModule"], _angular_common_http__WEBPACK_IMPORTED_MODULE_14__["HttpClientModule"], _angular_forms__WEBPACK_IMPORTED_MODULE_10__["FormsModule"], _angular_forms__WEBPACK_IMPORTED_MODULE_10__["ReactiveFormsModule"], _user_user_module__WEBPACK_IMPORTED_MODULE_7__["UserModule"], _angular_platform_browser_animations__WEBPACK_IMPORTED_MODULE_9__["BrowserAnimationsModule"], _share_module_share_module_module__WEBPACK_IMPORTED_MODULE_12__["ShareModuleModule"], ngx_toastr__WEBPACK_IMPORTED_MODULE_8__["ToastrModule"].forRoot({
             timeOut: 2000,
             progressBar: true,
-            progressAnimation: 'increasing',
+            progressAnimation: "increasing",
             preventDuplicates: true
           })],
-          providers: [_helpers_auth_interceptor__WEBPACK_IMPORTED_MODULE_5__["authInterceptorProviders"]],
+          providers: [_helpers_auth_interceptor__WEBPACK_IMPORTED_MODULE_4__["authInterceptorProviders"], _helpers_cache_interceptor__WEBPACK_IMPORTED_MODULE_13__["cacheInterceptor"]],
           exports: [],
           bootstrap: [_app_component__WEBPACK_IMPORTED_MODULE_3__["AppComponent"]]
         }]
@@ -3411,6 +3417,118 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
   },
 
   /***/
+  "./src/app/helpers/cache.interceptor.ts":
+  /*!**********************************************!*\
+    !*** ./src/app/helpers/cache.interceptor.ts ***!
+    \**********************************************/
+
+  /*! exports provided: CacheInterceptor, cacheInterceptor */
+
+  /***/
+  function srcAppHelpersCacheInterceptorTs(module, __webpack_exports__, __webpack_require__) {
+    "use strict";
+
+    __webpack_require__.r(__webpack_exports__);
+    /* harmony export (binding) */
+
+
+    __webpack_require__.d(__webpack_exports__, "CacheInterceptor", function () {
+      return CacheInterceptor;
+    });
+    /* harmony export (binding) */
+
+
+    __webpack_require__.d(__webpack_exports__, "cacheInterceptor", function () {
+      return cacheInterceptor;
+    });
+    /* harmony import */
+
+
+    var _angular_common_http__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(
+    /*! @angular/common/http */
+    "./node_modules/@angular/common/__ivy_ngcc__/fesm2015/http.js");
+    /* harmony import */
+
+
+    var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(
+    /*! @angular/core */
+    "./node_modules/@angular/core/__ivy_ngcc__/fesm2015/core.js");
+    /* harmony import */
+
+
+    var rxjs__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(
+    /*! rxjs */
+    "./node_modules/rxjs/_esm2015/index.js");
+    /* harmony import */
+
+
+    var rxjs_operators__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(
+    /*! rxjs/operators */
+    "./node_modules/rxjs/_esm2015/operators/index.js");
+
+    var CacheInterceptor =
+    /*#__PURE__*/
+    function () {
+      function CacheInterceptor() {
+        _classCallCheck(this, CacheInterceptor);
+
+        this.cache = new Map();
+      }
+
+      _createClass(CacheInterceptor, [{
+        key: "intercept",
+        value: function intercept(req, next) {
+          var _this7 = this;
+
+          // Only cache GET requests
+          if (req.method !== "GET") {
+            return next.handle(req);
+          }
+
+          var cachedResponse = this.cache.get(req.urlWithParams);
+
+          if (cachedResponse) {
+            // Serve from cache
+            return Object(rxjs__WEBPACK_IMPORTED_MODULE_2__["of"])(cachedResponse);
+          }
+
+          return next.handle(req).pipe(Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_3__["tap"])(function (event) {
+            if (event instanceof _angular_common_http__WEBPACK_IMPORTED_MODULE_0__["HttpResponse"]) {
+              // Cache the new response
+              _this7.cache.set(req.urlWithParams, event);
+            }
+          }));
+        }
+      }]);
+
+      return CacheInterceptor;
+    }();
+
+    CacheInterceptor.ɵfac = function CacheInterceptor_Factory(t) {
+      return new (t || CacheInterceptor)();
+    };
+
+    CacheInterceptor.ɵprov = _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵdefineInjectable"]({
+      token: CacheInterceptor,
+      factory: CacheInterceptor.ɵfac
+    });
+    /*@__PURE__*/
+
+    (function () {
+      _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵsetClassMetadata"](CacheInterceptor, [{
+        type: _angular_core__WEBPACK_IMPORTED_MODULE_1__["Injectable"]
+      }], null, null);
+    })();
+
+    var cacheInterceptor = [{
+      provide: _angular_common_http__WEBPACK_IMPORTED_MODULE_0__["HTTP_INTERCEPTORS"],
+      useClass: CacheInterceptor,
+      multi: true
+    }];
+    /***/
+  },
+
+  /***/
   "./src/app/services/authen.service.ts":
   /*!********************************************!*\
     !*** ./src/app/services/authen.service.ts ***!
@@ -4326,19 +4444,19 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       }, {
         key: "changePass",
         value: function changePass() {
-          var _this7 = this;
+          var _this8 = this;
 
           if (this.formPw.valid) {
             this.userService.updatePassword(this.storageService.getUser().id, this.oldPass.value, this.newPass.value, Number(this.otp.value)).subscribe(function (next) {
-              _this7.toastrService.success(next.message, 'Thông báo');
+              _this8.toastrService.success(next.message, 'Thông báo');
 
-              _this7.formSubmitted = false;
+              _this8.formSubmitted = false;
 
-              _this7.formPw.reset();
+              _this8.formPw.reset();
             }, function (error) {
-              _this7.toastrService.error(error.error.message, 'Thông báo');
+              _this8.toastrService.error(error.error.message, 'Thông báo');
 
-              _this7.formSubmitted = false;
+              _this8.formSubmitted = false;
             });
           } else {
             this.formSubmitted = true;
@@ -4350,17 +4468,17 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       }, {
         key: "getOtp",
         value: function getOtp() {
-          var _this8 = this;
+          var _this9 = this;
 
           this.el.nativeElement.querySelector('.loading-container').style.display = 'block';
           this.commonService.getOtp(this.storageService.getUser().email).subscribe(function (data) {
-            _this8.el.nativeElement.querySelector('.loading-container').style.display = 'none';
+            _this9.el.nativeElement.querySelector('.loading-container').style.display = 'none';
 
-            _this8.toastrService.success('Vui lòng kiểm tra email để lấy mã OTP', 'Thông báo');
+            _this9.toastrService.success('Vui lòng kiểm tra email để lấy mã OTP', 'Thông báo');
           }, function (error) {
-            _this8.el.nativeElement.querySelector('.loading-container').style.display = 'none';
+            _this9.el.nativeElement.querySelector('.loading-container').style.display = 'none';
 
-            _this8.toastrService.error(error.error.message, 'Thông báo');
+            _this9.toastrService.error(error.error.message, 'Thông báo');
           });
         }
       }]);
@@ -4969,7 +5087,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       _createClass(HomepageComponent, [{
         key: "ngOnInit",
         value: function ngOnInit() {
-          var _this9 = this;
+          var _this10 = this;
 
           this.user = {
             name: ""
@@ -4985,9 +5103,9 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
           if (this.bookIdsCare.length > 0) {
             this.isRecommend = true;
             this.bookService.findBooksRecommend().subscribe(function (books) {
-              _this9.books = books;
+              _this10.books = books;
               console.log(books);
-              console.log(_this9.books);
+              console.log(_this10.books);
             });
           } else {
             this.getBooks();
@@ -5001,47 +5119,47 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       }, {
         key: "getCategories",
         value: function getCategories() {
-          var _this10 = this;
+          var _this11 = this;
 
           this.bookService.getAllCategories().subscribe(function (categories) {
-            _this10.categories = categories;
+            _this11.categories = categories;
           });
         }
       }, {
         key: "getBooksRecommend",
         value: function getBooksRecommend() {
-          var _this11 = this;
+          var _this12 = this;
 
           this.isRecommend = true;
           this.isLoading = true;
           this.bookService.findBooksRecommend(this.page, this.pageSize).subscribe(function (books) {
-            _this11.books = _this11.books.concat(books);
-            _this11.isLoading = false;
+            _this12.books = _this12.books.concat(books);
+            _this12.isLoading = false;
 
-            if (books.length < _this11.pageSize) {
-              _this11.getBooks();
+            if (books.length < _this12.pageSize) {
+              _this12.getBooks();
             }
           }, function (error) {
-            _this11.toastrService.error("Lỗi tìm kiếm sản phẩm");
+            _this12.toastrService.error("Lỗi tìm kiếm sản phẩm");
 
-            _this11.isLoading = false;
+            _this12.isLoading = false;
           });
         }
       }, {
         key: "getBooks",
         value: function getBooks() {
-          var _this12 = this;
+          var _this13 = this;
 
           this.isRecommend = false;
           this.isLoading = true;
           this.bookService.paginate(this.page, this.pageSize).subscribe(function (page) {
-            _this12.books = _this12.books.concat(page.content);
-            _this12.totalPages = page.totalPages;
-            _this12.isLoading = false;
+            _this13.books = _this13.books.concat(page.content);
+            _this13.totalPages = page.totalPages;
+            _this13.isLoading = false;
           }, function (error) {
-            _this12.toastrService.error("Lỗi tìm kiếm sản phẩm");
+            _this13.toastrService.error("Lỗi tìm kiếm sản phẩm");
 
-            _this12.isLoading = false;
+            _this13.isLoading = false;
           });
         }
       }, {
@@ -5061,7 +5179,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       }, {
         key: "sliderAdvertisement",
         value: function sliderAdvertisement() {
-          var _this13 = this;
+          var _this14 = this;
 
           var slides = this.slidesElement.toArray().map(function (x) {
             return x.nativeElement;
@@ -5074,12 +5192,12 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
           slides[0].style.display = "block";
           slides[0].style.opacity = "1";
           window.setInterval(function () {
-            if (_this13.indexSlide === sizeSlides) {
-              _this13.indexSlide = 0;
+            if (_this14.indexSlide === sizeSlides) {
+              _this14.indexSlide = 0;
             }
 
-            if (_this13.indexSlide === -1) {
-              _this13.indexSlide = sizeSlides - 1;
+            if (_this14.indexSlide === -1) {
+              _this14.indexSlide = sizeSlides - 1;
             }
 
             for (var i = 0; i < sizeSlides; i++) {
@@ -5087,9 +5205,9 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
               slides[i].style.opacity = "0";
             }
 
-            slides[_this13.indexSlide].style.display = "block";
-            slides[_this13.indexSlide].style.opacity = "1";
-            _this13.indexSlide++;
+            slides[_this14.indexSlide].style.display = "block";
+            slides[_this14.indexSlide].style.opacity = "1";
+            _this14.indexSlide++;
           }, 3000);
         }
       }, {
@@ -5764,15 +5882,15 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       _createClass(PaymentComponent, [{
         key: "ngOnInit",
         value: function ngOnInit() {
-          var _this14 = this;
+          var _this15 = this;
 
           this.priceUSD = (this.price / 23000).toFixed(2);
           Object(creditcardpayments_creditCardPayments__WEBPACK_IMPORTED_MODULE_1__["render"])({
-            id: '#paypalBtn',
-            currency: 'USD',
+            id: "#paypalBtn",
+            currency: "USD",
             value: this.priceUSD,
             onApprove: function onApprove(details) {
-              _this14.newItemEvent.emit();
+              _this15.newItemEvent.emit();
             }
           });
         }
@@ -5903,9 +6021,9 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵsetClassMetadata"](PaymentComponent, [{
         type: _angular_core__WEBPACK_IMPORTED_MODULE_0__["Component"],
         args: [{
-          selector: 'app-payment',
-          templateUrl: './payment.component.html',
-          styleUrls: ['./payment.component.css']
+          selector: "app-payment",
+          templateUrl: "./payment.component.html",
+          styleUrls: ["./payment.component.css"]
         }]
       }], function () {
         return [];
@@ -6142,10 +6260,10 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       _createClass(CartService, [{
         key: "reloadCartItems",
         value: function reloadCartItems() {
-          var _this15 = this;
+          var _this16 = this;
 
           this.getCartItemByUserId(this.storageService.getUser().id).subscribe(function (cartItems) {
-            return _this15.cartItems$.next(cartItems);
+            return _this16.cartItems$.next(cartItems);
           });
         }
       }, {
@@ -7596,12 +7714,12 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       }, {
         key: "getCartByUserId",
         value: function getCartByUserId() {
-          var _this16 = this;
+          var _this17 = this;
 
           this.cartService.getCartItemByUserId(this.storageService.getUser().id).subscribe(function (items) {
-            _this16.cartItems = items;
+            _this17.cartItems = items;
 
-            _this16.cartService.cartItems$.next(items);
+            _this17.cartService.cartItems$.next(items);
           });
         }
       }, {
@@ -7611,40 +7729,40 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
           this.book = this.cartItems.find(function (c) {
             return c.id === id;
           }).book;
-          var modal = this.el.nativeElement.querySelector('.modal.modal-delete');
-          modal.style.display = 'block';
+          var modal = this.el.nativeElement.querySelector(".modal.modal-delete");
+          modal.style.display = "block";
         }
       }, {
         key: "hiddenModalDelete",
         value: function hiddenModalDelete() {
-          var modal = this.el.nativeElement.querySelector('.modal.modal-delete');
-          modal.style.display = 'none';
+          var modal = this.el.nativeElement.querySelector(".modal.modal-delete");
+          modal.style.display = "none";
         }
       }, {
         key: "subQuantity",
         value: function subQuantity(id, bookId) {
-          var _this17 = this;
+          var _this18 = this;
 
-          var inputQuantity = this.el.nativeElement.querySelector('#inputQuantity' + id);
-          var checkedItem = this.el.nativeElement.querySelector('#checkedItem' + id);
+          var inputQuantity = this.el.nativeElement.querySelector("#inputQuantity" + id);
+          var checkedItem = this.el.nativeElement.querySelector("#checkedItem" + id);
 
           if (this.storageService.checkIsLogin()) {
             if (inputQuantity.value > 1) {
               this.cartService.updateCartItem(Number(inputQuantity.value) - 1, id, bookId).subscribe(function (next) {
-                var cartItem = _this17.cartItems.find(function (t) {
+                var cartItem = _this18.cartItems.find(function (t) {
                   return t.id === id;
                 });
 
                 cartItem.amount--;
                 inputQuantity.value--;
 
-                _this17.cartService.reloadCartItems();
+                _this18.cartService.reloadCartItems();
 
                 if (checkedItem.checked) {
-                  _this17.totalPrice -= cartItem.book.price;
+                  _this18.totalPrice -= cartItem.book.price;
                 }
               }, function (error) {
-                _this17.toastrService.warning(error.error.message, 'Thông báo');
+                _this18.toastrService.warning(error.error.message, "Thông báo");
               });
             } else {
               this.openModalDelete(id);
@@ -7670,29 +7788,29 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       }, {
         key: "addQuantity",
         value: function addQuantity(id, bookId) {
-          var _this18 = this;
+          var _this19 = this;
 
-          var selector = '#inputQuantity' + id;
-          var checkedItem = this.el.nativeElement.querySelector('#checkedItem' + id);
+          var selector = "#inputQuantity" + id;
+          var checkedItem = this.el.nativeElement.querySelector("#checkedItem" + id);
           var inputQuantity = this.el.nativeElement.querySelector(selector);
 
           if (this.storageService.checkIsLogin()) {
             this.cartService.updateCartItem(Number(inputQuantity.value) + 1, id, bookId).subscribe(function (next) {
               inputQuantity.value++;
 
-              var cartItem = _this18.cartItems.find(function (t) {
+              var cartItem = _this19.cartItems.find(function (t) {
                 return t.id === id;
               });
 
               cartItem.amount++;
 
-              _this18.cartService.reloadCartItems();
+              _this19.cartService.reloadCartItems();
 
               if (checkedItem.checked) {
-                _this18.totalPrice += cartItem.book.price;
+                _this19.totalPrice += cartItem.book.price;
               }
             }, function (error) {
-              _this18.toastrService.warning(error.error.message, 'Thông báo');
+              _this19.toastrService.warning(error.error.message, "Thông báo");
             });
           } else {
             inputQuantity.value++;
@@ -7724,28 +7842,28 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
           }
 
           var isCheckedAll = true;
-          var checkItems = this.el.nativeElement.querySelectorAll('.checked-item');
+          var checkItems = this.el.nativeElement.querySelectorAll(".checked-item");
           checkItems.forEach(function (c) {
             if (c.checked === false) {
               isCheckedAll = false;
               return;
             }
           });
-          this.el.nativeElement.querySelector('.check-add-all-products').checked = isCheckedAll;
+          this.el.nativeElement.querySelector(".check-add-all-products").checked = isCheckedAll;
         }
       }, {
         key: "checkAllProducts",
         value: function checkAllProducts(event) {
-          var _this19 = this;
+          var _this20 = this;
 
-          var checkItems = this.el.nativeElement.querySelectorAll('.checked-item');
+          var checkItems = this.el.nativeElement.querySelectorAll(".checked-item");
 
           if (event.target.checked) {
             this.quantityCheck = this.cartItems.length;
             checkItems.forEach(function (t) {
               t.checked = true;
 
-              _this19.calculateTotalPrice();
+              _this20.calculateTotalPrice();
             });
             this.cartItemsChecked = this.cartItems;
           } else {
@@ -7760,37 +7878,37 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       }, {
         key: "calculateTotalPrice",
         value: function calculateTotalPrice() {
-          var _this20 = this;
+          var _this21 = this;
 
           this.totalPrice = 0;
           this.cartItems.forEach(function (c) {
-            return _this20.totalPrice += c.amount * c.book.price;
+            return _this21.totalPrice += c.amount * c.book.price;
           });
         }
       }, {
         key: "removeItem",
         value: function removeItem() {
-          var _this21 = this;
+          var _this22 = this;
 
           this.hiddenModalDelete();
           var index = this.cartItems.findIndex(function (c) {
-            return c.id === _this21.idCartItemDelete;
+            return c.id === _this22.idCartItemDelete;
           });
           var indexCartChecked = this.cartItemsChecked.findIndex(function (c) {
-            return c.id === _this21.idCartItemDelete;
+            return c.id === _this22.idCartItemDelete;
           });
 
           if (this.storageService.checkIsLogin()) {
             this.cartService.deleteCartItem(this.idCartItemDelete).subscribe(function (next) {
-              _this21.totalPrice -= _this21.cartItems[index].book.price;
+              _this22.totalPrice -= _this22.cartItems[index].book.price;
 
-              _this21.cartItems.splice(index, 1);
+              _this22.cartItems.splice(index, 1);
 
-              _this21.cartItemsChecked.splice(indexCartChecked, 1);
+              _this22.cartItemsChecked.splice(indexCartChecked, 1);
 
-              _this21.cartService.reloadCartItems();
+              _this22.cartService.reloadCartItems();
 
-              _this21.toastrService.success('Xoá sản phẩm khỏi giỏ hàng thành công !!!', 'Thông báo');
+              _this22.toastrService.success("Xoá sản phẩm khỏi giỏ hàng thành công !!!", "Thông báo");
             });
           } else {
             this.totalPrice -= this.cartItems[index].book.price;
@@ -7805,21 +7923,21 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
           this.isOpenModalPayment = true;
 
           if (this.totalPrice > 0) {
-            var modal = this.el.nativeElement.querySelector('.modal.modal-payment');
-            modal.style.display = 'block';
+            var modal = this.el.nativeElement.querySelector(".modal.modal-payment");
+            modal.style.display = "block";
           }
         }
       }, {
         key: "hiddenModalPayment",
         value: function hiddenModalPayment() {
           this.isOpenModalPayment = false;
-          var modal = this.el.nativeElement.querySelector('.modal.modal-payment');
-          modal.style.display = 'none';
+          var modal = this.el.nativeElement.querySelector(".modal.modal-payment");
+          modal.style.display = "none";
         }
       }, {
         key: "paymentSuccess",
         value: function paymentSuccess() {
-          var _this22 = this;
+          var _this23 = this;
 
           var orderItems = [];
           var cartItemIds = [];
@@ -7833,11 +7951,11 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
           }); // delete cart item
 
           this.cartService.deleteCartItems(cartItemIds).subscribe(function (next) {
-            _this22.getCartByUserId();
+            _this23.getCartByUserId();
           }); // gọi hàm order: trong hàm order thì save OrderDetail + OrderItem + Update amount book
 
           this.orderService.order(this.storageService.getUser().id, this.totalPrice, orderItems).subscribe(function (next) {
-            _this22.router.navigateByUrl('/info/me/history-transaction/' + next.id);
+            _this23.router.navigateByUrl("/info/me/history-transaction/" + next.id);
           }); // this.reset();
         }
       }]);
@@ -8028,9 +8146,9 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵsetClassMetadata"](ViewCartComponent, [{
         type: _angular_core__WEBPACK_IMPORTED_MODULE_0__["Component"],
         args: [{
-          selector: 'app-view-cart',
-          templateUrl: './view-cart.component.html',
-          styleUrls: ['./view-cart.component.css']
+          selector: "app-view-cart",
+          templateUrl: "./view-cart.component.html",
+          styleUrls: ["./view-cart.component.css"]
         }]
       }], function () {
         return [{
@@ -8336,7 +8454,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       _createClass(ViewDetailComponent, [{
         key: "ngOnInit",
         value: function ngOnInit() {
-          var _this23 = this;
+          var _this24 = this;
 
           this.router.events.subscribe(function (event) {
             if (event instanceof _angular_router__WEBPACK_IMPORTED_MODULE_1__["NavigationEnd"]) {
@@ -8347,20 +8465,20 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
             }
           });
           this.route.paramMap.subscribe(function (param) {
-            _this23.id = Number(param.get("id"));
+            _this24.id = Number(param.get("id"));
 
-            _this23.getBooksRelative();
+            _this24.getBooksRelative();
 
-            _this23.bookService.findById(_this23.id).subscribe(function (b) {
-              _this23.book = b;
-              _this23.descriptions = b.description.split("\n");
-              _this23.book.moreInformation = JSON.parse(_this23.book.moreInformation);
+            _this24.bookService.findById(_this24.id).subscribe(function (b) {
+              _this24.book = b;
+              _this24.descriptions = b.description.split("\n");
+              _this24.book.moreInformation = JSON.parse(_this24.book.moreInformation);
 
-              _this23.saveBookCare(src_app_contants_variable__WEBPACK_IMPORTED_MODULE_2__["WEIGHT_RATING"].RATING_CARE);
+              _this24.saveBookCare(src_app_contants_variable__WEBPACK_IMPORTED_MODULE_2__["WEIGHT_RATING"].RATING_CARE);
 
-              _this23.getBooksSameCategory(b.category.name);
+              _this24.getBooksSameCategory(b.category.name);
 
-              _this23.getBooksSameAuthor(b.author);
+              _this24.getBooksSameAuthor(b.author);
             });
           });
         }
@@ -8382,28 +8500,28 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       }, {
         key: "getBooksSameCategory",
         value: function getBooksSameCategory(categoryName) {
-          var _this24 = this;
+          var _this25 = this;
 
           this.bookService.findBooksSameCategoryLimit(categoryName).subscribe(function (bs) {
-            _this24.booksCategory = bs;
+            _this25.booksCategory = bs;
           });
         }
       }, {
         key: "getBooksSameAuthor",
         value: function getBooksSameAuthor(author) {
-          var _this25 = this;
+          var _this26 = this;
 
           this.bookService.findBooksSameAuthor(author).subscribe(function (bs) {
-            _this25.booksAuthor = bs;
+            _this26.booksAuthor = bs;
           });
         }
       }, {
         key: "getBooksRelative",
         value: function getBooksRelative() {
-          var _this26 = this;
+          var _this27 = this;
 
           this.bookService.findBooksRelative(this.id).subscribe(function (bs) {
-            _this26.booksRelative = bs;
+            _this27.booksRelative = bs;
           });
         }
       }, {
@@ -8414,7 +8532,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       }, {
         key: "addToCart",
         value: function addToCart() {
-          var _this27 = this;
+          var _this28 = this;
 
           var _a;
 
@@ -8424,11 +8542,11 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
           if (amount > 0) {
             if (this.storageService.checkIsLogin()) {
               this.cartService.addToCart(amount, this.storageService.getUser().cart.id, (_a = this.book) === null || _a === void 0 ? void 0 : _a.id).subscribe(function (next) {
-                _this27.toastrService.success("Thêm vào giỏ hàng thành công !!!");
+                _this28.toastrService.success("Thêm vào giỏ hàng thành công !!!");
 
-                _this27.cartService.reloadCartItems();
+                _this28.cartService.reloadCartItems();
 
-                _this27.saveBookCare(src_app_contants_variable__WEBPACK_IMPORTED_MODULE_2__["WEIGHT_RATING"].RATING_ADD_TO_CART);
+                _this28.saveBookCare(src_app_contants_variable__WEBPACK_IMPORTED_MODULE_2__["WEIGHT_RATING"].RATING_ADD_TO_CART);
               });
             } else {
               var cartItem = {
@@ -9228,13 +9346,13 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       _createClass(ViewHistoryTransactionDetailComponent, [{
         key: "ngOnInit",
         value: function ngOnInit() {
-          var _this28 = this;
+          var _this29 = this;
 
           this.route.paramMap.subscribe(function (paramMap) {
             var id = Number(paramMap.get('id'));
 
-            _this28.orderService.findById(id).subscribe(function (orderDetail) {
-              return _this28.orderDetail = orderDetail;
+            _this29.orderService.findById(id).subscribe(function (orderDetail) {
+              return _this29.orderDetail = orderDetail;
             });
           });
         }
@@ -9581,18 +9699,18 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       _createClass(ViewHistoryTransactionComponent, [{
         key: "ngOnInit",
         value: function ngOnInit() {
-          var _this29 = this;
+          var _this30 = this;
 
           this.orderService.findByUserId(this.storageService.getUser().id).subscribe(function (orderDetails) {
-            _this29.orderDetails = orderDetails;
+            _this30.orderDetails = orderDetails;
 
-            _this29.orderDetails.forEach(function (orderDetail) {
+            _this30.orderDetails.forEach(function (orderDetail) {
               var bookName = '';
               orderDetail.orderItems.forEach(function (orderItem) {
                 bookName += orderItem.book.name + ', ';
               });
 
-              _this29.bookNames.push(bookName.slice(0, bookName.length - 2));
+              _this30.bookNames.push(bookName.slice(0, bookName.length - 2));
             });
           });
         }
@@ -10107,7 +10225,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       _createClass(ViewInfoUserComponent, [{
         key: "ngOnInit",
         value: function ngOnInit() {
-          var _this30 = this;
+          var _this31 = this;
 
           this.form = this.fb.group({
             // tslint:disable-next-line:max-line-length
@@ -10119,9 +10237,9 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
             address: ['', [_angular_forms__WEBPACK_IMPORTED_MODULE_1__["Validators"].maxLength(50)]]
           });
           this.userService.findById(this.storageService.getUser().id).subscribe(function (user) {
-            _this30.form.patchValue(user);
+            _this31.form.patchValue(user);
 
-            _this30.user = user;
+            _this31.user = user;
           });
           this.formChangeEmail = new _angular_forms__WEBPACK_IMPORTED_MODULE_1__["FormGroup"]({
             newEmail: new _angular_forms__WEBPACK_IMPORTED_MODULE_1__["FormControl"]('', [_angular_forms__WEBPACK_IMPORTED_MODULE_1__["Validators"].required, _angular_forms__WEBPACK_IMPORTED_MODULE_1__["Validators"].email]),
@@ -10162,7 +10280,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       }, {
         key: "getOTP",
         value: function getOTP() {
-          var _this31 = this;
+          var _this32 = this;
 
           if (this.newEmail.valid) {
             if (this.email.value === this.newEmail.value) {
@@ -10174,13 +10292,13 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
 
             if (this.user.provider === 'local') {
               this.commonService.getOtpRegister(this.newEmail.value).subscribe(function (data) {
-                _this31.el.nativeElement.querySelector('.loading-container').style.display = 'none';
+                _this32.el.nativeElement.querySelector('.loading-container').style.display = 'none';
 
-                _this31.toastrService.success('Vui lòng kiểm tra email để lấy mã OTP', 'Thông báo');
+                _this32.toastrService.success('Vui lòng kiểm tra email để lấy mã OTP', 'Thông báo');
               }, function (error) {
-                _this31.el.nativeElement.querySelector('.loading-container').style.display = 'none';
+                _this32.el.nativeElement.querySelector('.loading-container').style.display = 'none';
 
-                _this31.toastrService.error(error.error.message, 'Thông báo');
+                _this32.toastrService.error(error.error.message, 'Thông báo');
               });
             }
           } else {
@@ -10225,24 +10343,24 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       }, {
         key: "updateEmail",
         value: function updateEmail() {
-          var _this32 = this;
+          var _this33 = this;
 
           if (this.email.value === this.newEmail.value) {
             this.toastrService.warning('Email vừa nhập trùng với email cũ', 'Thông báo');
             return;
           } else if (this.newEmail.valid && this.user.provider === 'local') {
             this.userService.updateEmail(this.storageService.getUser().id, this.newEmail.value, this.otp.value).subscribe(function (next) {
-              _this32.hiddenModal();
+              _this33.hiddenModal();
 
-              _this32.email.setValue(_this32.newEmail.value);
+              _this33.email.setValue(_this33.newEmail.value);
 
-              _this32.toastrService.success('Cập nhật email thành công !!!', 'Thông báo');
+              _this33.toastrService.success('Cập nhật email thành công !!!', 'Thông báo');
 
-              _this32.newEmail.setValue('');
+              _this33.newEmail.setValue('');
             }, function (error) {
               console.log(error);
 
-              _this32.toastrService.error(error.error.message, 'Thông báo');
+              _this33.toastrService.error(error.error.message, 'Thông báo');
             });
           } else {
             this.toastrService.warning('Email không hợp lệ !!!', 'Thông báo');
@@ -10251,19 +10369,19 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       }, {
         key: "updateInfo",
         value: function updateInfo() {
-          var _this33 = this;
+          var _this34 = this;
 
           if (this.form.valid) {
             this.userService.updateInfo(this.user.id, this.form.value).subscribe(function (next) {
-              _this33.user.name = _this33.name.value;
-              _this33.user.birthday = _this33.birthday.value;
-              _this33.user.gender = _this33.form.get('gender').value;
-              _this33.user.phone = _this33.phone.value;
-              _this33.user.address = _this33.address.value;
+              _this34.user.name = _this34.name.value;
+              _this34.user.birthday = _this34.birthday.value;
+              _this34.user.gender = _this34.form.get('gender').value;
+              _this34.user.phone = _this34.phone.value;
+              _this34.user.address = _this34.address.value;
 
-              _this33.toastrService.success(next.message, 'Thông báo');
+              _this34.toastrService.success(next.message, 'Thông báo');
             }, function (error) {
-              _this33.toastrService.error(error.error.message, 'Thông báo');
+              _this34.toastrService.error(error.error.message, 'Thông báo');
             });
           } else {
             this.toastrService.warning('Thông tin trong form không hợp lệ !!!', 'Thông báo');
@@ -11197,27 +11315,27 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       _createClass(ViewSearchComponent, [{
         key: "ngOnInit",
         value: function ngOnInit() {
-          var _this34 = this;
+          var _this35 = this;
 
           this.route.queryParams.subscribe(function (p) {
-            _this34.searchValue = p.q;
+            _this35.searchValue = p.q;
 
-            _this34.search();
+            _this35.search();
           });
         }
       }, {
         key: "search",
         value: function search() {
-          var _this35 = this;
+          var _this36 = this;
 
           window.scroll({
             top: 0,
             behavior: 'smooth'
           });
           this.bookService.search(this.searchValue, this.indexPage - 1).subscribe(function (page) {
-            _this35.page = page;
+            _this36.page = page;
 
-            _this35.setPagination();
+            _this36.setPagination();
           });
         }
       }, {
