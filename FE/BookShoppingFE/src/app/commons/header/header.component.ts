@@ -22,6 +22,8 @@ export class HeaderComponent implements OnInit {
   formSearch: FormGroup;
   cartItems: CartItem[];
   totalPriceCart = 0;
+  imageDefault =
+    "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS3URjWpcZfPfzAHxrU_Xms2GzfUJmvWXGjuw&s";
 
   constructor(
     private route: ActivatedRoute,
@@ -48,14 +50,13 @@ export class HeaderComponent implements OnInit {
       if (token) {
         this.tokenStorageService.saveToken(token);
         this.userService.getInfo(token).subscribe((user) => {
-          console.log(user);
+          console.log("user", user);
           this.user = user;
           this.tokenStorageService.saveUser(user);
           this.tokenStorageService.isLogin();
           this.isLogin = true;
           this.resetUrl();
         });
-        this.synchronizedCart();
       } else if (error) {
         if (error.toLowerCase() === "emailregistered") {
           this.toastrService.warning(
@@ -68,8 +69,7 @@ export class HeaderComponent implements OnInit {
 
     if (this.tokenStorageService.checkIsLogin()) {
       this.user = this.tokenStorageService.getUser();
-      this.isLogin =
-        this.tokenStorageService.checkIsLogin().toLowerCase() === "true";
+      this.isLogin = this.tokenStorageService.checkIsLogin();
       this.synchronizedCart();
     } else {
       this.cartItems = this.cartStorageService.getItems();
@@ -121,6 +121,7 @@ export class HeaderComponent implements OnInit {
     this.cartService
       .getCartItemByUserId(this.tokenStorageService.getUser().id)
       .subscribe((items) => {
+        console.log("items cart", items);
         this.cartItems = items;
         items.forEach((t) => (this.totalPriceCart += t.amount * t?.book.price));
         this.cartService.cartItems$.next(items);
@@ -155,5 +156,9 @@ export class HeaderComponent implements OnInit {
     } else {
       this.getCartItemsByUserId();
     }
+  }
+
+  onImgError(event: any) {
+    event.target.src = this.imageDefault;
   }
 }

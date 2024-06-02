@@ -94,86 +94,20 @@
       </div>
     </div>
 
-    <div class="component">
-      <div class="component-header">SẢN PHẨM CÙNG TÁC GIẢ</div>
+    <app-slider-book
+      [books]="booksAuthor"
+      [title]="titlebooksAuthor"
+    ></app-slider-book>
 
-      <div class="component-body position-relative">
-        <div class="row position-relative row-same-author">
-          <div class="col-2" *ngFor="let book of sliderBooksAuthor">
-            <div
-              class="product-item-wrapper pf-8"
-              (click)="viewAnotherBook(book.id)"
-            >
-              <div class="text-align-center">
-                <img src="{{ book?.avatar }}" alt="" class="product-image" />
-              </div>
-              <div class="product-name">
-                {{ book?.name }}
-              </div>
-              <div class="product-rate">
-                <span *ngFor="let i of numberRatings">
-                  <i
-                    class="bi bi-star-fill icon-star-fill"
-                    *ngIf="i <= book?.numberRating"
-                  ></i>
-                  <i
-                    class="bi bi-star-fill icon-star-no-fill"
-                    *ngIf="i > book?.numberRating"
-                  ></i>
-                </span>
-              </div>
-              <div class="product-price">
-                Giá: <span>{{ book?.price | currency : "VND" }}</span>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
+    <app-slider-book
+      [books]="booksRelative"
+      [title]="titlebooksRelative"
+    ></app-slider-book>
 
-    <div class="component">
-      <div class="component-header">SẢN PHẨM CÙNG THỂ LOẠI (20 sản phẩm)</div>
-      <div class="component-body position-relative">
-        <div class="btn-previous-wrapper" (click)="previousBooksCategory()">
-          <div class="btn-previous"></div>
-        </div>
-
-        <div class="row row-same-category">
-          <div class="col-2" *ngFor="let book of sliderBooksCategory">
-            <div
-              class="product-item-wrapper pf-8"
-              (click)="viewAnotherBook(book.id)"
-            >
-              <div class="text-align-center">
-                <img src="{{ book?.avatar }}" alt="" class="product-image" />
-              </div>
-              <div class="product-name">
-                {{ book?.name }}
-              </div>
-              <div class="product-rate">
-                <span *ngFor="let i of numberRatings">
-                  <i
-                    class="bi bi-star-fill icon-star-fill"
-                    *ngIf="i <= book?.numberRating"
-                  ></i>
-                  <i
-                    class="bi bi-star-fill icon-star-no-fill"
-                    *ngIf="i > book?.numberRating"
-                  ></i>
-                </span>
-              </div>
-              <div class="product-price">
-                Giá: <span>{{ book?.price | currency : "VND" }}</span>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <div class="btn-next-wrapper" (click)="nextBooksCategory()">
-          <div class="btn-next"></div>
-        </div>
-      </div>
-    </div>
+    <app-slider-book
+      [books]="booksCategory"
+      [title]="titlebooksCategory"
+    ></app-slider-book>
 
     <div class="component">
       <div class="component-header">Thông tin sản phẩm</div>

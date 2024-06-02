@@ -1,34 +1,30 @@
-import { Injectable } from '@angular/core';
-import {Cart} from '../models/cart';
-import {CartItem} from '../models/cart-item';
+import { Injectable } from "@angular/core";
+import { Cart } from "../models/cart";
+import { CartItem } from "../models/cart-item";
 
-const TOKEN_KEY = 'auth-token';
-const USER_KEY = 'auth-user';
+const TOKEN_KEY = "auth-token";
+const USER_KEY = "auth-user";
 
 @Injectable({
-  providedIn: 'root'
+  providedIn: "root",
 })
-
 export class TokenStorageService {
-
-  constructor() {
-
-  }
+  constructor() {}
 
   signOut() {
     window.sessionStorage.clear();
   }
 
   isLogin() {
-    window.sessionStorage.setItem('isLogin', String(true));
+    window.sessionStorage.setItem("isLogin", String(true));
   }
 
   checkIsLogin() {
-    return sessionStorage.getItem('isLogin');
+    return Boolean(sessionStorage.getItem("isLogin"));
   }
 
   isLogout() {
-    window.sessionStorage.removeItem('isLogin');
+    window.sessionStorage.removeItem("isLogin");
     window.sessionStorage.removeItem(TOKEN_KEY);
   }
 
@@ -41,7 +37,7 @@ export class TokenStorageService {
     return sessionStorage.getItem(TOKEN_KEY);
   }
 
-  public saveUser(user) {
+  public saveUser(user: any) {
     window.sessionStorage.removeItem(USER_KEY);
     window.sessionStorage.setItem(USER_KEY, JSON.stringify(user));
   }

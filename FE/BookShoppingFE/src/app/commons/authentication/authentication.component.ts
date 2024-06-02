@@ -242,6 +242,7 @@ export class AuthenticationComponent implements OnInit {
               this.tokenStorageService.saveUser(user);
               this.tokenStorageService.isLogin();
               window.location.href = environment.domain;
+              // window.location.href = "http://localhost:4200";
             },
             (error) => {
               alert(error);

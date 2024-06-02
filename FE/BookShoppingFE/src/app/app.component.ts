@@ -1,33 +1,16 @@
-import {
-  AfterViewChecked,
-  Component,
-  ElementRef,
-  OnInit,
-  ViewChild,
-  isDevMode,
-} from "@angular/core";
-import {CartStorageService} from './services/cart-storage.service';
-import {render} from 'creditcardpayments/creditCardPayments';
-import {environment} from '../environments/environment.prod';
-
+import { Component, OnInit } from "@angular/core";
+import { CartStorageService } from "./services/cart-storage.service";
 declare var paypal;
 
 @Component({
-  selector: 'app-root',
-  templateUrl: './app.component.html',
-  styleUrls: ['./app.component.css']
+  selector: "app-root",
+  templateUrl: "./app.component.html",
+  styleUrls: ["./app.component.css"],
 })
 export class AppComponent implements OnInit {
-  constructor(private cartStorageService: CartStorageService, private el: ElementRef) {
-  }
+  constructor(private cartStorageService: CartStorageService) {}
 
   ngOnInit(): void {
     this.cartStorageService.loadCart();
-
-    if (isDevMode()) {
-      console.log("Development!");
-    } else {
-      console.log("Production!");
-    }
   }
 }

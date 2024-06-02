@@ -14,6 +14,7 @@ import { Category } from "../../models/category";
 import { Book } from "../../models/book";
 import { ToastrService } from "ngx-toastr";
 import { Router } from "@angular/router";
+import { BookCareStorageService } from "src/app/services/book-care-storage.service";
 
 @Component({
   selector: "app-homepage",
@@ -28,10 +29,11 @@ export class HomepageComponent implements OnInit, AfterViewInit {
   books: Book[] = [];
   imageUrl: string;
   page: number = 0;
-  pageSize: number = 48;
+  pageSize: number = 36;
   totalPages: number;
   numberRatings: number[] = [1, 2, 3, 4, 5];
   isLoading: boolean = false;
+  isRecommend: boolean = false;
 
   indexSlide = 0;
   images = [
@@ -56,12 +58,15 @@ export class HomepageComponent implements OnInit, AfterViewInit {
     { path: "https://cdn0.fahasa.com/media/magentothem/banner7/840_x_320.png" },
   ];
 
+  bookIdsCare: any[] = [];
+
   constructor(
     private tokenStorageService: TokenStorageService,
     private bookService: BookService,
     private toastrService: ToastrService,
     private router: Router,
-    private el: ElementRef
+    private el: ElementRef,
+    private bookCareService: BookCareStorageService
   ) {}
 
   ngOnInit(): void {
@@ -72,7 +77,17 @@ export class HomepageComponent implements OnInit, AfterViewInit {
       this.user = this.tokenStorageService.getUser();
     }
     this.getCategories();
-    this.getBooks();
+    this.bookIdsCare = this.bookCareService.loadBooksCare();
+    if (this.bookIdsCare.length > 0) {
+      this.isRecommend = true;
+      this.bookService.findBooksRecommend().subscribe((books) => {
+        this.books = books;
+        console.log(books);
+        console.log(this.books);
+      });
+    } else {
+      this.getBooks();
+    }
   }
 
   ngAfterViewInit(): void {
@@ -85,7 +100,23 @@ export class HomepageComponent implements OnInit, AfterViewInit {
     });
   }
 
+  getBooksRecommend() {
+    this.isRecommend = true;
+    this.isLoading = true;
+    this.bookService.findBooksRecommend(this.page, this.pageSize).subscribe(
+      (books) => {
+        this.books = this.books.concat(books);
+        this.isLoading = false;
+      },
+      (error) => {
+        this.toastrService.error("Lỗi tìm kiếm sản phẩm");
+        this.isLoading = false;
+      }
+    );
+  }
+
   getBooks() {
+    this.isRecommend = false;
     this.isLoading = true;
     this.bookService.paginate(this.page, this.pageSize).subscribe(
       (page) => {
@@ -94,7 +125,7 @@ export class HomepageComponent implements OnInit, AfterViewInit {
         this.isLoading = false;
       },
       (error) => {
-        this.toastrService.error("Error when loading books");
+        this.toastrService.error("Lỗi tìm kiếm sản phẩm");
         this.isLoading = false;
       }
     );

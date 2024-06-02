@@ -44,7 +44,7 @@
     <div class="component">
       <div class="row best-sale-title">
         <i class="bi bi-lightning best-sale-icon"></i>
-        Sách bán chạy
+        Sách phù hợp với bạn
       </div>
       <div class="row">
         <div class="col-2" *ngFor="let book of books">
@@ -74,9 +74,10 @@
       <div class="row btn-view-more-wrapper">
         <button
           class="btn btn-view-more"
-          [disabled]="page >= totalPages - 1 || isLoading"
+          [disabled]="(page >= totalPages - 1 || isLoading) && !isRecommend"
           (click)="viewMore()"
         >
+          <div class="loader" *ngIf="isLoading"></div>
           Xem thêm
         </button>
       </div>

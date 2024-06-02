@@ -67,7 +67,7 @@ export class CartService {
     );
   }
 
-  deleteCartItems(cartItems): Observable<ResponseMessage> {
+  deleteCartItems(cartItems: any): Observable<ResponseMessage> {
     return this.http.post<ResponseMessage>(
       API_URL + "/deleteCartItems",
       cartItems
@@ -76,7 +76,7 @@ export class CartService {
 
   synchronizedCart(
     cartId: number,
-    cartItemRequests
+    cartItemRequests: any[]
   ): Observable<ResponseMessage> {
     return this.http.post<ResponseMessage>(
       API_URL + "/synchronizedCart?cartId=" + cartId,
