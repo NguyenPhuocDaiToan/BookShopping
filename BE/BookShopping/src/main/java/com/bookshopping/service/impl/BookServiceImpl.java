@@ -92,8 +92,10 @@ public class BookServiceImpl implements BookService {
         if (idsRecommend.isEmpty() || idsRecommend.size() < (page + 1) * size) {
             List<Integer> list = Arrays.asList(idBooks.split(",")).stream().map(s -> Integer.parseInt(s.trim())).collect(Collectors.toList());
             List<Integer> bookIdsRecommend = aiService.getRecommendation(list, (page + 1) * size + 100);
-            System.out.println("Number elements recommend");
-            System.out.println(bookIdsRecommend);
+            System.out.print("Get top k = ");
+            System.out.println((page + 1) * size + 100);
+            System.out.print("Number elements recommend = ");
+            System.out.println(bookIdsRecommend.size());
             cacheRecommend.setRecommend(idBooks, bookIdsRecommend);
 
             int maxElementRecommend = bookIdsRecommend.size();
