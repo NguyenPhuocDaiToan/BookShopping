@@ -15,4 +15,9 @@ public class OrderItemServiceImpl implements OrderItemService {
         orderItemRepository.saveOrderItem(orderItem.getOrderDetail().getId(),
                 orderItem.getBook().getId(), orderItem.getPrice(), orderItem.getAmount());
     }
+
+    @Override
+    public boolean hasUserBoughtBook(Integer userId, Integer bookId) {
+        return orderItemRepository.findOrderItemByBookIdAndUserId(bookId, userId).isPresent();
+    }
 }

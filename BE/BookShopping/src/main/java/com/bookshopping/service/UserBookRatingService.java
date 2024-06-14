@@ -12,9 +12,9 @@ public interface UserBookRatingService {
 
 //    Optional<UserBookRating> findByUserIdAndBookId(int userId, int bookId);
 
-    UserBookRating addRating(int userId, int bookId, float ratingRecommendation);
+    UserBookRating addRating(int userId, int bookId, float ratingRecommendation, String comment, boolean isUserRating);
 
-    UserBookRating updateRating(int userId, int bookId, float newRatingRecommendation);
+    UserBookRating updateRating(int userId, int bookId, float newRatingRecommendation, String comment, boolean isUserRating);
 
     Page<UserBookRating> paginate(Pageable page);
     List<Integer> getBooksCare(int userId, int limit);

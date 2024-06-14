@@ -62,4 +62,9 @@ public class OrderController {
         List<OrderDetail> orderDetails = orderDetailService.findByUserId(userId);
         return new ResponseEntity<>(orderDetails, HttpStatus.OK);
     }
+
+    @GetMapping("/hasUserBoughtBook")
+    public boolean hasUserBoughtBook(@RequestParam Integer userId, @RequestParam Integer bookId) {
+        return orderItemService.hasUserBoughtBook(userId, bookId);
+    }
 }

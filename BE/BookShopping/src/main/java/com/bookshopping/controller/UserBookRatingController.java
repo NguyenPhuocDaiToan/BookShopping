@@ -27,6 +27,8 @@ public class UserBookRatingController {
         List<Integer> bookIds = data.getBookIds();
         List<Float> ratingRecommendations = data.getRatingRecommendations();
         int userId = data.getUserId();
+        List<String> comments = data.getComments();
+        List<Boolean> isUserRatings = data.getIsUserRatings();
 
         for (int i = 0; i < bookIds.size(); i++) {
             UserBookRating oldRating = userBookRatingService.findByUserIdAndBookId(userId, bookIds.get(i));
@@ -35,10 +37,10 @@ public class UserBookRatingController {
             if (oldRating != null) {
                 // if user rated => ignore
                 if (!oldRating.isUserRating()) {
-                    userBookRatingService.updateRating(userId, bookIds.get(i), ratingRecommendations.get(i));
+                    userBookRatingService.updateRating(userId, bookIds.get(i), ratingRecommendations.get(i), comments.get(i), isUserRatings.get(i));
                 }
             } else {
-                userBookRatingService.addRating(userId, bookIds.get(i), ratingRecommendations.get(i));
+                userBookRatingService.addRating(userId, bookIds.get(i), ratingRecommendations.get(i), comments.get(i), isUserRatings.get(i));
             }
         }
 

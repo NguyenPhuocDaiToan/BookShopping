@@ -13,4 +13,6 @@ public class UserBookRatingRequest {
     private int userId;
     private List<Integer> bookIds;
     private List<Float> ratingRecommendations;
+    private List<String> comments;
+    private List<Boolean> isUserRatings;
 }

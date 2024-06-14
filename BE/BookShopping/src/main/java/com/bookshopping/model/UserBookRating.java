@@ -4,10 +4,7 @@ import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
+import javax.persistence.*;
 
 @Entity
 @Data
@@ -18,10 +15,13 @@ public class UserBookRating {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
 
-    private int userId;
-    private int bookId;
+    @ManyToOne(targetEntity = User.class)
+    private User userId;
+    @ManyToOne(targetEntity = Book.class)
+    private Book bookId;
 
     private boolean isUserRating = false;
 
     private float ratingRecommendation;
+    private String comment = "";
 }

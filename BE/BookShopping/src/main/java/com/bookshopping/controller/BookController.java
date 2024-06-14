@@ -111,8 +111,9 @@ public class BookController {
 
     @GetMapping("/recommend")
     public ResponseEntity<List<Book>> recommendation(@RequestParam String idBooks, @RequestParam Integer page, @RequestParam Integer size) {
-        List<Book> books = bookService.getBooksRecommend(idBooks, page, size);
-        return new ResponseEntity<>(books, HttpStatus.OK);
+        return new ResponseEntity<>(bookService.findAll(), HttpStatus.OK);
+//        List<Book> books = bookService.getBooksRecommend(idBooks, page, size);
+//        return new ResponseEntity<>(books, HttpStatus.OK);
     }
 
     @GetMapping("/relative")

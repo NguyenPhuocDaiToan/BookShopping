@@ -23,23 +23,26 @@ public class UserBookRatingServiceImpl implements UserBookRatingService {
     }
 
     @Override
-    public UserBookRating addRating(int userId, int bookId, float ratingRecommendation) {
+    public UserBookRating addRating(int userId, int bookId, float ratingRecommendation, String comment, boolean isUserRating) {
         UserBookRating newRating = new UserBookRating();
-        newRating.setUserId(userId);
-        newRating.setBookId(bookId);
+//        newRating.setUserId(userId);
+//        newRating.setBookId(bookId);
         newRating.setRatingRecommendation(ratingRecommendation);
+        newRating.setComment(comment);
+        newRating.setUserRating(isUserRating);
 
         return userBookRatingRepository.save(newRating);
     }
 
     @Override
-    public UserBookRating updateRating(int userId, int bookId, float newRatingRecommendation) {
+    public UserBookRating updateRating(int userId, int bookId, float newRatingRecommendation, String comment, boolean isUserRating) {
         Optional<UserBookRating> optionalRating = userBookRatingRepository.findByUserIdAndBookId(userId, bookId);
 
         if (optionalRating.isPresent()) {
             UserBookRating existingRating = optionalRating.get();
             existingRating.setRatingRecommendation(newRatingRecommendation);
-
+            existingRating.setComment(comment);
+            existingRating.setUserRating(isUserRating);
             return userBookRatingRepository.save(existingRating);
         } else {
             throw new IllegalArgumentException("Rating does not exist for this user and book.");
