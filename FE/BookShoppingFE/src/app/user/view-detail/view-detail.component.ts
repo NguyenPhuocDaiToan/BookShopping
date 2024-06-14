@@ -30,6 +30,7 @@ export class ViewDetailComponent implements OnInit {
   booksCategory: Book[];
   booksAuthor: Book[];
   booksRelative: Book[];
+  comments: any[] = [];
   indexbooksCategory = 0;
   user: User;
 
@@ -39,6 +40,8 @@ export class ViewDetailComponent implements OnInit {
 
   // indexbooksAuthor = 0;
   numberRatings: number[] = [1, 2, 3, 4, 5];
+  number_rating = 0;
+  comment = "";
 
   constructor(
     private route: ActivatedRoute,
@@ -77,6 +80,14 @@ export class ViewDetailComponent implements OnInit {
         this.getBooksSameCategory(b.category.name);
         this.getBooksSameAuthor(b.author);
       });
+
+      this.getComments();
+    });
+  }
+
+  getComments() {
+    this.userBookRatingService.getComment(this.id).subscribe((data) => {
+      this.comments = data;
     });
   }
 
@@ -169,5 +180,54 @@ export class ViewDetailComponent implements OnInit {
       ".input-change-quantity"
     );
     inputQuantity.value++;
+  }
+
+  openModalRating() {
+    const modal = this.el.nativeElement.querySelector(".modal.modal-rating");
+    modal.style.display = "block";
+  }
+
+  hiddenModalRating() {
+    const modal = this.el.nativeElement.querySelector(".modal.modal-rating");
+    modal.style.display = "none";
+  }
+
+  saveRating() {
+    if (!this.number_rating) {
+      return;
+    }
+
+    console.log(this.number_rating, this.comment);
+
+    if (this.storageService.checkIsLogin()) {
+      this.user = this.storageService.getUser();
+      this.userBookRatingService
+        .updateRating(
+          this.user.id,
+          this.id,
+          this.number_rating,
+          this.comment,
+          true
+        )
+        .subscribe(
+          (next) => {
+            console.log("RATING OK", this.number_rating, this.comment);
+            this.toastrService.success("Đánh giá thành công !!!");
+            this.hiddenModalRating();
+
+            this.getComments();
+          },
+          (error) => {
+            console.log("RATING ERROR");
+            this.toastrService.error("Đánh giá thất bại !!!");
+            this.hiddenModalRating();
+          }
+        );
+      this.bookCareStorageService.saveBooksCare(this.id);
+    }
+  }
+
+  changeRating($event: any) {
+    this.number_rating = $event;
   }
 }

@@ -14,12 +14,20 @@ export class UserBookRatingService {
   updateRating(
     userId: number,
     bookId: number,
-    rating: number
+    rating: number,
+    comment: string = "",
+    isUserRating: boolean = false
   ): Observable<any> {
     return this.http.post<any>(API_URL + "/modify", {
       userId,
       bookIds: [bookId],
       ratingRecommendations: [rating],
+      comments: [comment],
+      isUserRatings: [isUserRating],
     });
+  }
+
+  getComment(bookId: number): Observable<any> {
+    return this.http.get<any>(API_URL + "?bookId=" + bookId);
   }
 }

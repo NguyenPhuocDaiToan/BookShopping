@@ -4,8 +4,8 @@
 
 export const environment = {
   production: false,
-  domain: "https://bookrecommendation.website",
-  apiurl: "https://bookrecommendation.website/api",
+  domain: "http://localhost:4200",
+  apiurl: "http://localhost:8081/api",
   clientId:
     "AXPkXKpXxzFnLRNZHVAvewN-dvyt3zjRVr-bzveAEZz5aOQJWj6A7fxiUSr-kcXpvvrbW94m2ZufGl5L",
 };

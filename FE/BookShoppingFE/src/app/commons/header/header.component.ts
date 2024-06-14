@@ -139,12 +139,12 @@ export class HeaderComponent implements OnInit {
   synchronizedCart() {
     this.cartItems = this.cartStorageService.getItems();
     const cartItemRequests = [];
-    console.log(this.cartItems);
+    console.log("cart local", this.cartItems);
     if (this.cartItems.length > 0) {
       this.cartItems.forEach((c) =>
         cartItemRequests.push({
-          bookId: c.book.id,
-          amount: c.amount,
+          bookId: +c.book.id,
+          amount: +c.amount,
         })
       );
       this.cartService
@@ -154,6 +154,7 @@ export class HeaderComponent implements OnInit {
           this.getCartItemsByUserId();
         });
     } else {
+      console.log("get cart items by user id");
       this.getCartItemsByUserId();
     }
   }

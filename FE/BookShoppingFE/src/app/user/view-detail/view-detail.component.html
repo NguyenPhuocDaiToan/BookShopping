@@ -203,12 +203,110 @@
             </div>
           </div>
           <div class="col-7 d-flex-center-all">
-            <button class="btn btn-outline btn-write-rating">
-              Viết đánh giá
+            <button
+              class="btn btn-outline btn-write-rating"
+              (click)="openModalRating()"
+            >
+              Đánh giá
             </button>
           </div>
         </div>
       </div>
     </div>
+
+    <div class="component">
+      <div class="component-header">Đánh giá từ người dùng</div>
+      <div class="component-body">
+        <div class="row pt-8 pb-8" *ngFor="let comment of comments">
+          <div class="col-2">
+            <div class="d-flex-direction-column d-flex-align-center">
+              <img
+                src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS3URjWpcZfPfzAHxrU_Xms2GzfUJmvWXGjuw&s"
+                alt=""
+                style="width: 40px; height: 40px"
+              />
+
+              <div class="mt-8 mb-8">{{ comment?.username }}</div>
+
+              <div class="color-green">
+                <i class="fa-solid fa-check icon-check"></i>
+                <span>Đã mua hàng</span>
+              </div>
+            </div>
+          </div>
+          <div class="col-10">
+            <div class="row rating-comment">
+              <app-rating-stars
+                [rating]="comment?.ratingRecommendation"
+                [readOnly]="true"
+              ></app-rating-stars>
+            </div>
+
+            <div>
+              {{ comment?.comment }}
+            </div>
+
+            <div class="mt-8">
+              Đánh giá ngày: {{ comment?.createdAt | date : "dd/MM/yyyy" }}
+            </div>
+
+            <div class="mt-8">
+              <span>
+                <i class="fa-regular fa-thumbs-up"></i>
+                Thích
+              </span>
+              <span class="ml-16">
+                <i class="fa-solid fa-circle-info"></i>
+                Báo cáo
+              </span>
+            </div>
+          </div>
+        </div>
+        <hr />
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="modal modal-rating">
+  <div class="modal-overlay" (click)="hiddenModalRating()"></div>
+  <div class="modal-container">
+    <h3 class="modal-header m-0">Đánh giá sản phẩm</h3>
+    <div class="modal-body">
+      <app-rating-stars
+        (ratingChange)="changeRating($event)"
+      ></app-rating-stars>
+
+      <textarea
+        name="comment"
+        id="comment"
+        [(ngModel)]="comment"
+        class="form-control"
+      ></textarea>
+    </div>
+
+    <div class="modal-footer">
+      <div class="d-flex-end mt-16">
+        <button
+          class="btn btn-outline"
+          (click)="hiddenModalRating()"
+          type="button"
+        >
+          Huỷ
+        </button>
+        <button class="btn btn-fill ml-16" (click)="saveRating()">
+          Lưu đánh giá
+        </button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="loading-container">
+  <div class="overlay"></div>
+  <div class="balls">
+    <div></div>
+    <div></div>
+    <div></div>
   </div>
 </div>

@@ -23,20 +23,26 @@ export class CacheInterceptor implements HttpInterceptor {
       return next.handle(req);
     }
 
-    const cachedResponse = this.cache.get(req.urlWithParams);
-    if (cachedResponse) {
-      // Serve from cache
-      return of(cachedResponse);
+    if (req.urlWithParams.includes("category/findAll")) {
+      console.log("get cache", req.urlWithParams);
+      const cachedResponse = this.cache.get(req.urlWithParams);
+      if (cachedResponse) {
+        // Serve from cache
+        return of(cachedResponse);
+      }
+
+      return next.handle(req).pipe(
+        tap((event) => {
+          if (event instanceof HttpResponse) {
+            // Cache the new response
+            console.log("save cache", req.urlWithParams);
+            this.cache.set(req.urlWithParams, event);
+          }
+        })
+      );
     }
 
-    return next.handle(req).pipe(
-      tap((event) => {
-        if (event instanceof HttpResponse) {
-          // Cache the new response
-          this.cache.set(req.urlWithParams, event);
-        }
-      })
-    );
+    return next.handle(req);
   }
 }
 export const cacheInterceptor = [

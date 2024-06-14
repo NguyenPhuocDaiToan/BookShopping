@@ -9,7 +9,7 @@ import {ViewCartComponent} from './view-cart/view-cart.component';
 import {ViewSearchComponent} from './view-search/view-search.component';
 import {ChangePasswordComponent} from './change-password/change-password.component';
 import {SidebarComponent} from './sidebar/sidebar.component';
-import {ReactiveFormsModule} from '@angular/forms';
+import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 import {ShareModuleModule} from '../share-module/share-module.module';
 import {NgxSpinnerModule} from 'ngx-spinner';
 import {NgxPayPalModule} from 'ngx-paypal';
@@ -17,6 +17,7 @@ import { PaymentComponent } from './payment/payment.component';
 import { ViewHistoryTransactionComponent } from './view-history-transaction/view-history-transaction.component';
 import { ViewHistoryTransactionDetailComponent } from './view-history-transaction-detail/view-history-transaction-detail.component';
 import { SliderBookComponent } from './layers/slider-book/slider-book.component';
+import { RatingStarsComponent } from './rating-stars/rating-stars.component';
 
 
 @NgModule({
@@ -31,7 +32,8 @@ import { SliderBookComponent } from './layers/slider-book/slider-book.component'
     PaymentComponent,
     ViewHistoryTransactionComponent,
     ViewHistoryTransactionDetailComponent,
-    SliderBookComponent
+    SliderBookComponent,
+    RatingStarsComponent
   ],
   imports: [
     CommonModule,
@@ -39,7 +41,8 @@ import { SliderBookComponent } from './layers/slider-book/slider-book.component'
     ReactiveFormsModule,
     ShareModuleModule,
     NgxSpinnerModule,
-    NgxPayPalModule
+    NgxPayPalModule,
+    FormsModule
   ]
 })
 export class UserModule {
