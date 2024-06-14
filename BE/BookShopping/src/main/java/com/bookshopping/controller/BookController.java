@@ -56,7 +56,7 @@ public class BookController {
             return new ResponseEntity<>(new ResponseMessage("Thêm sách thất bại."), HttpStatus.BAD_REQUEST);
         return new ResponseEntity<>(new ResponseMessage("Thêm mới sách thành công !!!"), HttpStatus.OK);
     }
-
+    
     @PostMapping("/create-multi")
     public ResponseEntity<ResponseMessage> createMultiBook(@RequestBody List<Book> books) {
         for (int i = 0; i < books.size(); i++) {
@@ -125,8 +125,9 @@ public class BookController {
     }
 
     @GetMapping("/semantic")
-    public ResponseEntity<List<Book>> getRelative(@RequestParam String text) {
-        List<SemanticResponse> semantics = aiService.getBooksSemantic(text);
+    public ResponseEntity<List<Book>> getSematic(@RequestParam Integer bookId) {
+	    Book book = bookService.findById(bookId);
+        List<SemanticResponse> semantics = aiService.getBooksSemantic(book.getDescription());
         List<Integer> listIds = semantics.stream().map(SemanticResponse::get_id).collect(Collectors.toList());
 
         List<Book> books = bookService.findBookByIds(listIds);
