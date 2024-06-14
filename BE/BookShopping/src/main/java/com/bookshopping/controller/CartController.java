@@ -102,16 +102,13 @@ public class CartController {
     @PostMapping("/synchronizedCart")
     public ResponseEntity<?> synchronizedCart(@RequestParam Integer cartId, @RequestBody List<CartItemRequest> cartItemRequests) {
         System.out.println("synchronizedCart");
-        Book book;
-        CartItem cartItem;
         for (CartItemRequest cartItemRequest : cartItemRequests) {
-            book = bookService.findById(cartItemRequest.getBookId());
-            cartItem = cartItemService.findByCartIdAndBookId(cartId, cartItemRequest.getBookId());
-            System.out.print(book);
-            System.out.print(cartItem);
+            Integer bookId = cartItemRequest.getBookId();
+            Book book = bookService.findById(bookId);
+            CartItem cartItem = cartItemService.findByCartIdAndBookId(cartId, bookId);
             if(cartItem == null) {
                 if(book.getAmount() >= cartItemRequest.getAmount()) {
-                    cartItemService.save(cartItemRequest.getAmount(), cartId, cartItemRequest.getBookId());
+                    cartItemService.save(cartItemRequest.getAmount(), cartId, bookId);
                 }
             } else {
                 if(book.getAmount() >= cartItemRequest.getAmount() + cartItem.getAmount()) {

@@ -1,20 +1,31 @@
 package com.bookshopping.dto;
 
-import lombok.Value;
+import org.springframework.beans.factory.annotation.Value;
 
-public interface StatisticAccount {
-    @Value("#{target.fullname}")
-    String getFullName();
+import java.time.LocalDate;
 
-    @Value("#{target.account_code}")
-    String getAccountCode();
+public interface CommentResponse {
+    @Value("#{target.id}")
+    int getId();
 
-    @Value("#{target.numberTicket}")
-    int getNumberTicket();
+    @Value("#{target.user_id}")
+    int getUserId();
 
-    @Value("#{target.money}")
-    double getMoney();
+    @Value("#{target.book_id}")
+    int getBookId();
 
-    @Value("#{target.point}")
-    int getPoint();
+    @Value("#{target.username}")
+    String getUsername();
+
+    @Value("#{target.comment}")
+    String getComment();
+
+    @Value("#{target.rating_recommendation}")
+    String getRatingRecommendation();
+
+    @Value("#{target.created_at}")
+    LocalDate getCreatedAt();
+
+    @Value("#{target.updated_at}")
+    LocalDate getUpdatedAt();
 }

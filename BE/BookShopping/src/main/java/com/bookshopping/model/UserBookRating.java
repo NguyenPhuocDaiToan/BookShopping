@@ -5,6 +5,7 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 
 import javax.persistence.*;
+import java.time.LocalDate;
 
 @Entity
 @Data
@@ -15,13 +16,14 @@ public class UserBookRating {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
 
-    @ManyToOne(targetEntity = User.class)
-    private User userId;
-    @ManyToOne(targetEntity = Book.class)
-    private Book bookId;
+    private int userId;
+    private int bookId;
 
     private boolean isUserRating = false;
 
     private float ratingRecommendation;
     private String comment = "";
+
+    private LocalDate createdAt;
+    private LocalDate updatedAt;
 }

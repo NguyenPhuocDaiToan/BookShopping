@@ -1,5 +1,6 @@
 package com.bookshopping.controller;
 
+import com.bookshopping.dto.CommentResponse;
 import com.bookshopping.model.UserBookRating;
 import com.bookshopping.payload.request.UserBookRatingRequest;
 import com.bookshopping.payload.response.ResponseMessage;
@@ -21,6 +22,11 @@ public class UserBookRatingController {
     @Autowired
     UserBookRatingService userBookRatingService;
 
+    @GetMapping("")
+    public ResponseEntity<List<CommentResponse>> getBookRating(@RequestParam Integer bookId) {
+        return new ResponseEntity<>(userBookRatingService.getComment(bookId), HttpStatus.OK);
+    }
+
     @PostMapping("/modify")
     public ResponseEntity<ResponseMessage> addRatingRecommendation(@RequestBody UserBookRatingRequest data) {
 
@@ -36,7 +42,7 @@ public class UserBookRatingController {
             // if exist rating
             if (oldRating != null) {
                 // if user rated => ignore
-                if (!oldRating.isUserRating()) {
+                if (!oldRating.isUserRating() || isUserRatings.get(i)) {
                     userBookRatingService.updateRating(userId, bookIds.get(i), ratingRecommendations.get(i), comments.get(i), isUserRatings.get(i));
                 }
             } else {
@@ -47,10 +53,10 @@ public class UserBookRatingController {
         return new ResponseEntity<>(new ResponseMessage("OK"), HttpStatus.OK);
     }
 
-    @GetMapping("")
-    public ResponseEntity<Page<UserBookRating>> paginate(@PageableDefault(size = 48) Pageable pageable) {
-        return new ResponseEntity<>(userBookRatingService.paginate(pageable), HttpStatus.OK);
-    }
+//    @GetMapping("")
+//    public ResponseEntity<Page<UserBookRating>> paginate(@PageableDefault(size = 48) Pageable pageable) {
+//        return new ResponseEntity<>(userBookRatingService.paginate(pageable), HttpStatus.OK);
+//    }
 
     @GetMapping("/getBooksCare")
     public ResponseEntity<List<Integer>> getBooksCare(@RequestParam Integer userId, @RequestParam(defaultValue = "50") Integer limit) {

@@ -19,6 +19,7 @@ public class CategoryController {
 
     @GetMapping("/findAll")
     public ResponseEntity<List<Category>> getAllCategories() {
+        System.out.println("find all category");
         return new ResponseEntity<>(categoryService.findAll(), HttpStatus.OK);
     }
 

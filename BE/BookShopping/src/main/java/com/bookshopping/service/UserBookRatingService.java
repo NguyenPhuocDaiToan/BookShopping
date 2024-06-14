@@ -1,11 +1,11 @@
 package com.bookshopping.service;
 
+import com.bookshopping.dto.CommentResponse;
 import com.bookshopping.model.UserBookRating;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 
 import java.util.List;
-import java.util.Optional;
 
 public interface UserBookRatingService {
     UserBookRating findByUserIdAndBookId(int userId, int bookId);
@@ -18,4 +18,6 @@ public interface UserBookRatingService {
 
     Page<UserBookRating> paginate(Pageable page);
     List<Integer> getBooksCare(int userId, int limit);
+
+    List<CommentResponse> getComment(Integer bookId);
 }

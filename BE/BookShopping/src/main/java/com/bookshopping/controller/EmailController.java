@@ -28,7 +28,7 @@ public class EmailController {
             String message = "<h3>Cảm ơn bạn đã sử dụng ứng dụng của chúng tôi !!!</h3>"
                     + "<p>Mã OTP để đăng ký tài khoản của bạn là: " + otp + ".</p>"
                     + "<p>Mã OTP có hiệu lực trong thời gian 4 phút.</p>";
-            if(emailService.sendEmail(email, "DT BookStore", message))
+            if(emailService.sendEmail(email, "PBL7 Book Recommendation", message))
                 return new ResponseEntity<>(new ResponseMessage("OK"), HttpStatus.OK);
             return new ResponseEntity<>(new ResponseMessage("Gửi email bị lỗi"), HttpStatus.BAD_REQUEST);
         }
@@ -41,7 +41,7 @@ public class EmailController {
         String message = "<h3>Cảm ơn bạn đã sử dụng ứng dụng của chúng tôi !!!</h3>"
                 + "<p>Mã OTP để thay đổi mật khẩu của bạn là: " + otp + ".</p>"
                 + "<p>Mã OTP có hiệu lực trong thời gian 4 phút.</p>";
-        if(emailService.sendEmail(email, "DT BookStore", message))
+        if(emailService.sendEmail(email, "PBL7 Book Recommendation", message))
             return new ResponseEntity<>(new ResponseMessage("OK"), HttpStatus.OK);
         return new ResponseEntity<>(new ResponseMessage("Gửi email bị lỗi"), HttpStatus.BAD_REQUEST);
     }

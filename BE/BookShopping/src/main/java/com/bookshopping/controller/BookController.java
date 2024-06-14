@@ -30,6 +30,7 @@ public class BookController {
 
     @GetMapping("/findAll")
     public ResponseEntity<List<Book>> getAllBooks() {
+        System.out.print("findAll");
         return new ResponseEntity<>(bookService.findAll(), HttpStatus.OK);
     }
 
@@ -40,6 +41,7 @@ public class BookController {
 
     @GetMapping("")
     public ResponseEntity<Page<Book>> paginate(@PageableDefault(size = 48) Pageable pageable) {
+        System.out.println("paginate book");
         return new ResponseEntity<>(bookService.paginate(pageable), HttpStatus.OK);
     }
 
@@ -71,9 +73,7 @@ public class BookController {
 
     @GetMapping("/findById")
     public ResponseEntity<Book> findById(@RequestParam Integer id) {
-        System.out.println("Find by id");
         Book book = bookService.findById(id);
-        System.out.println(book.getId());
         return new ResponseEntity<>(book, HttpStatus.OK);
     }
 
@@ -111,9 +111,9 @@ public class BookController {
 
     @GetMapping("/recommend")
     public ResponseEntity<List<Book>> recommendation(@RequestParam String idBooks, @RequestParam Integer page, @RequestParam Integer size) {
-        return new ResponseEntity<>(bookService.findAll(), HttpStatus.OK);
-//        List<Book> books = bookService.getBooksRecommend(idBooks, page, size);
-//        return new ResponseEntity<>(books, HttpStatus.OK);
+//        return new ResponseEntity<>(bookService.findAll(), HttpStatus.OK);
+        List<Book> books = bookService.getBooksRecommend(idBooks, page, size);
+        return new ResponseEntity<>(books, HttpStatus.OK);
     }
 
     @GetMapping("/relative")
